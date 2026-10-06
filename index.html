@@ -3,29 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Re:Read finds forgotten American books worth bringing back. Founding members help decide what returns.">
-<title>Re:Read — American Myths</title>
+<meta name="description" content="Re:Read finds forgotten American books worth bringing back. Drop 001: American Myths.">
+<title>Re:Read — Drop 001: American Myths</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --ink:#1c1d1a;
-  --forest:#24312b;
-  --forest-2:#314139;
-  --oxblood:#873a31;
-  --brick:#b34c34;
-  --gold:#ddb958;
-  --paper:#f7f2e8;
-  --paper-2:#efe6d7;
-  --paper-3:#fffdf7;
-  --line:#d9cfc0;
-  --muted:#69645c;
-  --display:"Libre Baskerville",Georgia,serif;
+  --ink:#171713;
+  --paper:#f3eddf;
+  --paper-bright:#faf6ed;
+  --paper-deep:#e8dfcf;
+  --red:#b73727;
+  --red-dark:#8f2b20;
+  --mustard:#d8b652;
+  --blue:#324c69;
+  --muted:#706a61;
+  --line:#cfc4b4;
+  --serif:"Newsreader",Georgia,serif;
   --sans:"DM Sans",Arial,sans-serif;
-  --max:1180px;
+  --max:1240px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -40,1170 +39,850 @@ body{
 a{color:inherit;text-decoration:none}
 button,input{font:inherit}
 img{display:block;max-width:100%}
-.shell{width:min(var(--max),calc(100% - 40px));margin:0 auto}
-:focus-visible{outline:3px solid rgba(221,185,88,.48);outline-offset:3px}
+::selection{background:var(--mustard);color:var(--ink)}
+.shell{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
 .skip-link{position:absolute;left:-9999px;top:12px;z-index:1000;padding:10px 14px;background:#fff}
 .skip-link:focus{left:12px}
+:focus-visible{outline:2px solid var(--red);outline-offset:4px}
 
-/* HEADER */
+/* ---------- masthead ---------- */
 .site-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  border-bottom:1px solid rgba(28,29,26,.12);
-  background:rgba(247,242,232,.96);
-  backdrop-filter:blur(14px);
+  position:relative;
+  z-index:20;
+  border-bottom:1px solid rgba(23,23,19,.18);
+  background:var(--paper);
 }
 .header-inner{
-  width:min(var(--max),calc(100% - 40px));
-  min-height:68px;
-  margin:0 auto;
-  display:flex;
+  width:min(var(--max),calc(100% - 48px));
+  min-height:74px;
+  margin-inline:auto;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
   align-items:center;
-  justify-content:space-between;
-  gap:24px;
+  gap:20px;
 }
 .wordmark{
-  font-family:var(--display);
-  color:var(--ink);
-  font-size:26px;
-  line-height:1;
+  justify-self:start;
+  font-family:var(--serif);
+  font-size:29px;
   font-weight:700;
-  letter-spacing:-.045em;
+  letter-spacing:-.05em;
 }
-.wordmark span{color:var(--brick)}
-.main-nav{
+.wordmark span{color:var(--red)}
+.header-center{
+  justify-self:center;
+  font-size:9.5px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#5e594f;
+}
+.header-link{
+  justify-self:end;
+  padding-bottom:2px;
+  border-bottom:1px solid currentColor;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  overflow:hidden;
+  min-height:760px;
+  border-bottom:1px solid var(--ink);
+  background:var(--paper);
+}
+.hero-grid{
+  width:min(var(--max),calc(100% - 48px));
+  min-height:760px;
+  margin-inline:auto;
+  display:grid;
+  grid-template-columns:minmax(0,.92fr) minmax(500px,1.08fr);
+  gap:54px;
+  align-items:center;
+  padding:72px 0 76px;
+}
+.hero-copy{position:relative;z-index:5}
+.kicker{
   display:flex;
   align-items:center;
-  gap:22px;
-}
-.main-nav a{
-  font-size:12px;
+  gap:10px;
+  margin:0 0 20px;
+  color:var(--red);
+  font-size:10px;
   font-weight:700;
-  color:#5f5a54;
+  letter-spacing:.17em;
+  text-transform:uppercase;
 }
-.main-nav a:hover{color:var(--ink)}
-.nav-join{
-  min-height:38px;
-  padding:0 14px;
+.kicker::before{content:"";width:34px;height:1px;background:currentColor}
+.hero h1{
+  margin:0;
+  max-width:690px;
+  font-family:var(--serif);
+  font-size:clamp(72px,8.4vw,122px);
+  line-height:.79;
+  letter-spacing:-.067em;
+  font-weight:600;
+}
+.hero h1 em{
+  display:block;
+  padding-left:.62em;
+  color:var(--red);
+  font-weight:500;
+}
+.hero-lede{
+  max-width:580px;
+  margin:30px 0 0;
+  font-family:var(--serif);
+  font-size:20px;
+  line-height:1.55;
+}
+.hero-lede strong{font-weight:700}
+.hero-note{
+  max-width:555px;
+  margin:17px 0 0;
+  color:var(--muted);
+  font-size:12.5px;
+  line-height:1.62;
+}
+.hero-actions{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin-top:28px;
+}
+.primary-link{
+  min-height:46px;
+  padding:0 17px;
   border:1px solid var(--ink);
-  border-radius:999px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
   background:var(--ink);
-  color:#fff!important;
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  transition:background .18s ease,color .18s ease;
+}
+.primary-link:hover{background:var(--red);border-color:var(--red)}
+.text-link{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  border-bottom:1px solid currentColor;
 }
 
-/* HEROLEAD — same Porch Patrol proportions, now merchandised around DROP 001 */
-.hero{
+/* ---------- archival collage ---------- */
+.archive-stage{
   position:relative;
-  isolation:isolate;
-  overflow:hidden;
-  min-height:650px;
-  background:var(--forest);
-  color:#fffaf0;
-  display:flex;
-  align-items:center;
+  min-height:620px;
 }
-.hero::before{
+.archive-stage::before{
+  content:"RESEARCH SHELF / DROP 001";
+  position:absolute;
+  right:-1px;
+  top:8px;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  color:#726a5f;
+  font-size:8.5px;
+  font-weight:700;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+}
+.archive-card{
+  position:absolute;
+  overflow:hidden;
+  border:1px solid rgba(23,23,19,.28);
+  background:#d7cbb9;
+  box-shadow:0 18px 30px rgba(34,27,19,.14);
+}
+.archive-card img{width:100%;height:100%;object-fit:cover}
+.archive-card.one{
+  width:37%;
+  height:71%;
+  left:5%;
+  top:13%;
+  transform:rotate(-6deg);
+}
+.archive-card.two{
+  width:39%;
+  height:76%;
+  left:31%;
+  top:4%;
+  z-index:3;
+  transform:rotate(2.8deg);
+}
+.archive-card.three{
+  width:35%;
+  height:67%;
+  right:3%;
+  top:20%;
+  transform:rotate(7deg);
+}
+.archive-stamp{
+  position:absolute;
+  z-index:8;
+  left:2%;
+  bottom:4%;
+  width:184px;
+  height:184px;
+  border:1px solid var(--red);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  transform:rotate(-11deg);
+  color:var(--red);
+  background:rgba(243,237,223,.85);
+  text-align:center;
+  font-family:var(--serif);
+  font-size:19px;
+  line-height:1.05;
+}
+.archive-stamp::before,
+.archive-stamp::after{
   content:"";
   position:absolute;
-  inset:0;
-  z-index:0;
-  background:
-    linear-gradient(180deg,rgba(36,49,43,.96),rgba(31,43,37,.98)),
-    url("https://images.unsplash.com/photo-1473755504818-b72b6dfdc226?auto=format&fit=crop&w=1800&q=75") center/cover;
+  border:1px solid currentColor;
+  border-radius:50%;
 }
-.hero-book-pattern{
+.archive-stamp::before{inset:7px}
+.archive-stamp::after{inset:14px}
+.archive-caption{
   position:absolute;
-  inset:0;
-  z-index:1;
-  opacity:.12;
-  pointer-events:none;
-  background-image:
-    linear-gradient(90deg,transparent 0 18px,rgba(255,255,255,.36) 19px 20px,transparent 21px 42px),
-    linear-gradient(0deg,transparent 0 62px,rgba(255,255,255,.28) 63px 64px,transparent 65px 96px);
-  background-size:126px 96px,126px 96px;
-  transform:skewX(-4deg) scale(1.08);
+  right:14px;
+  bottom:3px;
+  max-width:280px;
+  color:#746d63;
+  font-size:9.5px;
+  line-height:1.45;
+  text-align:right;
 }
-.hero-wash{
-  position:absolute;
-  inset:0;
-  z-index:2;
-  background:
-    radial-gradient(circle at 80% 50%,rgba(221,185,88,.12),transparent 24%),
-    linear-gradient(90deg,rgba(22,30,26,.30),rgba(22,30,26,.06) 58%,rgba(22,30,26,.14));
-  pointer-events:none;
+.archive-caption a{text-decoration:underline}
+
+/* ---------- type rail ---------- */
+.archetype-rail{
+  overflow:hidden;
+  border-bottom:1px solid var(--ink);
+  background:var(--ink);
+  color:#f8f1e4;
 }
-.hero-inner{
-  position:relative;
-  z-index:3;
-  width:min(var(--max),calc(100% - 40px));
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 440px;
-  gap:66px;
+.rail-track{
+  width:max-content;
+  display:flex;
   align-items:center;
-  padding:70px 0;
+  animation:rail 38s linear infinite;
 }
-.hero-copy{max-width:660px}
-.hero-eyebrow{
-  margin:0 0 15px;
-  color:#efd47e;
-  font-size:11px;
-  font-weight:800;
+.archetype-rail:hover .rail-track,
+.archetype-rail:focus-within .rail-track{animation-play-state:paused}
+.rail-set{display:flex;align-items:center;flex-shrink:0}
+.rail-item{
+  padding:15px 24px 14px;
+  border-right:1px solid rgba(255,255,255,.18);
+  white-space:nowrap;
+  font-family:var(--serif);
+  font-size:22px;
+  font-style:italic;
+}
+.rail-item b{
+  margin-right:8px;
+  color:var(--mustard);
+  font-family:var(--sans);
+  font-size:8px;
+  font-style:normal;
+  letter-spacing:.13em;
+}
+@keyframes rail{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- manifesto ---------- */
+.manifesto{
+  padding:98px 0 106px;
+  border-bottom:1px solid var(--line);
+  background:var(--paper-bright);
+}
+.manifesto-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:76px;
+  align-items:start;
+}
+.manifesto h2{
+  margin:0;
+  font-family:var(--serif);
+  font-size:clamp(56px,6vw,82px);
+  line-height:.9;
+  letter-spacing:-.055em;
+  font-weight:500;
+}
+.manifesto h2 span{color:var(--red)}
+.manifesto-copy{
+  padding-top:6px;
+  border-top:1px solid var(--ink);
+}
+.manifesto-copy p{
+  margin:19px 0 0;
+  font-family:var(--serif);
+  font-size:20px;
+  line-height:1.58;
+}
+.manifesto-copy p:first-child{margin-top:21px}
+.manifesto-copy .small{
+  color:var(--muted);
+  font-family:var(--sans);
+  font-size:12.5px;
+  line-height:1.68;
+}
+.manifesto-copy strong{font-weight:700}
+
+/* ---------- founding callout ---------- */
+.founding{
+  border-bottom:1px solid var(--ink);
+  background:var(--red);
+  color:#fff8ea;
+}
+.founding-grid{
+  min-height:500px;
+  display:grid;
+  grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+}
+.founding-title{
+  padding:68px 52px 66px max(24px,calc((100vw - var(--max))/2));
+  border-right:1px solid rgba(255,255,255,.34);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.founding-title .issue{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+}
+.founding-title h2{
+  margin:42px 0 0;
+  font-family:var(--serif);
+  font-size:clamp(58px,6.2vw,88px);
+  line-height:.86;
+  letter-spacing:-.055em;
+  font-weight:500;
+}
+.founding-title small{
+  display:block;
+  margin-top:44px;
+  max-width:260px;
+  color:rgba(255,248,234,.72);
+  font-size:10px;
+  line-height:1.55;
+}
+.founding-body{
+  padding:70px max(24px,calc((100vw - var(--max))/2)) 70px 58px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.founding-body .big{
+  margin:0;
+  max-width:720px;
+  font-family:var(--serif);
+  font-size:clamp(30px,3vw,43px);
+  line-height:1.15;
+}
+.founding-body .big strong{font-weight:700}
+.founding-body .detail{
+  max-width:650px;
+  margin:24px 0 0;
+  color:rgba(255,248,234,.80);
+  font-size:13px;
+  line-height:1.67;
+}
+.shape-words{
+  margin-top:31px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.35);
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 19px;
+}
+.shape-words span{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+/* ---------- signup ---------- */
+.signup-wrap{
+  padding:80px 0 86px;
+  border-bottom:1px solid var(--line);
+  background:var(--paper);
+}
+.signup-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);
+  gap:60px;
+  align-items:end;
+}
+.signup-copy .eyebrow{
+  margin:0 0 12px;
+  color:var(--red);
+  font-size:9.5px;
+  font-weight:700;
   letter-spacing:.16em;
   text-transform:uppercase;
 }
-.hero h1{
+.signup-copy h2{
   margin:0;
-  font-family:var(--display);
-  font-size:clamp(60px,6.2vw,86px);
-  line-height:.94;
-  letter-spacing:-.052em;
-  font-weight:700;
-}
-.hero h1::after{
-  content:"";
-  display:block;
-  width:62px;
-  height:6px;
-  margin-top:23px;
-  background:var(--gold);
-}
-.hero-lede{
-  max-width:620px;
-  margin:20px 0 0;
-  color:rgba(255,250,240,.90);
-  font-size:18px;
-  line-height:1.6;
+  font-family:var(--serif);
+  font-size:clamp(44px,4.5vw,62px);
+  line-height:.98;
+  letter-spacing:-.045em;
   font-weight:500;
 }
-.hero-archetypes{
-  max-width:625px;
+.signup-copy p{
+  max-width:480px;
   margin:15px 0 0;
-  color:rgba(255,250,240,.68);
-  font-size:12.5px;
-  line-height:1.55;
-  font-weight:650;
-}
-.hero-archetypes strong{color:#efd47e}
-.hero-drop-card{
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.17);
-  border-radius:14px;
-  background:var(--paper-3);
-  color:var(--ink);
-  box-shadow:0 24px 58px rgba(0,0,0,.22);
-}
-.drop-image{
-  position:relative;
-  height:245px;
-  overflow:hidden;
-  background:#55483a;
-}
-.drop-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:saturate(.86) contrast(1.02);
-}
-.drop-image::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.40));
-}
-.drop-badge{
-  position:absolute;
-  left:16px;
-  top:16px;
-  z-index:2;
-  padding:7px 9px;
-  background:#fffaf0;
-  color:var(--oxblood);
-  font-size:9.5px;
-  font-weight:900;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-}
-.drop-caption{
-  position:absolute;
-  left:17px;
-  right:17px;
-  bottom:16px;
-  z-index:2;
-  color:#fff;
-}
-.drop-caption span{
-  display:block;
-  margin-bottom:4px;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-.drop-caption strong{
-  display:block;
-  font-family:var(--display);
-  font-size:28px;
-  line-height:1;
-}
-.drop-card-body{padding:22px 23px 23px}
-.drop-card-body h2{
-  margin:0;
-  color:var(--oxblood);
-  font-family:var(--display);
-  font-size:26px;
-  line-height:1.05;
-  letter-spacing:-.03em;
-}
-.drop-card-body p{
-  margin:7px 0 15px;
   color:var(--muted);
-  font-size:12.5px;
-  line-height:1.5;
+  font-size:13px;
+  line-height:1.65;
 }
-.hero-form{
+.signup-form{
+  border-top:1px solid var(--ink);
+  padding-top:18px;
+}
+.form-row{
   display:grid;
   grid-template-columns:minmax(0,1fr) auto;
-  gap:8px;
+  gap:10px;
 }
 .field{
   width:100%;
   min-width:0;
-  height:48px;
-  padding:0 13px;
-  border:1px solid #d6cabb;
-  border-radius:7px;
-  background:#fff;
+  height:52px;
+  padding:0 2px;
+  border:0;
+  border-bottom:1px solid #7b746a;
+  border-radius:0;
+  background:transparent;
   color:var(--ink);
   outline:none;
 }
-.field:focus{border-color:var(--oxblood);box-shadow:0 0 0 3px rgba(135,58,49,.10)}
-.button{
-  min-height:48px;
-  padding:0 18px;
+.field:focus{border-bottom-color:var(--red)}
+.join-button{
+  min-height:52px;
+  padding:0 22px;
   border:1px solid var(--ink);
-  border-radius:7px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
   background:var(--ink);
   color:#fff;
-  font-weight:800;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
   cursor:pointer;
-  transition:transform .16s ease,background .16s ease,box-shadow .16s ease;
 }
-.button:hover{
-  transform:translateY(-1px);
-  background:var(--oxblood);
-  border-color:var(--oxblood);
-  box-shadow:0 9px 20px rgba(28,29,26,.12);
-}
-.button:disabled{opacity:.62;cursor:wait;transform:none}
+.join-button:hover{background:var(--red);border-color:var(--red)}
+.join-button:disabled{opacity:.55;cursor:wait}
 .form-note{
-  margin-top:9px;
-  color:#81786e;
-  font-size:10.5px;
-  line-height:1.45;
+  margin-top:10px;
+  color:#847d73;
+  font-size:9.5px;
+  line-height:1.5;
 }
 .success,.form-error{
   display:none;
-  margin-top:10px;
-  padding:10px 12px;
-  border-radius:6px;
-  font-size:11.5px;
-}
-.success{background:#e9f0e8;color:#3d563e}
-.form-error{background:#f6e5e1;color:#7a342a}
-
-/* SERVICE TICKER — now the AMERICAN MYTHS archetype rail */
-.pp-service-ticker-wrap{
-  padding:26px 0;
-  border-bottom:1px solid var(--line);
-  background:var(--paper-3);
-}
-.pp-service-ticker{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 210px;
-  gap:18px;
-  align-items:stretch;
-}
-.pp-service-ticker__viewport{
-  min-width:0;
-  min-height:58px;
-  display:flex;
-  align-items:center;
-  overflow:hidden;
-  padding:8px 13px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  background:#f4ecdf;
-}
-.pp-service-ticker__track{
-  width:max-content;
-  display:flex;
-  align-items:center;
-  animation:ticker 34s linear infinite;
-  will-change:transform;
-}
-.pp-service-ticker__viewport:hover .pp-service-ticker__track,
-.pp-service-ticker__viewport:focus .pp-service-ticker__track{animation-play-state:paused}
-.pp-service-ticker__set{
-  display:flex;
-  align-items:center;
-  gap:24px;
-  flex-shrink:0;
-  padding-right:24px;
-}
-.pp-service-ticker__item{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  white-space:nowrap;
-  color:var(--ink);
-  font-family:var(--display);
-  font-size:13px;
-  font-weight:700;
-}
-.pp-service-ticker__mark{
-  width:24px;
-  height:24px;
-  display:grid;
-  place-items:center;
-  border:1px solid #b9aa95;
-  border-radius:50%;
-  background:#fffaf1;
-  color:var(--oxblood);
-  font-family:var(--sans);
-  font-size:8.5px;
-  font-weight:900;
-}
-.pp-service-ticker__cta{
-  min-width:210px;
-  min-height:58px;
-  padding:12px 22px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  border:1px solid var(--ink);
-  border-radius:10px;
-  background:var(--ink);
-  color:#fff;
-  font-size:14px;
-  font-weight:800;
-  cursor:pointer;
-}
-.pp-service-ticker__cta:hover{background:var(--oxblood);border-color:var(--oxblood)}
-.pp-service-ticker__cta-arrow{color:var(--gold);font-size:18px;transition:transform .16s ease}
-.pp-service-ticker__cta[aria-expanded="true"] .pp-service-ticker__cta-arrow{transform:rotate(90deg)}
-.pp-service-ticker__lead{
   margin-top:12px;
-  display:grid;
-  grid-template-columns:220px minmax(0,1fr);
-  gap:18px;
-  align-items:center;
-  padding:18px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  background:#fff;
-  box-shadow:0 10px 28px rgba(28,29,26,.06);
-}
-.pp-service-ticker__lead[hidden]{display:none}
-.pp-service-ticker__lead-copy strong{
-  display:block;
-  font-family:var(--display);
-  font-size:21px;
-  line-height:1.08;
-}
-.pp-service-ticker__lead-copy span{
-  display:block;
-  margin-top:5px;
-  color:var(--muted);
-  font-size:11.5px;
-}
-.pp-service-ticker__lead-form{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto;
-  gap:9px;
-}
-.pp-service-ticker__lead-form .field,
-.pp-service-ticker__lead-form .button{height:46px;min-height:46px}
-.pp-service-ticker__lead-note,
-.pp-service-ticker__lead-form .success,
-.pp-service-ticker__lead-form .form-error{grid-column:1/-1}
-.pp-service-ticker__lead-note{color:var(--muted);font-size:10.5px}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* DROP 001 EDITORIAL FEATURE */
-.drop-section{
-  padding:82px 0 76px;
-  background:var(--paper);
-}
-.drop-grid{
-  display:grid;
-  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
-  gap:58px;
-  align-items:center;
-}
-.drop-visual{
-  position:relative;
-  min-height:520px;
-  overflow:hidden;
-  border:1px solid rgba(28,29,26,.12);
-  background:#685847;
-}
-.drop-visual img{
-  width:100%;
-  height:520px;
-  object-fit:cover;
-  filter:saturate(.78);
-}
-.drop-visual-label{
-  position:absolute;
-  left:0;
-  bottom:0;
-  padding:15px 18px;
-  background:#fffaf0;
-  color:var(--ink);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-.drop-copy .eyebrow,
-.process-intro .eyebrow,
-.member-copy .eyebrow{
-  margin:0 0 10px;
-  color:var(--brick);
   font-size:11px;
-  font-weight:800;
-  letter-spacing:.14em;
-  text-transform:uppercase;
 }
-.drop-copy h2{
+.success{color:#3f5c43}
+.form-error{color:var(--red-dark)}
+
+/* ---------- process ---------- */
+.process{
+  padding:84px 0 92px;
+  background:var(--paper-bright);
+}
+.process-head{
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  align-items:end;
+  margin-bottom:38px;
+}
+.process-head h2{
   margin:0;
-  font-family:var(--display);
-  font-size:clamp(46px,4.8vw,62px);
-  line-height:.98;
+  font-family:var(--serif);
+  font-size:clamp(47px,4.5vw,64px);
+  line-height:.95;
   letter-spacing:-.045em;
+  font-weight:500;
 }
-.drop-copy .lead{
-  margin:18px 0 0;
-  color:#4e4a45;
-  font-size:17px;
+.process-head p{
+  max-width:430px;
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.65;
+}
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  border-top:1px solid var(--ink);
+  border-bottom:1px solid var(--ink);
+}
+.process-item{
+  min-height:240px;
+  padding:22px 24px 24px 0;
+  border-right:1px solid var(--line);
+}
+.process-item:not(:first-child){padding-left:24px}
+.process-item:last-child{border-right:0}
+.process-item .num{
+  font-size:8.5px;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--red);
+}
+.process-item h3{
+  margin:57px 0 0;
+  font-family:var(--serif);
+  font-size:30px;
+  line-height:1;
+  font-weight:600;
+}
+.process-item p{
+  margin:12px 0 0;
+  color:var(--muted);
+  font-size:12px;
   line-height:1.62;
 }
-.drop-copy .member-line{
-  margin:21px 0 0;
-  padding-top:18px;
-  border-top:1px solid var(--line);
-  color:var(--ink);
-  font-size:14px;
-  line-height:1.55;
-  font-weight:750;
-}
-.hunt-list{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:0 28px;
-  margin-top:24px;
-  border-top:1px solid var(--line);
-}
-.hunt-item{
-  padding:12px 0;
-  border-bottom:1px solid var(--line);
-  display:flex;
-  align-items:baseline;
-  justify-content:space-between;
-  gap:12px;
-}
-.hunt-item span:first-child{
-  font-family:var(--display);
-  font-size:15px;
-  font-weight:700;
-}
-.hunt-item span:last-child{
-  color:#9b9185;
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:.11em;
-  text-transform:uppercase;
-}
 
-/* PROCESSSTEPS */
-.process-section{
-  padding:76px 0 70px;
-  background:var(--paper-2);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-.process-intro{max-width:820px;margin:0 0 34px}
-.process-intro h2{
-  margin:0;
-  font-family:var(--display);
-  font-size:clamp(42px,4vw,54px);
-  line-height:1.02;
-  letter-spacing:-.04em;
-}
-.process-intro p{
-  max-width:650px;
-  margin:13px 0 0;
-  color:var(--muted);
-  font-size:16px;
-  font-weight:600;
-  line-height:1.55;
-}
-.process-intro::after{
-  content:"";
-  display:block;
-  width:58px;
-  height:4px;
-  margin-top:17px;
-  background:var(--brick);
-}
-.process-layout{
-  display:grid;
-  grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
-  gap:48px;
-  align-items:stretch;
-}
-.process-steps{
-  min-width:0;
-  display:grid;
-  grid-template-rows:repeat(4,minmax(0,1fr));
-  overflow:hidden;
-  border:1px solid var(--line);
-  border-radius:10px;
-  background:#fff;
-}
-.process-step{
-  width:100%;
-  display:grid;
-  grid-template-columns:30px minmax(0,1fr);
-  gap:15px;
-  align-items:center;
-  padding:17px 20px;
-  border:0;
-  border-bottom:1px solid var(--line);
-  background:#fff;
-  text-align:left;
-  cursor:pointer;
-  transition:background .16s ease;
-}
-.process-step:last-child{border-bottom:0}
-.process-step:hover,.process-step:focus-visible{background:#f8f2e9}
-.process-step.active{background:#eadfd0}
-.process-number{
-  width:28px;
-  height:28px;
+/* ---------- final ---------- */
+.final{
+  min-height:580px;
+  padding:84px 24px;
   display:grid;
   place-items:center;
-  align-self:start;
-  margin-top:1px;
-  border:1.5px solid var(--ink);
-  border-radius:50%;
-  font-size:11px;
-  font-weight:800;
-}
-.process-step.active .process-number{
-  border-color:var(--brick);
-  background:var(--brick);
-  color:#fff;
-}
-.process-copy strong{
-  display:block;
-  font-size:17px;
-  line-height:1.3;
-}
-.process-step.active .process-copy strong{color:var(--oxblood)}
-.process-copy span{
-  display:block;
-  max-width:480px;
-  margin-top:6px;
-  color:#5e5953;
-  font-size:13px;
-  line-height:1.48;
-}
-.process-media{
-  position:relative;
-  min-width:0;
-  min-height:430px;
-  overflow:hidden;
-  border:1px solid rgba(28,29,26,.12);
-  border-radius:10px;
-  background:#d8cbbc;
-}
-.process-photo{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:0;
-  transition:opacity .24s ease;
-  filter:saturate(.78);
-}
-.process-photo.active{opacity:1}
-.process-media-label{
-  position:absolute;
-  left:16px;
-  bottom:16px;
-  z-index:2;
-  padding:7px 10px;
-  border-radius:999px;
-  background:rgba(28,29,26,.84);
-  color:#fff;
-  font-size:10.5px;
-  font-weight:800;
-  backdrop-filter:blur(5px);
-}
-
-/* HORIZONTAL CONTENT STRIP — tactile bookmaking details */
-.edition-strip{
-  padding:62px 0 66px;
   background:var(--ink);
-  color:#fffaf0;
-}
-.edition-head{
-  display:grid;
-  grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);
-  gap:48px;
-  align-items:end;
-  margin-bottom:27px;
-}
-.edition-head h2{
-  margin:0;
-  font-family:var(--display);
-  font-size:clamp(40px,4vw,54px);
-  line-height:1;
-  letter-spacing:-.04em;
-}
-.edition-head p{
-  max-width:610px;
-  margin:0;
-  color:#c9c2b7;
-  font-size:14px;
-  line-height:1.6;
-}
-.edition-grid{
-  display:grid;
-  grid-template-columns:repeat(6,minmax(0,1fr));
-  border-top:1px solid rgba(255,255,255,.22);
-}
-.edition-item{
-  min-height:126px;
-  padding:17px 14px 10px 0;
-  border-bottom:1px solid rgba(255,255,255,.22);
-}
-.edition-item small{
-  display:block;
-  color:#d6b85e;
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-.edition-item strong{
-  display:block;
-  margin-top:15px;
-  font-family:var(--display);
-  font-size:15px;
-  line-height:1.25;
-}
-
-/* FOUNDING MEMBERS */
-.member-section{padding:78px 0;background:var(--paper-3)}
-.member-grid{
-  display:grid;
-  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
-  gap:58px;
-  align-items:center;
-}
-.member-copy h2{
-  margin:0;
-  font-family:var(--display);
-  font-size:clamp(44px,4.5vw,58px);
-  line-height:.99;
-  letter-spacing:-.045em;
-}
-.member-copy p{
-  max-width:560px;
-  margin:17px 0 0;
-  color:var(--muted);
-  font-size:15.5px;
-  line-height:1.62;
-}
-.member-board{
-  border:1px solid var(--line);
-  background:var(--paper);
-}
-.member-row{
-  display:grid;
-  grid-template-columns:140px minmax(0,1fr);
-  gap:20px;
-  padding:19px 20px;
-  border-bottom:1px solid var(--line);
-}
-.member-row:last-child{border-bottom:0}
-.member-row span{
-  color:var(--brick);
-  font-size:9.5px;
-  font-weight:900;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-.member-row strong{
-  font-family:var(--display);
-  font-size:17px;
-  line-height:1.3;
-}
-
-/* FAQ */
-.faq-section{
-  padding:72px 0 78px;
-  background:var(--paper-2);
-  border-top:1px solid var(--line);
-}
-.faq-wrap{width:min(900px,calc(100% - 40px));margin:0 auto}
-.section-heading{margin-bottom:24px}
-.section-heading h2{
-  margin:0;
-  font-family:var(--display);
-  font-size:46px;
-  line-height:1;
-  letter-spacing:-.04em;
-}
-.section-heading p{margin:10px 0 0;color:var(--muted);font-size:14px}
-.faq-list{display:grid;gap:10px}
-.faq-item{
-  border:1px solid #d9cec0;
-  border-radius:9px;
-  background:#fffdf8;
-  overflow:hidden;
-}
-.faq-item summary{
-  list-style:none;
-  cursor:pointer;
-  padding:17px 48px 17px 18px;
-  position:relative;
-  font-size:15px;
-  font-weight:700;
-}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{
-  content:"+";
-  position:absolute;
-  right:18px;
-  top:50%;
-  transform:translateY(-50%);
-  color:var(--oxblood);
-  font-size:22px;
-}
-.faq-item[open] summary::after{content:"–"}
-.faq-item p{
-  margin:0;
-  padding:0 18px 18px;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.6;
-}
-.faq-item p strong{color:var(--ink)}
-
-/* CTA BAND */
-.final-cta{
-  padding:68px 16px 74px;
+  color:#fff8ea;
   text-align:center;
-  background:var(--oxblood);
-  color:#fff;
 }
-.final-cta h2{
-  max-width:820px;
-  margin:0 auto;
-  font-family:var(--display);
-  font-size:clamp(44px,5vw,62px);
-  line-height:.98;
-  letter-spacing:-.045em;
+.final-inner{max-width:930px}
+.final .small{
+  margin:0 0 20px;
+  color:var(--mustard);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.17em;
+  text-transform:uppercase;
 }
-.final-cta p{
-  max-width:620px;
-  margin:14px auto 0;
-  color:rgba(255,255,255,.80);
-  font-size:15px;
+.final h2{
+  margin:0;
+  font-family:var(--serif);
+  font-size:clamp(60px,7vw,100px);
+  line-height:.86;
+  letter-spacing:-.06em;
+  font-weight:500;
 }
-.final-cta .button{
-  margin-top:24px;
-  min-width:210px;
-  background:#fffaf0;
-  border-color:#fffaf0;
-  color:var(--ink);
+.final h2 em{color:#d45b45;font-weight:500}
+.final p{
+  max-width:560px;
+  margin:24px auto 0;
+  color:rgba(255,248,234,.70);
+  font-size:13px;
+  line-height:1.65;
 }
-.final-cta .button:hover{background:var(--gold);border-color:var(--gold)}
-
+.final a{
+  margin-top:28px;
+  display:inline-block;
+  padding-bottom:4px;
+  border-bottom:1px solid currentColor;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
 footer{
-  border-top:1px solid var(--line);
-  padding:24px 0 28px;
-  background:var(--paper);
+  padding:21px 0 24px;
+  background:var(--ink);
+  color:rgba(255,248,234,.55);
+  border-top:1px solid rgba(255,255,255,.16);
 }
 .footer-inner{
-  width:min(var(--max),calc(100% - 40px));
-  margin:0 auto;
+  width:min(var(--max),calc(100% - 48px));
+  margin-inline:auto;
   display:flex;
   justify-content:space-between;
   gap:20px;
-  color:#786f65;
-  font-size:11.5px;
+  font-size:9.5px;
+  letter-spacing:.04em;
 }
-.footer-brand{
-  font-family:var(--display);
-  color:var(--ink);
-  font-size:19px;
-  font-weight:700;
-}
-.footer-brand span{color:var(--brick)}
-.footer-meta{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:flex-end;
-  gap:8px 16px;
-}
+.footer-brand{color:#fff8ea;font-family:var(--serif);font-size:17px;font-weight:700}
+.footer-brand span{color:#d45b45}
 
-/* RESPONSIVE */
-@media(max-width:980px){
-  .hero-inner{grid-template-columns:1fr;gap:34px;min-height:auto;padding:58px 0 44px}
-  .hero-drop-card{max-width:580px}
-  .drop-grid,.member-grid{gap:34px}
-  .process-layout{gap:30px}
-  .edition-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+/* ---------- responsive ---------- */
+@media(max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:46px;padding-top:62px}
+  .hero-copy{max-width:740px}
+  .archive-stage{min-height:610px;max-width:760px;width:100%}
+  .manifesto-grid{gap:46px}
+  .founding-grid{grid-template-columns:1fr}
+  .founding-title{
+    padding:54px max(24px,calc((100vw - var(--max))/2));
+    border-right:0;border-bottom:1px solid rgba(255,255,255,.34)
+  }
+  .founding-title small{margin-top:28px}
+  .founding-body{padding:55px max(24px,calc((100vw - var(--max))/2))}
 }
 @media(max-width:760px){
-  .main-nav a:not(.nav-join){display:none}
-  .hero h1{font-size:clamp(52px,13vw,66px)}
-  .pp-service-ticker{grid-template-columns:1fr;gap:10px}
-  .pp-service-ticker__cta{min-width:0;min-height:54px}
-  .pp-service-ticker__lead{grid-template-columns:1fr}
-  .drop-section{padding:58px 0 54px}
-  .drop-grid{grid-template-columns:1fr;gap:28px}
-  .drop-visual{min-height:380px}
-  .drop-visual img{height:380px}
-  .process-section{padding:54px 0 36px}
-  .process-intro{margin-bottom:26px}
-  .process-intro h2{font-size:37px}
-  .process-layout{grid-template-columns:1fr;gap:20px}
-  .process-media{grid-row:1;min-height:280px}
-  .process-steps{grid-row:2;grid-template-rows:auto}
-  .process-step{padding:16px}
-  .edition-head{grid-template-columns:1fr;gap:14px}
-  .member-grid{grid-template-columns:1fr}
+  .shell,.header-inner,.hero-grid,.footer-inner{width:calc(100% - 30px)}
+  .header-inner{grid-template-columns:1fr auto;min-height:64px}
+  .header-center{display:none}
+  .hero{min-height:auto}
+  .hero-grid{min-height:auto;padding:50px 0 56px}
+  .hero h1{font-size:clamp(62px,18vw,90px)}
+  .hero h1 em{padding-left:.24em}
+  .hero-lede{font-size:18px}
+  .hero-actions{align-items:flex-start;flex-direction:column;gap:13px}
+  .archive-stage{min-height:500px}
+  .archive-card.one{width:42%;height:68%;left:1%;top:15%}
+  .archive-card.two{width:44%;height:73%;left:28%;top:4%}
+  .archive-card.three{width:40%;height:63%;right:0;top:24%}
+  .archive-stamp{width:138px;height:138px;font-size:15px}
+  .archive-caption{max-width:210px;font-size:8px}
+  .manifesto{padding:67px 0 74px}
+  .manifesto-grid{grid-template-columns:1fr;gap:34px}
+  .manifesto h2{font-size:56px}
+  .founding-title h2{font-size:58px}
+  .founding-body .big{font-size:31px}
+  .signup-wrap{padding:62px 0 68px}
+  .signup-grid{grid-template-columns:1fr;gap:32px}
+  .process{padding:64px 0 72px}
+  .process-head{display:block}
+  .process-head p{margin-top:15px}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .process-item:nth-child(2){border-right:0}
+  .process-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .process-item:nth-child(3){padding-left:0}
+  .final{min-height:500px}
 }
-@media(max-width:560px){
-  .header-inner,.hero-inner,.shell,.footer-inner{width:min(100% - 28px,var(--max))}
-  .header-inner{min-height:62px}
-  .wordmark{font-size:23px}
-  .nav-join{min-height:36px;padding-inline:12px;font-size:11px}
-  .hero-inner{padding:44px 0 30px;row-gap:24px}
-  .hero h1{font-size:clamp(47px,14vw,57px)}
-  .hero-lede{font-size:16px;line-height:1.5}
-  .hero-drop-card{border-radius:11px}
-  .drop-image{height:210px}
-  .drop-card-body{padding:19px 17px 18px}
-  .drop-card-body h2{font-size:24px}
-  .hero-form{grid-template-columns:1fr}
-  .hero-form .button{width:100%}
-  .pp-service-ticker__set{gap:19px;padding-right:19px}
-  .pp-service-ticker__item{font-size:12px}
-  .pp-service-ticker__lead-form{grid-template-columns:1fr}
-  .pp-service-ticker__lead-form .button{width:100%}
-  .hunt-list{grid-template-columns:1fr}
-  .drop-copy h2{font-size:42px}
-  .process-intro h2{font-size:34px}
-  .process-step{grid-template-columns:28px minmax(0,1fr);gap:12px;padding:15px 14px}
-  .process-copy strong{font-size:16px}
-  .process-copy span{font-size:12.5px}
-  .process-media{min-height:235px}
-  .edition-strip{padding:50px 0 54px}
-  .edition-grid{grid-template-columns:1fr 1fr}
-  .edition-item{min-height:108px}
-  .member-section{padding:56px 0}
-  .member-copy h2{font-size:40px}
-  .member-row{grid-template-columns:1fr;gap:7px;padding:16px}
-  .faq-section{padding:54px 0 58px}
-  .faq-wrap{width:min(100% - 28px,900px)}
-  .section-heading h2{font-size:40px}
-  .final-cta{padding:54px 16px 60px}
-  .footer-inner{flex-direction:column}
-  .footer-meta{justify-content:flex-start}
+@media(max-width:520px){
+  .wordmark{font-size:25px}
+  .header-link{font-size:9.5px}
+  .hero-grid{padding-top:42px}
+  .kicker{font-size:9px}
+  .hero h1{font-size:clamp(58px,18vw,76px)}
+  .hero-lede{font-size:17px}
+  .archive-stage{min-height:420px}
+  .archive-stamp{width:112px;height:112px;font-size:12px;bottom:0}
+  .archive-caption{display:none}
+  .rail-item{padding:12px 18px;font-size:18px}
+  .manifesto h2{font-size:49px}
+  .manifesto-copy p{font-size:18px}
+  .founding-title,.founding-body{padding-left:15px;padding-right:15px}
+  .founding-title h2{font-size:50px}
+  .form-row{grid-template-columns:1fr}
+  .join-button{width:100%}
+  .process-grid{grid-template-columns:1fr}
+  .process-item,
+  .process-item:not(:first-child),
+  .process-item:nth-child(3){
+    min-height:0;
+    padding:22px 0 25px;
+    border-right:0;
+    border-bottom:1px solid var(--line)
+  }
+  .process-item:last-child{border-bottom:0}
+  .process-item h3{margin-top:30px}
+  .final h2{font-size:56px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .process-photo,.process-step,.process-number{transition:none}
-  .pp-service-ticker__track{width:auto;overflow-x:auto;animation:none}
-  .pp-service-ticker__set[aria-hidden="true"]{display:none}
+  .rail-track{animation:none;width:auto;overflow-x:auto}
+  .rail-set[aria-hidden="true"]{display:none}
 }
 </style>
 </head>
+
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="wordmark" href="#top"><span>Re:</span>Read</a>
-    <nav class="main-nav" aria-label="Primary navigation">
-      <a href="#drop">Drop 001</a>
-      <a href="#how">How it works</a>
-      <a href="#members">Founding members</a>
-      <a class="nav-join" href="#join">Join Re:Read</a>
-    </nav>
+    <a class="wordmark" href="#top" aria-label="Re:Read home"><span>Re:</span>Read</a>
+    <div class="header-center">A publishing house for books worth finding again</div>
+    <a class="header-link" href="#founding">Founding members</a>
   </div>
 </header>
 
 <main id="main">
+
 <section class="hero" id="top">
-  <div class="hero-book-pattern" aria-hidden="true"></div>
-  <div class="hero-wash" aria-hidden="true"></div>
-
-  <div class="hero-inner">
+  <div class="hero-grid">
     <div class="hero-copy">
-      <div class="hero-eyebrow">Drop 001 · Founding season · Coming soon</div>
-      <h1>AMERICAN<br>MYTHS</h1>
-      <p class="hero-lede">We’re starting with some of America’s most enduring characters — the outlaw, the detective, the dreamer, the dealmaker, the drifter, the champion. Then we’re digging through the stacks for the books that made those characters stranger, sharper and more complicated than we remember.</p>
-      <p class="hero-archetypes"><strong>Founding members help decide what comes back.</strong> We bring the research, rights, editorial judgment and publishing expertise. Members help choose the books and shape the editions.</p>
+      <p class="kicker">Drop 001 · Coming soon</p>
+      <h1>AMERICAN <em>MYTHS</em></h1>
+      <p class="hero-lede">We’re digging through America’s literary past for the books that disappeared — the strange, overlooked stories of outlaws, detectives, drifters, dreamers, champions and schemers that deserve another life.</p>
+      <p class="hero-note"><strong>Founding members help decide what comes back.</strong> Not after the fact. Before the books are chosen, designed and made.</p>
+      <div class="hero-actions">
+        <a class="primary-link" href="#founding">Become a founding member</a>
+        <a class="text-link" href="#story">What is Re:Read?</a>
+      </div>
     </div>
 
-    <aside class="hero-drop-card" id="join">
-      <div class="drop-image">
-        <img src="https://images.unsplash.com/photo-1766068969516-21c25fcca69b?auto=format&fit=crop&w=1200&q=82" alt="Row of worn vintage books on a shelf">
-        <div class="drop-badge">Drop 001</div>
-        <div class="drop-caption"><span>First Re:Read collection</span><strong>American Myths</strong></div>
-      </div>
-      <div class="drop-card-body">
-        <h2>Help choose what comes back.</h2>
-        <p>Become a founding member and have a voice in the books, covers, paper, binding, endpapers and details that turn a forgotten title into something worth owning.</p>
-        <form class="hero-form demo-form">
-          <input class="field" type="email" name="Email" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
-          <button class="button" type="submit">Join</button>
-          <div class="form-note">Founding membership details are coming soon. Join the list now and you’ll hear first.</div>
-          <div class="success" role="status" aria-live="polite">You’re in. We’ll send founding member details first.</div>
-          <div class="form-error" role="alert">Something didn’t send. Try again.</div>
-        </form>
-      </div>
-    </aside>
+    <div class="archive-stage" aria-label="Archival American magazine covers from the Re:Read research moodboard">
+      <figure class="archive-card one">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Adventure_1920-10-18_cover.jpg" alt="1920 cover of Adventure magazine" fetchpriority="high">
+      </figure>
+      <figure class="archive-card two">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Black_Mask_%28November%2C_1928%29_cover.jpg" alt="1928 cover of Black Mask magazine" fetchpriority="high">
+      </figure>
+      <figure class="archive-card three">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Life_%28magazine%29_cover_on_June_2%2C_1910.jpg" alt="1910 cover of Life magazine" fetchpriority="high">
+      </figure>
+      <div class="archive-stamp" aria-hidden="true">FOUND<br>IN THE<br>STACKS</div>
+      <div class="archive-caption">Archival public-domain covers shown as research atmosphere, not announced Re:Read titles.</div>
+    </div>
   </div>
 </section>
 
-<section class="pp-service-ticker-wrap" aria-label="American Myths archetypes">
+<section class="archetype-rail" aria-label="American Myths archetypes" tabindex="0">
+  <div class="rail-track">
+    <div class="rail-set">
+      <div class="rail-item"><b>01</b>The Adventurer</div>
+      <div class="rail-item"><b>02</b>The Athlete</div>
+      <div class="rail-item"><b>03</b>The Outlaw</div>
+      <div class="rail-item"><b>04</b>The Detective</div>
+      <div class="rail-item"><b>05</b>The Entrepreneur</div>
+      <div class="rail-item"><b>06</b>The Dreamer</div>
+      <div class="rail-item"><b>07</b>The Dealmaker</div>
+      <div class="rail-item"><b>08</b>The Drifter</div>
+      <div class="rail-item"><b>09</b>The Champion</div>
+      <div class="rail-item"><b>10</b>The Renegade</div>
+    </div>
+    <div class="rail-set" aria-hidden="true">
+      <div class="rail-item"><b>01</b>The Adventurer</div>
+      <div class="rail-item"><b>02</b>The Athlete</div>
+      <div class="rail-item"><b>03</b>The Outlaw</div>
+      <div class="rail-item"><b>04</b>The Detective</div>
+      <div class="rail-item"><b>05</b>The Entrepreneur</div>
+      <div class="rail-item"><b>06</b>The Dreamer</div>
+      <div class="rail-item"><b>07</b>The Dealmaker</div>
+      <div class="rail-item"><b>08</b>The Drifter</div>
+      <div class="rail-item"><b>09</b>The Champion</div>
+      <div class="rail-item"><b>10</b>The Renegade</div>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto" id="story">
+  <div class="shell manifesto-grid">
+    <h2>Think you’ve read <span>everything?</span></h2>
+    <div class="manifesto-copy">
+      <p>Re:Read finds forgotten American books worth bringing back.</p>
+      <p class="small">Not the obvious classics. Not another edition of a book already stacked ten-deep at a bookstore. We look for the strange, overlooked, influential and surprising books that make you wonder how you never heard of them.</p>
+      <p class="small">Every season begins with a larger idea. We research the field, build the shortlist, and bring our members into the process before a book becomes a Re:Read edition.</p>
+    </div>
+  </div>
+</section>
+
+<section class="founding" id="founding">
+  <div class="founding-grid">
+    <div class="founding-title">
+      <div class="issue">Founding membership · Issue 001</div>
+      <h2>WE FIND.<br>YOU DECIDE.</h2>
+      <small>Re:Read is part publishing house, part literary club, part collective act of discovery.</small>
+    </div>
+
+    <div class="founding-body">
+      <p class="big">Our members have a voice in <strong>what we publish</strong> and <strong>how we publish it.</strong></p>
+      <p class="detail">We bring the research, editorial judgment, rights, design and publishing expertise. Members help choose the books, weigh in on the authors and themes we explore, and shape the physical details that turn a forgotten title into something worth owning.</p>
+
+      <div class="shape-words" aria-label="Things founding members can help shape">
+        <span>Book selection</span>
+        <span>Cover</span>
+        <span>Paper</span>
+        <span>Binding</span>
+        <span>Endpapers</span>
+        <span>Introductions</span>
+        <span>Future themes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="signup-wrap">
+  <div class="shell signup-grid">
+    <div class="signup-copy">
+      <div class="eyebrow">Drop 001 · American Myths</div>
+      <h2>Get in before we choose the books.</h2>
+      <p>Founding members will be invited into the first shortlist and edition decisions. Join the list now and we’ll tell you when the doors open.</p>
+    </div>
+
+    <form class="signup-form demo-form">
+      <div class="form-row">
+        <input class="field" type="email" name="Email" placeholder="Your email address" aria-label="Your email address" autocomplete="email" required>
+        <button class="join-button" type="submit">Join the founding list</button>
+      </div>
+      <div class="form-note">Founding membership details are coming soon. No catalog spam.</div>
+      <div class="success" role="status" aria-live="polite">You’re on the founding list.</div>
+      <div class="form-error" role="alert">Something went wrong. Try again.</div>
+    </form>
+  </div>
+</section>
+
+<section class="process" id="how">
   <div class="shell">
-    <div class="pp-service-ticker">
-      <div class="pp-service-ticker__viewport" tabindex="0" aria-label="Characters we are exploring. Hover or focus to pause.">
-        <div class="pp-service-ticker__track">
-          <div class="pp-service-ticker__set" role="list">
-            <div class="pp-service-ticker__item" role="listitem"><span class="pp-service-ticker__mark">01</span>Adventurer</div>
-            <div class="pp-service-ticker__item" role="listitem"><span class="pp-service-ticker__mark">02</span>Athlete</div>
-            <div class="pp-service-ticker__item" role="listitem"><span class="pp-service-ticker__mark">03</span>Outlaw</div>
-            <div class="pp-service-ticker__item" role="listitem"><span class="pp-service-ticker__mark">04</span>Detective</div>
-            <div class="pp-service-ticker__item" role="listitem"><span class="pp-service-ticker__mark">05</span>Entrepreneur</div>
-            <div class="pp-service-ticker__item" role="listitem"><span class="pp-service-ticker__mark">06</span>Dreamer</div>
-            <div class="pp-service-ticker__item" role="listitem"><span class="pp-service-ticker__mark">07</span>Dealmaker</div>
-            <div class="pp-service-ticker__item" role="listitem"><span class="pp-service-ticker__mark">08</span>Drifter</div>
-            <div class="pp-service-ticker__item" role="listitem"><span class="pp-service-ticker__mark">09</span>Champion</div>
-            <div class="pp-service-ticker__item" role="listitem"><span class="pp-service-ticker__mark">10</span>Renegade</div>
-          </div>
-          <div class="pp-service-ticker__set" aria-hidden="true">
-            <div class="pp-service-ticker__item"><span class="pp-service-ticker__mark">01</span>Adventurer</div>
-            <div class="pp-service-ticker__item"><span class="pp-service-ticker__mark">02</span>Athlete</div>
-            <div class="pp-service-ticker__item"><span class="pp-service-ticker__mark">03</span>Outlaw</div>
-            <div class="pp-service-ticker__item"><span class="pp-service-ticker__mark">04</span>Detective</div>
-            <div class="pp-service-ticker__item"><span class="pp-service-ticker__mark">05</span>Entrepreneur</div>
-            <div class="pp-service-ticker__item"><span class="pp-service-ticker__mark">06</span>Dreamer</div>
-            <div class="pp-service-ticker__item"><span class="pp-service-ticker__mark">07</span>Dealmaker</div>
-            <div class="pp-service-ticker__item"><span class="pp-service-ticker__mark">08</span>Drifter</div>
-            <div class="pp-service-ticker__item"><span class="pp-service-ticker__mark">09</span>Champion</div>
-            <div class="pp-service-ticker__item"><span class="pp-service-ticker__mark">10</span>Renegade</div>
-          </div>
-        </div>
-      </div>
-
-      <button class="pp-service-ticker__cta" type="button" aria-expanded="false">
-        <span>Join the hunt.</span><span class="pp-service-ticker__cta-arrow" aria-hidden="true">→</span>
-      </button>
+    <div class="process-head">
+      <h2>How a book comes back.</h2>
+      <p>The process is simple on purpose. Re:Read does the digging; members help turn the strongest finds into books worth owning.</p>
     </div>
 
-    <div class="pp-service-ticker__lead" hidden>
-      <div class="pp-service-ticker__lead-copy">
-        <strong>Think we missed one?</strong>
-        <span>Founding members can recommend books, characters and directions for future drops.</span>
-      </div>
-      <form class="pp-service-ticker__lead-form demo-form">
-        <input class="field" type="email" name="Email" placeholder="Email address" aria-label="Email address" required>
-        <button class="button" type="submit">Become a founding member</button>
-        <div class="pp-service-ticker__lead-note">Join now and we’ll send details as soon as founding membership opens.</div>
-        <div class="success" role="status" aria-live="polite">You’re in.</div>
-        <div class="form-error" role="alert">Try again.</div>
-      </form>
+    <div class="process-grid">
+      <article class="process-item">
+        <div class="num">01 / Find</div>
+        <h3>We hunt.</h3>
+        <p>Archives, old catalogs, references, dead ends, used-book shelves, forgotten reviews and the trails one book leaves to another.</p>
+      </article>
+      <article class="process-item">
+        <div class="num">02 / Curate</div>
+        <h3>We make the case.</h3>
+        <p>Why this book? Why did it disappear? Why is it worth seeing again now? If we can’t answer that, it doesn’t make the shortlist.</p>
+      </article>
+      <article class="process-item">
+        <div class="num">03 / Decide</div>
+        <h3>You weigh in.</h3>
+        <p>Members react to the shortlist and help shape the edition — without turning editorial judgment into a popularity contest.</p>
+      </article>
+      <article class="process-item">
+        <div class="num">04 / Publish</div>
+        <h3>We bring it back.</h3>
+        <p>A considered new edition with the design, context and physical details the book deserves.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="drop-section" id="drop">
-  <div class="shell drop-grid">
-    <div class="drop-visual">
-      <img src="https://images.unsplash.com/photo-1473755504818-b72b6dfdc226?auto=format&fit=crop&w=1500&q=86" alt="A collection of worn vintage books">
-      <div class="drop-visual-label">Researching now · Drop 001</div>
-    </div>
-
-    <div class="drop-copy">
-      <div class="eyebrow">The first drop</div>
-      <h2>We’re combing through some very old shelves.</h2>
-      <p class="lead">American literature is full of characters we think we know. Re:Read is looking past the obvious classics for the strange, overlooked, influential and surprising books that helped build those myths — especially the ones that disappeared from the culture.</p>
-      <p class="member-line">The final list is not fixed. That is the point. Founding members will help decide which discoveries deserve a new edition.</p>
-
-      <div class="hunt-list" aria-label="Archetypes in the American Myths research brief">
-        <div class="hunt-item"><span>The Outlaw</span><span>Research brief 01</span></div>
-        <div class="hunt-item"><span>The Detective</span><span>Research brief 02</span></div>
-        <div class="hunt-item"><span>The Dreamer</span><span>Research brief 03</span></div>
-        <div class="hunt-item"><span>The Dealmaker</span><span>Research brief 04</span></div>
-        <div class="hunt-item"><span>The Drifter</span><span>Research brief 05</span></div>
-        <div class="hunt-item"><span>The Champion</span><span>Research brief 06</span></div>
-      </div>
-    </div>
+<section class="final">
+  <div class="final-inner">
+    <p class="small">Re:Read · Founding season</p>
+    <h2>It isn’t about looking backward.<br><em>It’s about finding what we missed.</em></h2>
+    <p>American Myths is only the first place we’re looking.</p>
+    <a href="#founding">Join before Drop 001</a>
   </div>
 </section>
 
-<section class="process-section" id="how">
-  <div class="shell">
-    <div class="process-intro">
-      <div class="eyebrow">How Re:Read works</div>
-      <h2>We find. You decide.</h2>
-      <p>Re:Read does the digging. Members help turn the strongest discoveries into books worth owning.</p>
-    </div>
-
-    <div class="process-layout">
-      <div class="process-steps" role="list" aria-label="How Re:Read works">
-        <button type="button" class="process-step active" data-index="0" data-label="Find" aria-pressed="true">
-          <span class="process-number">1</span>
-          <span class="process-copy"><strong>Find</strong><span>We hunt down books that disappeared — old catalogs, archives, references, recommendations and the trails one forgotten book leaves to another.</span></span>
-        </button>
-
-        <button type="button" class="process-step" data-index="1" data-label="Curate" aria-pressed="false">
-          <span class="process-number">2</span>
-          <span class="process-copy"><strong>Curate</strong><span>We organize the strongest finds around a theme and make the editorial case for why they deserve to be read again.</span></span>
-        </button>
-
-        <button type="button" class="process-step" data-index="2" data-label="Vote" aria-pressed="false">
-          <span class="process-number">3</span>
-          <span class="process-copy"><strong>Vote</strong><span>Members weigh in on what we publish and how we make it — from the title itself to cover direction, paper, binding and endpapers.</span></span>
-        </button>
-
-        <button type="button" class="process-step" data-index="3" data-label="Read" aria-pressed="false">
-          <span class="process-number">4</span>
-          <span class="process-copy"><strong>Read</strong><span>We bring the discoveries back as thoughtful new editions: researched, edited, designed and made to earn a place on your shelf.</span></span>
-        </button>
-      </div>
-
-      <div class="process-media" aria-live="polite">
-        <img class="process-photo active" data-photo="0" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1400&q=86" alt="Old books lining library shelves">
-        <img class="process-photo" data-photo="1" src="https://images.unsplash.com/photo-1766068969516-21c25fcca69b?auto=format&fit=crop&w=1400&q=84" alt="Vintage books selected from a shelf">
-        <img class="process-photo" data-photo="2" src="https://images.unsplash.com/photo-1455885666463-7a8c8bb2f8f0?auto=format&fit=crop&w=1400&q=86" alt="A reader examining a book closely">
-        <img class="process-photo" data-photo="3" src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=1400&q=86" alt="A carefully made stack of books">
-        <div class="process-media-label">Find</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="edition-strip" aria-labelledby="edition-heading">
-  <div class="shell">
-    <div class="edition-head">
-      <h2 id="edition-heading">The edition is part of the discovery.</h2>
-      <p>Members do not just vote on titles. Re:Read can bring readers into the physical decisions that make an old book feel newly considered — without turning the process into a design-by-committee mess.</p>
-    </div>
-
-    <div class="edition-grid" role="list">
-      <div class="edition-item" role="listitem"><small>01 · Selection</small><strong>Which discovery actually deserves to return?</strong></div>
-      <div class="edition-item" role="listitem"><small>02 · Cover</small><strong>What should the book look like now?</strong></div>
-      <div class="edition-item" role="listitem"><small>03 · Paper</small><strong>How should it feel in your hand?</strong></div>
-      <div class="edition-item" role="listitem"><small>04 · Binding</small><strong>Paperback, cloth, casebound or something stranger?</strong></div>
-      <div class="edition-item" role="listitem"><small>05 · Endpapers</small><strong>The details collectors notice first.</strong></div>
-      <div class="edition-item" role="listitem"><small>06 · Context</small><strong>Introductions, essays and material that change the read.</strong></div>
-    </div>
-  </div>
-</section>
-
-<section class="member-section" id="members">
-  <div class="shell member-grid">
-    <div class="member-copy">
-      <div class="eyebrow">Founding members</div>
-      <h2>Not an audience. Part of the publishing process.</h2>
-      <p>We bring the research, editorial judgment, rights, design and publishing expertise. Founding members help decide what deserves to come back — and how it should return.</p>
-    </div>
-
-    <div class="member-board">
-      <div class="member-row"><span>Discover</span><strong>See the research, shortlists and strange finds before a drop is finalized.</strong></div>
-      <div class="member-row"><span>Choose</span><strong>Weigh in on titles, themes and which books make the cut.</strong></div>
-      <div class="member-row"><span>Shape</span><strong>Have a voice in covers, materials, binding, endpapers and edition details.</strong></div>
-      <div class="member-row"><span>Own</span><strong>Get first access to the books you helped bring back.</strong></div>
-    </div>
-  </div>
-</section>
-
-<section class="faq-section">
-  <div class="faq-wrap">
-    <div class="section-heading">
-      <h2>Good to know</h2>
-      <p>Re:Read is part publishing house, part literary club and part collective act of discovery.</p>
-    </div>
-
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>What kinds of books are you looking for?</summary>
-        <p>Books that have fallen out of the culture but still have something to say. Some may be public domain. Others may require rights. The common thread is that they are <strong>not the obvious classics you can already find everywhere.</strong></p>
-      </details>
-
-      <details class="faq-item">
-        <summary>What is a drop?</summary>
-        <p>A drop is a themed Re:Read release. We research a larger idea, build a shortlist of discoveries around it, involve members in the final choices, then publish the books that earn their way back.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Is American Myths one book or a collection?</summary>
-        <p>It is the theme for the first Re:Read drop. We are researching multiple books and characters inside that theme now. Founding members will help decide what the final published selection becomes.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>How much say do members really get?</summary>
-        <p>A meaningful one. Re:Read keeps editorial responsibility, but members can weigh in on shortlists, themes and physical edition decisions. The goal is collaboration with taste and guardrails — not crowdsourcing every decision.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Are these collector books?</summary>
-        <p>They should be books worth owning. Some releases may eventually have numbered or special editions, but Re:Read is not built only for luxury collectors. The standard edition still has to be thoughtful, physical and compelling.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>When does Drop 001 launch?</summary>
-        <p>Coming soon. The research is underway now, and founding members will be invited in before the final selection and edition decisions are locked.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="final-cta">
-  <h2>We find the books. You help bring them back.</h2>
-  <p>Join Re:Read before Drop 001 and help shape American Myths from the beginning.</p>
-  <a class="button" href="#join">Become a founding member</a>
-</section>
 </main>
 
 <footer>
   <div class="footer-inner">
     <div class="footer-brand"><span>Re:</span>Read</div>
-    <div class="footer-meta">
-      <span>Drop 001: American Myths</span>
-      <span>© 2026 Re:Read</span>
-    </div>
+    <div>Drop 001 · American Myths · © 2026</div>
   </div>
 </footer>
 
@@ -1211,55 +890,29 @@ footer{
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 document.querySelectorAll('.demo-form').forEach(form=>{
-  form.addEventListener('submit',e=>{
-    e.preventDefault();
-    if(!form.checkValidity()){form.reportValidity();return}
-    const btn=form.querySelector('button[type="submit"]');
-    const ok=form.querySelector('.success');
-    const err=form.querySelector('.form-error');
-    const original=btn.textContent;
-    ok.style.display='none';
-    err.style.display='none';
-    btn.disabled=true;
-    btn.textContent='Joining…';
+  form.addEventListener('submit',event=>{
+    event.preventDefault();
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+    const button=form.querySelector('button[type="submit"]');
+    const success=form.querySelector('.success');
+    const error=form.querySelector('.form-error');
+    const original=button.textContent;
+    success.style.display='none';
+    error.style.display='none';
+    button.disabled=true;
+    button.textContent='Joining…';
+
     setTimeout(()=>{
-      form.querySelectorAll('.field').forEach(f=>f.value='');
-      ok.style.display='block';
-      btn.disabled=false;
-      btn.textContent=original;
-    },reduceMotion?30:350);
+      form.querySelectorAll('input').forEach(input=>input.value='');
+      success.style.display='block';
+      button.disabled=false;
+      button.textContent=original;
+    },reduceMotion?30:340);
   });
 });
-
-const steps=[...document.querySelectorAll('.process-step')];
-const photos=[...document.querySelectorAll('.process-photo')];
-const label=document.querySelector('.process-media-label');
-function activate(i){
-  steps.forEach((s,x)=>{
-    s.classList.toggle('active',x===i);
-    s.setAttribute('aria-pressed',x===i?'true':'false');
-  });
-  photos.forEach((p,x)=>p.classList.toggle('active',x===i));
-  if(label) label.textContent=steps[i].dataset.label||'';
-}
-steps.forEach((s,i)=>{
-  s.addEventListener('click',()=>activate(i));
-  s.addEventListener('focus',()=>activate(i));
-  if(matchMedia('(hover:hover) and (pointer:fine)').matches){
-    s.addEventListener('mouseenter',()=>activate(i));
-  }
-});
-
-const toggle=document.querySelector('.pp-service-ticker__cta');
-const panel=document.querySelector('.pp-service-ticker__lead');
-if(toggle&&panel){
-  toggle.addEventListener('click',()=>{
-    const open=panel.hidden;
-    panel.hidden=!open;
-    toggle.setAttribute('aria-expanded',open?'true':'false');
-    if(open&&innerWidth>560)setTimeout(()=>panel.querySelector('.field')?.focus(),0);
-  });
-}
 </script>
 </body>
 </html>
