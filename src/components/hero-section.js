@@ -4,10 +4,14 @@ class HeroSection extends HTMLElement {
       <section class="hero" id="top">
         <div class="hero-inner">
           <div class="copy">
-            <h1>We find forgotten books</h1>
+            <h1>
+              Bringing stories
+              <em>lost to time</em>
+              back to print.
+            </h1>
 
             <p class="hero-body">
-              <strong>Our first drop: American Myths.</strong>
+              Our first drop: <strong>American Myths.</strong>
               We’re digging through the stacks for lost adventurers, athletes,
               outlaws, detectives, entrepreneurs, dreamers, dealmakers, and renegades.
             </p>
