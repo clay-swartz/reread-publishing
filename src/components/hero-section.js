@@ -5,9 +5,8 @@ class HeroSection extends HTMLElement {
         <div class="hero-inner">
           <div class="copy">
             <h1>
-              Bringing stories
-              <em>lost to time</em>
-              back to print.
+              <em>Lost to time.</em>
+              <span>Back in print.</span>
             </h1>
 
             <p class="hero-body">
