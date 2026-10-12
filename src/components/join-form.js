@@ -1,47 +1,57 @@
 class JoinForm extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <div class="hero-signup">
-        <div class="hero-signup-copy">See the shortlist. Weigh in. Get first access.</div>
-        <form class="hero-inline-form">
+      <form class="signup-card" id="join" novalidate>
+        <h2>Join the first drop.</h2>
+        <p class="signup-sub">See the shortlist. Weigh in. Get first access.</p>
+
+        <div class="form-stack">
           <input
-            class="hero-field"
+            class="field"
             type="email"
             name="email"
-            placeholder="your email address"
-            aria-label="Your email address"
+            placeholder="Email address"
+            aria-label="Email address"
             autocomplete="email"
             required
           >
-          <button class="hero-submit" type="submit">Join Re:Read</button>
-          <div class="hero-success" role="status" aria-live="polite">You’re on the founding list.</div>
-        </form>
-      </div>
+          <button class="button" type="submit">Join Re:Read</button>
+        </div>
+
+        <div class="form-note">Founding members help decide what comes back.</div>
+        <div class="success" role="status" aria-live="polite">You’re on the founding list.</div>
+        <div class="form-error" role="alert" aria-live="assertive">Please enter a valid email address.</div>
+      </form>
     `;
 
     const form = this.querySelector("form");
     const button = this.querySelector("button");
-    const success = this.querySelector(".hero-success");
+    const success = this.querySelector(".success");
+    const error = this.querySelector(".form-error");
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
 
       if (!form.checkValidity()) {
+        error.style.display = "block";
+        success.style.display = "none";
         form.reportValidity();
         return;
       }
 
+      error.style.display = "none";
+      success.style.display = "none";
+
       const original = button.textContent;
       button.disabled = true;
-      button.textContent = "joining…";
-      success.classList.remove("is-visible");
+      button.textContent = "Joining…";
 
       window.setTimeout(() => {
         form.reset();
         button.disabled = false;
         button.textContent = original;
-        success.classList.add("is-visible");
-      }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 20 : 260);
+        success.style.display = "block";
+      }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 20 : 240);
     });
   }
 }

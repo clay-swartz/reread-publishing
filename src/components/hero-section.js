@@ -1,24 +1,20 @@
 class HeroSection extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <section class="hero" id="top">
+      <section class="hero hero-patterned" id="top">
+        <div class="hero-pattern" aria-hidden="true"></div>
         <div class="hero-inner">
-          <div class="copy">
-            <h1>
-              <em>Lost to time.</em>
-              <span>Back in print.</span>
-            </h1>
-
-            <p class="hero-body">
+          <div class="hero-copy">
+            <h1>Lost to time.<br><em>Back in print.</em></h1>
+            <p class="hero-lede">
               Our first drop: <strong>American Myths.</strong>
               We’re digging through the stacks for lost adventurers, athletes,
               outlaws, detectives, entrepreneurs, dreamers, dealmakers, and renegades.
             </p>
-
-            <join-form></join-form>
+            <p class="hero-proof-line"><strong>Founding members:</strong> see the shortlist · weigh in · get first access</p>
           </div>
 
-          <archive-stack></archive-stack>
+          <join-form></join-form>
         </div>
       </section>
     `;
