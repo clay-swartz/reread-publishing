@@ -1,17 +1,17 @@
 class HeroSection extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <section class="hero" id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-photograph" role="img" aria-label="An early twentieth-century photograph of the Library of Congress reading room"></div>
+        <div class="hero-shade" aria-hidden="true"></div>
         <div class="shell hero-inner">
-          <p class="issue-line">AN INDEPENDENT PUBLISHING HOUSE · EST. 2026</p>
-          <h1>Lost to time.<br><em>Back in print.</em></h1>
-          <div class="hero-footer">
-            <p>Extraordinary books don't always find their audience the first time. Re:Read gives overlooked writing another chance—and makes room for unexpected new voices.</p>
-            <a class="text-link" href="#season">Explore the first season <span aria-hidden="true">↗</span></a>
-          </div>
+          <div class="hero-meta"><span>THE LOST & FOUND OF BOOKS</span><span>VOL. 001 — AN INTRODUCTION</span></div>
+          <h1 id="hero-title">The best books<br>are still out <em>there.</em></h1>
+          <p>Re:Read is an independent press giving overlooked books another audience—and publishing unexpected new work along the way.</p>
+          <a href="#season" class="hero-link">Discover the first season <span aria-hidden="true">↘</span></a>
         </div>
-      </section>
-    `;
+        <div class="hero-photo-credit">Library of Congress · Detroit Publishing Co., c. 1905</div>
+      </section>`;
   }
 }
 customElements.define("hero-section", HeroSection);
