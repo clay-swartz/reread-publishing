@@ -16,7 +16,7 @@ class AboutReread extends HTMLElement {
         <div class="shell">
           <div class="editorial-rule"><span>02 / FROM THE DESK</span><span>THE WORK BEHIND THE BOOKS</span></div>
           <div class="notes-layout">
-            <div class="notes-picture"><img src="https://www.shorpy.com/files/images/4a17345a1.jpg" loading="lazy" alt="Historical photograph of the Library of Congress reading room, circa 1905"><span>AN ARCHIVE IS A STARTING PLACE, NOT A FINISH LINE.</span></div>
+            <div class="notes-picture"><img src="https://tile.loc.gov/image-services/iiif/service%3Apnp%3Ahighsm%3A17500%3A17594/full/pct%3A50/0/default.jpg" loading="lazy" alt="Library of Congress reading room photographed by Carol M. Highsmith"><span>AN ARCHIVE IS A STARTING PLACE, NOT A FINISH LINE.</span></div>
             <div class="notes-copy"><p class="season-kicker">AN OPENING NOTE</p><h2>Old doesn't<br>mean <em>over.</em></h2>
               <p>A book from 1998 can be just as lost as one from 1898. The date matters less than the question: would someone fall in love with it today?</p>
               <p>The search ranges across decades, genres, and formats—from novels that quietly went out of print to stories that never got the audience they deserved.</p>
