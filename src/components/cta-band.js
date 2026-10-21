@@ -1,13 +1,6 @@
 class CtaBand extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `
-      <footer class="site-footer">
-        <div class="shell footer-inner">
-          <div><a class="footer-wordmark" href="#top">Re:Read</a><p>An independent press for the books you missed.</p></div>
-          <p>First editions in development.<br>Acquisitions and publishing information coming soon.</p>
-        </div>
-      </footer>
-    `;
+    this.innerHTML = `<footer class="site-footer"><div class="shell footer-inner"><a href="#top" class="footer-wordmark">Re:Read</a><p>An independent publishing house. First season in development.</p><a href="#top" class="back-top">Back to top ↑</a></div></footer>`;
   }
 }
 customElements.define("cta-band", CtaBand);
