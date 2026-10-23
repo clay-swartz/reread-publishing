@@ -29,54 +29,56 @@ dialog{border:0;border-radius:7px;padding:30px;max-width:min(440px,calc(100vw - 
 <body><header><a href="/" class="wordmark" aria-label="Re:Read home" id="wordmark"><span>Re</span><span class="colon">:</span><span class="part-read"><span class="read-width" aria-hidden="true">Read</span><span class="read-face">Read</span></span></a><nav><a href="#" id="aboutLink">About</a></nav></header>
 <main class="background">
 <svg class="endpaper" aria-hidden="true" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900">
-<defs>
-<pattern id="bookpaper" width="252" height="300" patternUnits="userSpaceOnUse">
-<rect width="252" height="300" fill="#f2e6d6"/>
-<g stroke="#a32f3a" fill="none" stroke-linecap="round" stroke-linejoin="round">
-<!-- branching stems -->
-<path d="M-20 148 C32 142 38 62 105 50 S180 64 214 10 M272 148 C220 142 214 62 147 50 S72 64 38 10" stroke-width="2.9"/>
-<path d="M-20 148 C40 170 45 242 104 253 S176 236 214 290 M272 148 C212 170 207 242 148 253 S76 236 38 290" stroke-width="2.9"/>
-<path d="M80 55 C75 84 85 111 108 123 M172 55 C177 84 167 111 144 123 M83 246 C82 214 94 193 112 177 M169 246 C170 214 158 193 140 177" stroke-width="2.1"/>
-<!-- thin twigs -->
-<path d="M24 132 L20 109 M47 94 L35 78 M61 71 L55 47 M191 71 L197 47 M205 94 L217 78 M228 132 L232 109 M24 166 L20 189 M47 206 L35 222 M61 230 L55 253 M191 230 L197 253 M205 206 L217 222 M228 166 L232 189" stroke-width="1.8"/>
+<defs><pattern id="end" width="206" height="252" patternUnits="userSpaceOnUse" patternTransform="rotate(-7)">
+<rect width="206" height="252" fill="#d7b17e"/>
+<g fill="none" stroke="#314f53" stroke-width="3.2" stroke-linecap="round">
+<path d="M-12 132 C44 101 29 36 93 24 S176 65 218 -18"/>
+<path d="M-12 258 C42 221 33 167 107 154 S163 183 218 107"/>
+<path d="M-8 9 C23 18 55 85 104 86 S190 18 221 44"/>
+<path d="M-8 189 C42 201 79 108 128 99 S186 139 218 169"/>
 </g>
-<!-- pairs of blockprinted pointed leaves -->
-<g fill="#a32f3a">
-<path d="M20 109 Q-1 94 2 73 Q23 78 20 109ZM20 109 Q40 93 40 74 Q22 81 20 109Z"/>
-<path d="M35 78 Q15 59 20 43 Q38 51 35 78ZM35 78 Q58 62 55 47 Q39 53 35 78Z"/>
-<path d="M55 47 Q38 25 44 8 Q65 17 55 47ZM55 47 Q77 34 75 17 Q60 23 55 47Z"/>
-<path d="M232 109 Q253 94 250 73 Q229 78 232 109ZM232 109 Q212 93 212 74 Q230 81 232 109Z"/>
-<path d="M217 78 Q237 59 232 43 Q214 51 217 78ZM217 78 Q194 62 197 47 Q213 53 217 78Z"/>
-<path d="M197 47 Q214 25 208 8 Q187 17 197 47ZM197 47 Q175 34 177 17 Q192 23 197 47Z"/>
-<path d="M20 189 Q-1 204 2 225 Q23 220 20 189ZM20 189 Q40 205 40 224 Q22 217 20 189Z"/>
-<path d="M35 222 Q15 241 20 257 Q38 249 35 222ZM35 222 Q58 238 55 253 Q39 247 35 222Z"/>
-<path d="M55 253 Q38 275 44 292 Q65 283 55 253ZM55 253 Q77 266 75 283 Q60 277 55 253Z"/>
-<path d="M232 189 Q253 204 250 225 Q229 220 232 189ZM232 189 Q212 205 212 224 Q230 217 232 189Z"/>
-<path d="M217 222 Q237 241 232 257 Q214 249 217 222ZM217 222 Q194 238 197 253 Q213 247 217 222Z"/>
-<path d="M197 253 Q214 275 208 292 Q187 283 197 253ZM197 253 Q175 266 177 283 Q192 277 197 253Z"/>
+<g fill="none" stroke="#8e3f3d" stroke-width="1.1" stroke-linecap="round">
+<path d="M-12 139 C44 108 31 43 95 31 S178 72 218 -11"/>
+<path d="M-12 265 C42 228 35 174 109 161 S165 190 218 114"/>
+<path d="M-8 16 C23 25 55 92 104 93 S190 25 221 51"/>
 </g>
-<!-- birds facing each other at each repeat -->
-<g fill="#a32f3a">
-<path d="M78 112 C88 101 101 100 111 109 C117 115 120 123 116 132 C110 143 96 145 85 139 L65 151 L75 134 C71 128 72 117 78 112Z M105 111 Q123 101 130 111 L111 116Z"/>
-<path d="M174 112 C164 101 151 100 141 109 C135 115 132 123 136 132 C142 143 156 145 167 139 L187 151 L177 134 C181 128 180 117 174 112Z M147 111 Q129 101 122 111 L141 116Z"/>
-<path d="M83 189 C94 179 104 181 112 189 C121 198 117 212 107 218 L91 211 L72 223 L79 207 C73 199 77 193 83 189Z"/>
-<path d="M169 189 C158 179 148 181 140 189 C131 198 135 212 145 218 L161 211 L180 223 L173 207 C179 199 175 193 169 189Z"/>
+<g fill="#294d51" stroke="#d7b17e" stroke-width="1">
+<path d="M29 84 Q-2 55 6 31 Q38 48 29 84Z"/><path d="M29 84 Q63 60 65 38 Q38 42 29 84Z"/>
+<path d="M78 28 Q54 -4 64 -20 Q95 -8 78 28Z"/>
+<path d="M156 49 Q154 9 181 -8 Q187 31 156 49Z"/>
+<path d="M131 88 Q148 45 174 52 Q162 85 131 88Z"/>
+<path d="M34 197 Q0 167 8 140 Q41 155 34 197Z"/>
+<path d="M53 183 Q59 147 91 141 Q84 176 53 183Z"/>
+<path d="M119 165 Q92 130 106 109 Q136 134 119 165Z"/>
+<path d="M171 195 Q174 151 202 143 Q198 183 171 195Z"/>
+<path d="M171 195 Q141 173 128 187 Q151 212 171 195Z"/>
+<path d="M84 246 Q54 208 67 191 Q95 215 84 246Z"/>
 </g>
-<!-- bird eyes in paper color and beaks -->
-<g fill="#f2e6d6"><circle cx="105" cy="120" r="2"/><circle cx="147" cy="120" r="2"/><circle cx="103" cy="196" r="1.7"/><circle cx="149" cy="196" r="1.7"/></g>
-<g fill="#a32f3a"><path d="M115 121 l11 3 -11 4 Z M137 121 l-11 3 11 4Z M112 197 l10 4 -10 2Z M140 197 l-10 4 10 2Z"/></g>
-<!-- tiny flower in diamond of foliage -->
-<g transform="translate(126 152)" fill="#a32f3a">
-<path d="M0 -22 C7 -15 6 -8 0 -5 C-6 -8 -7 -15 0 -22Z"/>
-<path d="M22 0 C15 7 8 6 5 0 C8 -6 15 -7 22 0Z"/>
-<path d="M0 22 C-7 15 -6 8 0 5 C6 8 7 15 0 22Z"/>
-<path d="M-22 0 C-15 -7 -8 -6 -5 0 C-8 6 -15 7 -22 0Z"/>
-<circle r="4"/>
+<g fill="#963f43" stroke="#d7b17e" stroke-width="1">
+<g transform="translate(102 66)">
+<path d="M0 -21 C10 -15 11 -4 0 0 C-11 -4 -10 -15 0 -21Z"/>
+<path d="M21 0 C15 10 4 11 0 0 C4 -11 15 -10 21 0Z"/>
+<path d="M0 21 C-10 15 -11 4 0 0 C11 4 10 15 0 21Z"/>
+<path d="M-21 0 C-15 -10 -4 -11 0 0 C-4 11 -15 10 -21 0Z"/>
+<circle r="5" fill="#d7b17e" stroke="#294d51" stroke-width="2"/>
 </g>
-<g fill="none" stroke="#a32f3a" stroke-width="1"><path d="M126 0 v22 M126 280 v20 M0 149 h10 M242 149 h10"/></g>
-</pattern>
-</defs>
-<rect width="1440" height="900" fill="url(#bookpaper)"/>
+<g transform="translate(154 231) scale(.8)">
+<path d="M0 -21 C10 -15 11 -4 0 0 C-11 -4 -10 -15 0 -21Z"/>
+<path d="M21 0 C15 10 4 11 0 0 C4 -11 15 -10 21 0Z"/>
+<path d="M0 21 C-10 15 -11 4 0 0 C11 4 10 15 0 21Z"/>
+<path d="M-21 0 C-15 -10 -4 -11 0 0 C-4 11 -15 10 -21 0Z"/>
+<circle r="5" fill="#d7b17e" stroke="#294d51" stroke-width="2"/>
+</g>
+</g>
+<g fill="#6c715d">
+<circle cx="12" cy="102" r="1.5"/><circle cx="19" cy="107" r="1"/><circle cx="63" cy="117" r="1.5"/>
+<circle cx="147" cy="20" r="1.5"/><circle cx="141" cy="26" r="1"/><circle cx="194" cy="94" r="1.4"/>
+<circle cx="15" cy="234" r="1.6"/><circle cx="28" cy="240" r="1.2"/><circle cx="186" cy="226" r="1.4"/>
+</g>
+<g fill="none" stroke="#e8c89b" stroke-width=".9">
+<path d="M14 45 Q30 58 27 73 M16 157 Q31 170 31 186 M74 206 Q83 221 82 236 M164 161 Q176 173 173 184"/>
+</g>
+</pattern></defs><rect width="1440" height="900" fill="url(#end)"/>
 </svg>
 <section class="card"><h1>Great books don’t have an expiration date.</h1><p class="description">Re:Read brings overlooked books back into print and introduces readers to new work worth discovering. Our first collection? <strong>American Myths,</strong> exploring the archetypes that shape the American imagination.</p><p class="prompt">Have something to submit?</p><button class="submit" id="submitButton" type="button">Submit <span aria-hidden="true">↗</span></button></section>
 </main>
