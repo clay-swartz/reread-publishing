@@ -1,0 +1,51 @@
+name: Import ReRead endpapers
+on:
+  push:
+    paths:
+      - .github/workflows/import-endpapers.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download approved endpapers and commit assets
+        shell: bash
+        run: |
+          mkdir -p public/endpapers
+          echo 'Fetching sage original...'
+          if ! curl --fail --location --silent --show-error --retry 2 'https://media.canva.com/v2/image-resize/format:PNG/height:1402/quality:100/uri:ifs%3A%2F%2FM%2F58d09f28-5296-4aa5-8ab9-24a902a4371a/watermark:F/width:1122?csig=AAAAAAAAAAAAAAAAAAAAANjZ0bMz30oB0K0JOJCWXZRHaRGY2OQ9jffgox1MnoRM&exp=1792805125&osig=AAAAAAAAAAAAAAAAAAAAAEpXHnFmrzbz9njyoXUvrQvkCYLxV6ge8B4BjBPF1lyC&signer=media-rpc&token=AAIAAU0AJDU4ZDA5ZjI4LTUyOTYtNGFhNS04YWI5LTI0YTkwMmE0MzcxYQAAAAABoWuDO4gtHYAbfYY7Mh_PYj1tYxNBZkQ_kGsW60sNNPg0TXOYkw&x-canva-quality=thumbnail' -o public/endpapers/sage.png; then
+           echo 'Falling back to signed preview for sage'
+           curl --fail --location --silent --show-error --retry 2 'https://media.canva.com/v2/image-resize/format:PNG/height:200/quality:100/uri:ifs%3A%2F%2FM%2F58d09f28-5296-4aa5-8ab9-24a902a4371a/watermark:F/width:160?csig=AAAAAAAAAAAAAAAAAAAAANjZ0bMz30oB0K0JOJCWXZRHaRGY2OQ9jffgox1MnoRM&exp=1792805125&osig=AAAAAAAAAAAAAAAAAAAAAEpXHnFmrzbz9njyoXUvrQvkCYLxV6ge8B4BjBPF1lyC&signer=media-rpc&token=AAIAAU0AJDU4ZDA5ZjI4LTUyOTYtNGFhNS04YWI5LTI0YTkwMmE0MzcxYQAAAAABoWuDO4gtHYAbfYY7Mh_PYj1tYxNBZkQ_kGsW60sNNPg0TXOYkw&x-canva-quality=thumbnail' -o public/endpapers/sage.png
+          fi
+          file public/endpapers/sage.png
+          echo 'Fetching starburst original...'
+          if ! curl --fail --location --silent --show-error --retry 2 'https://media.canva.com/v2/image-resize/format:PNG/height:1402/quality:100/uri:ifs%3A%2F%2FM%2Fdf71157d-3999-4080-ab89-5e5b810ce4bd/watermark:F/width:1122?csig=AAAAAAAAAAAAAAAAAAAAAPWSqpBt6GDLXmNGylDcr6773wrzsm5RpukE4i59xAdF&exp=1792804159&osig=AAAAAAAAAAAAAAAAAAAAALeX37H286-2ZDcHwCDndG-bZissrIgZ3Zsc621V86dH&signer=media-rpc&token=AAIAAU0AJGRmNzExNTdkLTM5OTktNDA4MC1hYjg5LTVlNWI4MTBjZTRiZAAAAAABoWt0fhi_bfUqfoRYjIpjJmkRBGqSS5l9ngpE7PWpzflvJv1zxg&x-canva-quality=thumbnail' -o public/endpapers/starburst.png; then
+           echo 'Falling back to signed preview for starburst'
+           curl --fail --location --silent --show-error --retry 2 'https://media.canva.com/v2/image-resize/format:PNG/height:200/quality:100/uri:ifs%3A%2F%2FM%2Fdf71157d-3999-4080-ab89-5e5b810ce4bd/watermark:F/width:160?csig=AAAAAAAAAAAAAAAAAAAAAPWSqpBt6GDLXmNGylDcr6773wrzsm5RpukE4i59xAdF&exp=1792804159&osig=AAAAAAAAAAAAAAAAAAAAALeX37H286-2ZDcHwCDndG-bZissrIgZ3Zsc621V86dH&signer=media-rpc&token=AAIAAU0AJGRmNzExNTdkLTM5OTktNDA4MC1hYjg5LTVlNWI4MTBjZTRiZAAAAAABoWt0fhi_bfUqfoRYjIpjJmkRBGqSS5l9ngpE7PWpzflvJv1zxg&x-canva-quality=thumbnail' -o public/endpapers/starburst.png
+          fi
+          file public/endpapers/starburst.png
+          echo 'Fetching sepia original...'
+          if ! curl --fail --location --silent --show-error --retry 2 'https://media.canva.com/v2/image-resize/format:PNG/height:1402/quality:100/uri:ifs%3A%2F%2FM%2F1fcc926d-eadc-462c-9375-a1018a2f78e2/watermark:F/width:1122?csig=AAAAAAAAAAAAAAAAAAAAAFH9jKWrdAWX-flUPqZqyk8vHrF1taJ8H9NxKyzLUScn&exp=1792803434&osig=AAAAAAAAAAAAAAAAAAAAAB-RiTlsl4-LY-QrdNkrAmxm7kqiGyvsr10Zfi34aGLk&signer=media-rpc&token=AAIAAU0AJDFmY2M5MjZkLWVhZGMtNDYyYy05Mzc1LWExMDE4YTJmNzhlMgAAAAABoWtpbhBebC8fhE6iTKM6YUvluTRgi7weKueRNot6eFiks-BjDA&x-canva-quality=thumbnail' -o public/endpapers/sepia.png; then
+           echo 'Falling back to signed preview for sepia'
+           curl --fail --location --silent --show-error --retry 2 'https://media.canva.com/v2/image-resize/format:PNG/height:200/quality:100/uri:ifs%3A%2F%2FM%2F1fcc926d-eadc-462c-9375-a1018a2f78e2/watermark:F/width:160?csig=AAAAAAAAAAAAAAAAAAAAAFH9jKWrdAWX-flUPqZqyk8vHrF1taJ8H9NxKyzLUScn&exp=1792803434&osig=AAAAAAAAAAAAAAAAAAAAAB-RiTlsl4-LY-QrdNkrAmxm7kqiGyvsr10Zfi34aGLk&signer=media-rpc&token=AAIAAU0AJDFmY2M5MjZkLWVhZGMtNDYyYy05Mzc1LWExMDE4YTJmNzhlMgAAAAABoWtpbhBebC8fhE6iTKM6YUvluTRgi7weKueRNot6eFiks-BjDA&x-canva-quality=thumbnail' -o public/endpapers/sepia.png
+          fi
+          file public/endpapers/sepia.png
+          echo 'Fetching blush original...'
+          if ! curl --fail --location --silent --show-error --retry 2 'https://media.canva.com/v2/image-resize/format:PNG/height:1402/quality:100/uri:ifs%3A%2F%2FM%2F69372e11-0344-4bd3-9522-c85094b4c259/watermark:F/width:1122?csig=AAAAAAAAAAAAAAAAAAAAAK6Jh3MqwiVVD7ZkRAM1WfzHrhrCl7a-zNH3Tkckulao&exp=1792805766&osig=AAAAAAAAAAAAAAAAAAAAAAhiw7l-xe3DL9vK1VDvcnex5co93eBeSgRj6f5gXnVa&signer=media-rpc&token=AAIAAU0AJDY5MzcyZTExLTAzNDQtNGJkMy05NTIyLWM4NTA5NGI0YzI1OQAAAAABoWuNA3BcaADjyEGbh_Vkf8C1KVOzvc9pthuf4XmWYnsNRpFvIQ&x-canva-quality=thumbnail' -o public/endpapers/blush.png; then
+           echo 'Falling back to signed preview for blush'
+           curl --fail --location --silent --show-error --retry 2 'https://media.canva.com/v2/image-resize/format:PNG/height:200/quality:100/uri:ifs%3A%2F%2FM%2F69372e11-0344-4bd3-9522-c85094b4c259/watermark:F/width:160?csig=AAAAAAAAAAAAAAAAAAAAAK6Jh3MqwiVVD7ZkRAM1WfzHrhrCl7a-zNH3Tkckulao&exp=1792805766&osig=AAAAAAAAAAAAAAAAAAAAAAhiw7l-xe3DL9vK1VDvcnex5co93eBeSgRj6f5gXnVa&signer=media-rpc&token=AAIAAU0AJDY5MzcyZTExLTAzNDQtNGJkMy05NTIyLWM4NTA5NGI0YzI1OQAAAAABoWuNA3BcaADjyEGbh_Vkf8C1KVOzvc9pthuf4XmWYnsNRpFvIQ&x-canva-quality=thumbnail' -o public/endpapers/blush.png
+          fi
+          file public/endpapers/blush.png
+          echo 'Fetching birds original...'
+          if ! curl --fail --location --silent --show-error --retry 2 'https://media.canva.com/v2/image-resize/format:PNG/height:1402/quality:100/uri:ifs%3A%2F%2FM%2Fe3032d91-f896-406d-a270-34e67f0deba5/watermark:F/width:1122?csig=AAAAAAAAAAAAAAAAAAAAACh8hI9G3IHS7jQxEfgfQiWEO7awm3lJz75nHMYJ7VUD&exp=1792804547&osig=AAAAAAAAAAAAAAAAAAAAAA-x-2mIHBa3Y8lojbyf0k3eQWiLolP18C5sIpav3ZBL&signer=media-rpc&token=AAIAAU0AJGUzMDMyZDkxLWY4OTYtNDA2ZC1hMjcwLTM0ZTY3ZjBkZWJhNQAAAAABoWt6abj5Kbsx2lyWBeeIiTpbnCmBhkImVJo83WiMTwv9gDXQgQ&x-canva-quality=thumbnail' -o public/endpapers/birds.png; then
+           echo 'Falling back to signed preview for birds'
+           curl --fail --location --silent --show-error --retry 2 'https://media.canva.com/v2/image-resize/format:PNG/height:200/quality:100/uri:ifs%3A%2F%2FM%2Fe3032d91-f896-406d-a270-34e67f0deba5/watermark:F/width:160?csig=AAAAAAAAAAAAAAAAAAAAACh8hI9G3IHS7jQxEfgfQiWEO7awm3lJz75nHMYJ7VUD&exp=1792804547&osig=AAAAAAAAAAAAAAAAAAAAAA-x-2mIHBa3Y8lojbyf0k3eQWiLolP18C5sIpav3ZBL&signer=media-rpc&token=AAIAAU0AJGUzMDMyZDkxLWY4OTYtNDA2ZC1hMjcwLTM0ZTY3ZjBkZWJhNQAAAAABoWt6abj5Kbsx2lyWBeeIiTpbnCmBhkImVJo83WiMTwv9gDXQgQ&x-canva-quality=thumbnail' -o public/endpapers/birds.png
+          fi
+          file public/endpapers/birds.png
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/endpapers/
+          if ! git diff --cached --quiet; then git commit -m "Add Re:Read endpaper artwork"; git push; fi
