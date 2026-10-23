@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Cormorant+Garamond:wght@600&family=IBM+Plex+Mono:wght@500&family=Special+Elite&display=swap" rel="stylesheet">
 <style>:root{--paper:#fffaf2;--ink:#1b1b19;--red:#c64b2e;--card:#fffaf2;--btn:#293e52}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%}body{margin:0;color:var(--ink);background:#f2e6d6;font-family:"Space Grotesk",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}body{margin:0;color:var(--ink);background:#b64d4a;font-family:"Space Grotesk",Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}:focus-visible{outline:3px solid #d57f3d;outline-offset:4px}
 header{height:64px;background:var(--paper);position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,4vw,62px);border-bottom:1px solid rgba(63,35,18,.1)}
 .wordmark{display:inline-flex;align-items:baseline;white-space:nowrap;font-size:28px;line-height:1;font-weight:700;letter-spacing:-.082em}.part-read{display:inline-block;position:relative;isolation:isolate}.read-width{visibility:hidden;display:inline-block}.read-face{position:absolute;left:0;top:0;white-space:nowrap;transform-origin:left center}.colon{color:var(--red)}.wordmark.shift .read-face{animation:readMorph 1.7s steps(1,end)}nav a{font-size:14px;font-weight:500}
@@ -28,62 +28,33 @@ dialog{border:0;border-radius:7px;padding:30px;max-width:min(440px,calc(100vw - 
 </head>
 <body><header><a href="/" class="wordmark" aria-label="Re:Read home" id="wordmark"><span>Re</span><span class="colon">:</span><span class="part-read"><span class="read-width" aria-hidden="true">Read</span><span class="read-face">Read</span></span></a><nav><a href="#" id="aboutLink">About</a></nav></header>
 <main class="background">
-<svg class="endpaper" aria-hidden="true" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900">
-<defs><pattern id="end" width="206" height="252" patternUnits="userSpaceOnUse" patternTransform="rotate(-7)">
-<rect width="206" height="252" fill="#d7b17e"/>
-<g fill="none" stroke="#314f53" stroke-width="3.2" stroke-linecap="round">
-<path d="M-12 132 C44 101 29 36 93 24 S176 65 218 -18"/>
-<path d="M-12 258 C42 221 33 167 107 154 S163 183 218 107"/>
-<path d="M-8 9 C23 18 55 85 104 86 S190 18 221 44"/>
-<path d="M-8 189 C42 201 79 108 128 99 S186 139 218 169"/>
-</g>
-<g fill="none" stroke="#8e3f3d" stroke-width="1.1" stroke-linecap="round">
-<path d="M-12 139 C44 108 31 43 95 31 S178 72 218 -11"/>
-<path d="M-12 265 C42 228 35 174 109 161 S165 190 218 114"/>
-<path d="M-8 16 C23 25 55 92 104 93 S190 25 221 51"/>
-</g>
-<g fill="#294d51" stroke="#d7b17e" stroke-width="1">
-<path d="M29 84 Q-2 55 6 31 Q38 48 29 84Z"/><path d="M29 84 Q63 60 65 38 Q38 42 29 84Z"/>
-<path d="M78 28 Q54 -4 64 -20 Q95 -8 78 28Z"/>
-<path d="M156 49 Q154 9 181 -8 Q187 31 156 49Z"/>
-<path d="M131 88 Q148 45 174 52 Q162 85 131 88Z"/>
-<path d="M34 197 Q0 167 8 140 Q41 155 34 197Z"/>
-<path d="M53 183 Q59 147 91 141 Q84 176 53 183Z"/>
-<path d="M119 165 Q92 130 106 109 Q136 134 119 165Z"/>
-<path d="M171 195 Q174 151 202 143 Q198 183 171 195Z"/>
-<path d="M171 195 Q141 173 128 187 Q151 212 171 195Z"/>
-<path d="M84 246 Q54 208 67 191 Q95 215 84 246Z"/>
-</g>
-<g fill="#963f43" stroke="#d7b17e" stroke-width="1">
-<g transform="translate(102 66)">
-<path d="M0 -21 C10 -15 11 -4 0 0 C-11 -4 -10 -15 0 -21Z"/>
-<path d="M21 0 C15 10 4 11 0 0 C4 -11 15 -10 21 0Z"/>
-<path d="M0 21 C-10 15 -11 4 0 0 C11 4 10 15 0 21Z"/>
-<path d="M-21 0 C-15 -10 -4 -11 0 0 C-4 11 -15 10 -21 0Z"/>
-<circle r="5" fill="#d7b17e" stroke="#294d51" stroke-width="2"/>
-</g>
-<g transform="translate(154 231) scale(.8)">
-<path d="M0 -21 C10 -15 11 -4 0 0 C-11 -4 -10 -15 0 -21Z"/>
-<path d="M21 0 C15 10 4 11 0 0 C4 -11 15 -10 21 0Z"/>
-<path d="M0 21 C-10 15 -11 4 0 0 C11 4 10 15 0 21Z"/>
-<path d="M-21 0 C-15 -10 -4 -11 0 0 C-4 11 -15 10 -21 0Z"/>
-<circle r="5" fill="#d7b17e" stroke="#294d51" stroke-width="2"/>
-</g>
-</g>
-<g fill="#6c715d">
-<circle cx="12" cy="102" r="1.5"/><circle cx="19" cy="107" r="1"/><circle cx="63" cy="117" r="1.5"/>
-<circle cx="147" cy="20" r="1.5"/><circle cx="141" cy="26" r="1"/><circle cx="194" cy="94" r="1.4"/>
-<circle cx="15" cy="234" r="1.6"/><circle cx="28" cy="240" r="1.2"/><circle cx="186" cy="226" r="1.4"/>
-</g>
-<g fill="none" stroke="#e8c89b" stroke-width=".9">
-<path d="M14 45 Q30 58 27 73 M16 157 Q31 170 31 186 M74 206 Q83 221 82 236 M164 161 Q176 173 173 184"/>
-</g>
-</pattern></defs><rect width="1440" height="900" fill="url(#end)"/>
-</svg>
+<svg class="endpaper" aria-hidden="true" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900"><defs><pattern id="engraved-paper" width="270" height="240" patternUnits="userSpaceOnUse"><rect width="270" height="240" fill="#b64d4a"/><g id="engraved-motifs"></g></pattern></defs><rect width="1440" height="900" fill="url(#engraved-paper)"/></svg>
 <section class="card"><h1>Great books don’t have an expiration date.</h1><p class="description">Re:Read brings overlooked books back into print and introduces readers to new work worth discovering. Our first collection? <strong>American Myths,</strong> exploring the archetypes that shape the American imagination.</p><p class="prompt">Have something to submit?</p><button class="submit" id="submitButton" type="button">Submit <span aria-hidden="true">↗</span></button></section>
 </main>
 <dialog id="aboutDialog"><h2>About Re:Read</h2><p>Re:Read is a new independent press bringing overlooked books back to readers and publishing unexpected original work in themed seasons.</p><button id="closeAbout">Close</button></dialog>
 <dialog id="submitDialog"><h2>Submissions</h2><p>Submissions are not open yet. Re:Read will announce the reading window here.</p><button id="closeSubmit">Close</button></dialog>
-<script>const wordmark=document.getElementById('wordmark');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){let busy=false;function pulse(){if(busy)return;busy=true;wordmark.classList.remove('shift');void wordmark.offsetWidth;wordmark.classList.add('shift');setTimeout(()=>{wordmark.classList.remove('shift');busy=false},1750)}wordmark.addEventListener('mouseenter',pulse);wordmark.addEventListener('focus',pulse);setInterval(pulse,9500)}
+<script>const engraving=document.getElementById('engraved-motifs');
+const ns='http://www.w3.org/2000/svg';
+function mark(tag,attributes){
+ const node=document.createElementNS(ns,tag);
+ for(const [key,val] of Object.entries(attributes))node.setAttribute(key,String(val));
+ engraving.appendChild(node);
+}
+const centers=[[0,0],[135,0],[270,0],[67.5,80],[202.5,80],[-67.5,160],[67.5,160],[202.5,160],[337.5,160],[0,240],[135,240],[270,240]];
+for(const [cx,cy] of centers){
+ for(let k=0;k<60;k++){
+  const t=2*Math.PI*k/60,outer=52+6*Math.cos(t*6)**2,inner=10+(k%3===0?2:0);
+  const ux=-Math.sin(t),uy=Math.cos(t),w=k%5===0?1.4:1;
+  const coords=[[inner,.25],[outer,w],[outer,-w],[inner,-.25]]
+   .map(([r,z])=>(cx+r*Math.cos(t)+z*ux).toFixed(2)+','+(cy+r*Math.sin(t)+z*uy).toFixed(2)).join(' ');
+  mark('polygon',{points:coords,fill:'#ecd7b7',opacity:.92});
+ }
+ for(const r of [13,60])mark('circle',{cx,cy,r,fill:'none',stroke:'#ead4af','stroke-width':.7,opacity:.7});
+ mark('circle',{cx,cy,r:3,fill:'#d49b8d'});
+}
+for(let x=-135;x<=405;x+=135)for(let y=-80;y<=320;y+=160){
+ mark('path',{d:'M '+(x+67.5)+' '+(y+64)+' l 12 16 -12 16 -12 -16 Z',fill:'none',stroke:'#efdfc4','stroke-width':1.4,opacity:.9});
+}
+const wordmark=document.getElementById('wordmark');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){let busy=false;function pulse(){if(busy)return;busy=true;wordmark.classList.remove('shift');void wordmark.offsetWidth;wordmark.classList.add('shift');setTimeout(()=>{wordmark.classList.remove('shift');busy=false},1750)}wordmark.addEventListener('mouseenter',pulse);wordmark.addEventListener('focus',pulse);setInterval(pulse,9500)}
 const about=document.getElementById('aboutDialog'),submit=document.getElementById('submitDialog');document.getElementById('aboutLink').onclick=e=>{e.preventDefault();about.showModal()};document.getElementById('closeAbout').onclick=()=>about.close();document.getElementById('submitButton').onclick=()=>submit.showModal();document.getElementById('closeSubmit').onclick=()=>submit.close();
 </script></body></html>
