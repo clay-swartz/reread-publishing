@@ -1,18 +1,55 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="Re:Read is an independent publishing house for overlooked books and unexpected new voices. Discover the first season, American Myths.">
-  <title>Re:Read — An Independent Publishing House</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/src/styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5f0e6">
+<meta name="description" content="Re:Read is searching for overlooked books and original work for American Myths.">
+<title>Re:Read — The best stories are still out there.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f5f0e6;--ink:#1b1b19;--vermilion:#c64b2e;--green:#213f32}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}
+body{background:var(--paper);color:var(--ink);font-family:"Space Grotesk",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;cursor:pointer}a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--vermilion);outline-offset:4px}
+.stage{min-height:100svh;background:var(--paper)}
+header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:31px clamp(24px,4vw,72px)}
+.wordmark{font-size:30px;line-height:1;font-weight:700;letter-spacing:-.082em}
+.wordmark .colon{color:var(--vermilion)}
+nav a{font-size:15px;font-weight:500;border-bottom:1px solid transparent;padding-bottom:3px}
+nav a:hover{border-bottom-color:currentColor}
+main{display:flex;align-items:center;justify-content:center;text-align:center;min-height:calc(100svh - 99px);padding:clamp(56px,9vh,120px) 24px clamp(82px,13vh,160px)}
+.content{width:min(1060px,100%)}
+h1{font-size:clamp(58px,7vw,112px);font-weight:700;letter-spacing:-.078em;line-height:.96;margin:0 auto 31px;max-width:980px}
+p{font-size:clamp(19px,1.68vw,24px);line-height:1.54;letter-spacing:-.015em;margin:0 auto;max-width:960px}
+em{font-style:italic}
+.submit{display:inline-flex;align-items:center;justify-content:space-between;gap:42px;margin-top:35px;background:var(--green);border:0;border-radius:5px;color:#fff;font-weight:700;font-size:17px;padding:17px 24px;min-width:170px}
+.submit:hover{background:#172e25}.submit .arrow{font-size:20px;line-height:1}
+dialog{border:0;border-radius:9px;padding:32px;max-width:min(440px,calc(100vw - 30px));box-shadow:0 20px 90px rgba(0,0,0,.25);background:var(--paper);color:var(--ink)}
+dialog::backdrop{background:rgba(20,25,20,.45)}dialog h2{font-size:24px;margin:0 0 12px;letter-spacing:-.04em}
+dialog p{font-size:16px;line-height:1.55}dialog button{margin-top:24px;border:0;background:var(--green);color:white;border-radius:5px;padding:12px 18px}
+@media(max-width:650px){header{padding:26px 24px}.wordmark{font-size:25px}nav a{font-size:14px}main{min-height:calc(100svh - 77px);padding:85px 24px 110px}h1{font-size:clamp(50px,12vw,70px);margin-bottom:25px}p{font-size:18px}}
+</style>
 </head>
 <body>
-  <reread-app></reread-app>
-  <noscript>Re:Read is an independent publishing house. Its first season, American Myths, is in development.</noscript>
-  <script type="module" src="/src/main.js"></script>
-</body>
-</html>
+<div class="stage">
+<header><a href="/" class="wordmark" aria-label="Re:Read home">Re<span class="colon">:</span>Read</a><nav><a href="#about" id="aboutLink">About</a></nav></header>
+<main><div class="content">
+<h1>The best stories are still out there.</h1>
+<p>We’re searching through the stacks for lost adventurers, athletes, outlaws, detectives, entrepreneurs, dreamers, dealmakers, and renegades. Have an original work or overlooked book that belongs in <em>American Myths</em>?</p>
+<button type="button" class="submit" id="submitButton">Submit <span class="arrow" aria-hidden="true">↗</span></button>
+</div></main>
+</div>
+<dialog id="aboutDialog"><h2>About Re:Read</h2><p>Re:Read is a new independent press bringing overlooked books back to readers and publishing unexpected original work in themed seasons.</p><button type="button" id="closeAbout">Close</button></dialog>
+<dialog id="submitDialog"><h2>Submissions</h2><p>Submissions are not open yet. Re:Read will announce the reading window here.</p><button type="button" id="closeSubmit">Close</button></dialog>
+<script>
+const aboutDialog=document.getElementById("aboutDialog"),submitDialog=document.getElementById("submitDialog");
+document.getElementById("aboutLink").addEventListener("click",e=>{e.preventDefault();aboutDialog.showModal()});
+document.getElementById("submitButton").addEventListener("click",()=>submitDialog.showModal());
+document.getElementById("closeAbout").addEventListener("click",()=>aboutDialog.close());
+document.getElementById("closeSubmit").addEventListener("click",()=>submitDialog.close());
+</script>
+</body></html>
