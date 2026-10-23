@@ -15,7 +15,8 @@ a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}:focus-v
 header{height:64px;background:var(--paper);position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,4vw,62px);border-bottom:1px solid rgba(63,35,18,.1)}
 .wordmark{display:inline-flex;align-items:baseline;white-space:nowrap;font-size:28px;line-height:1;font-weight:700;letter-spacing:-.082em}.part-read{display:inline-block;position:relative;isolation:isolate}.read-width{visibility:hidden;display:inline-block}.read-face{position:absolute;left:0;top:0;white-space:nowrap;transform-origin:left center}.colon{color:var(--red)}.wordmark.shift .read-face{animation:readMorph 1.7s steps(1,end)}nav a{font-size:14px;font-weight:500}
 .background{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;padding:clamp(35px,7vh,64px) 22px;overflow:hidden;isolation:isolate}
-.endpaper{position:absolute;inset:0;width:100%;height:100%;z-index:-1;display:block;pointer-events:none}
+.endpaper{position:absolute;inset:0;z-index:-1;pointer-events:none;background-color:#d3b89e;background-size:320px auto;background-position:center center;background-repeat:repeat}
+@media(max-width:700px){.endpaper{background-size:255px auto}}
 .card{width:min(910px,100%);background:var(--card);border:1px solid rgba(159,117,75,.48);box-shadow:0 4px 4px rgba(51,32,28,.08),0 20px 45px rgba(51,32,28,.22);padding:clamp(40px,5vw,63px) clamp(30px,5vw,67px) clamp(37px,4.5vw,53px);text-align:center;position:relative;border-radius:7px}
 .card:before{content:"";position:absolute;inset:9px;border:1px solid rgba(181,139,88,.26);border-radius:3px;pointer-events:none}
 h1{font-size:clamp(45px,5vw,71px);letter-spacing:-.072em;line-height:1.04;font-weight:700;margin:0 auto 29px;max-width:800px}
@@ -28,33 +29,49 @@ dialog{border:0;border-radius:7px;padding:30px;max-width:min(440px,calc(100vw - 
 </head>
 <body><header><a href="/" class="wordmark" aria-label="Re:Read home" id="wordmark"><span>Re</span><span class="colon">:</span><span class="part-read"><span class="read-width" aria-hidden="true">Read</span><span class="read-face">Read</span></span></a><nav><a href="#" id="aboutLink">About</a></nav></header>
 <main class="background">
-<svg class="endpaper" aria-hidden="true" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900"><defs><pattern id="engraved-paper" width="270" height="240" patternUnits="userSpaceOnUse"><rect width="270" height="240" fill="#b64d4a"/><g id="engraved-motifs"></g></pattern></defs><rect width="1440" height="900" fill="url(#engraved-paper)"/></svg>
+<div class="endpaper" id="endpaperBackdrop" aria-hidden="true"></div>
 <section class="card"><h1>Great books don’t have an expiration date.</h1><p class="description">Re:Read brings overlooked books back into print and introduces readers to new work worth discovering. Our first collection? <strong>American Myths,</strong> exploring the archetypes that shape the American imagination.</p><p class="prompt">Have something to submit?</p><button class="submit" id="submitButton" type="button">Submit <span aria-hidden="true">↗</span></button></section>
 </main>
 <dialog id="aboutDialog"><h2>About Re:Read</h2><p>Re:Read is a new independent press bringing overlooked books back to readers and publishing unexpected original work in themed seasons.</p><button id="closeAbout">Close</button></dialog>
 <dialog id="submitDialog"><h2>Submissions</h2><p>Submissions are not open yet. Re:Read will announce the reading window here.</p><button id="closeSubmit">Close</button></dialog>
-<script>const engraving=document.getElementById('engraved-motifs');
-const ns='http://www.w3.org/2000/svg';
-function mark(tag,attributes){
- const node=document.createElementNS(ns,tag);
- for(const [key,val] of Object.entries(attributes))node.setAttribute(key,String(val));
- engraving.appendChild(node);
+<script>const designs=['sage','starburst','sepia','blush','birds'];
+const backdrop=document.getElementById('endpaperBackdrop');
+const bgSurface=document.querySelector('.background');
+let currentDesign=Math.floor(Math.random()*designs.length);
+const cached=new Map();
+function getImage(name){
+ if(cached.has(name))return cached.get(name);
+ const candidatePaths=['/endpapers/'+name+'.png','/public/endpapers/'+name+'.png'];
+ const promise=new Promise(resolve=>{
+  let i=0;
+  function tryNext(){
+   if(i===candidatePaths.length){resolve(null);return}
+   const src=candidatePaths[i++],image=new Image();
+   image.onload=()=>resolve(src);
+   image.onerror=tryNext;
+   image.src=src;
+  }
+  tryNext();
+ });
+ cached.set(name,promise);
+ return promise;
 }
-const centers=[[0,0],[135,0],[270,0],[67.5,80],[202.5,80],[-67.5,160],[67.5,160],[202.5,160],[337.5,160],[0,240],[135,240],[270,240]];
-for(const [cx,cy] of centers){
- for(let k=0;k<60;k++){
-  const t=2*Math.PI*k/60,outer=52+6*Math.cos(t*6)**2,inner=10+(k%3===0?2:0);
-  const ux=-Math.sin(t),uy=Math.cos(t),w=k%5===0?1.4:1;
-  const coords=[[inner,.25],[outer,w],[outer,-w],[inner,-.25]]
-   .map(([r,z])=>(cx+r*Math.cos(t)+z*ux).toFixed(2)+','+(cy+r*Math.sin(t)+z*uy).toFixed(2)).join(' ');
-  mark('polygon',{points:coords,fill:'#ecd7b7',opacity:.92});
- }
- for(const r of [13,60])mark('circle',{cx,cy,r,fill:'none',stroke:'#ead4af','stroke-width':.7,opacity:.7});
- mark('circle',{cx,cy,r:3,fill:'#d49b8d'});
+let generation=0;
+async function showDesign(index){
+ const own=++generation;
+ const source=await getImage(designs[index]);
+ if(own!==generation)return;
+ if(source)backdrop.style.backgroundImage='url("'+source+'")';
+ else backdrop.style.backgroundImage='none';
 }
-for(let x=-135;x<=405;x+=135)for(let y=-80;y<=320;y+=160){
- mark('path',{d:'M '+(x+67.5)+' '+(y+64)+' l 12 16 -12 16 -12 -16 Z',fill:'none',stroke:'#efdfc4','stroke-width':1.4,opacity:.9});
-}
+showDesign(currentDesign);
+for(const name of designs)getImage(name);
+bgSurface.addEventListener('click',event=>{
+ if(event.target!==bgSurface&&event.target!==backdrop)return;
+ const offset=1+Math.floor(Math.random()*(designs.length-1));
+ currentDesign=(currentDesign+offset)%designs.length;
+ showDesign(currentDesign);
+});
 const wordmark=document.getElementById('wordmark');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){let busy=false;function pulse(){if(busy)return;busy=true;wordmark.classList.remove('shift');void wordmark.offsetWidth;wordmark.classList.add('shift');setTimeout(()=>{wordmark.classList.remove('shift');busy=false},1750)}wordmark.addEventListener('mouseenter',pulse);wordmark.addEventListener('focus',pulse);setInterval(pulse,9500)}
 const about=document.getElementById('aboutDialog'),submit=document.getElementById('submitDialog');document.getElementById('aboutLink').onclick=e=>{e.preventDefault();about.showModal()};document.getElementById('closeAbout').onclick=()=>about.close();document.getElementById('submitButton').onclick=()=>submit.showModal();document.getElementById('closeSubmit').onclick=()=>submit.close();
 </script></body></html>
