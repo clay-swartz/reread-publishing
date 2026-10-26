@@ -51,12 +51,11 @@ if(previousDesign>=0&&previousDesign<designs.length&&currentDesign>=previousDesi
 function rememberDesign(){try{sessionStorage.setItem('reread-last-endpaper',String(currentDesign));}catch(e){}}
 rememberDesign();
 // Embed the five approved artworks in the page to avoid missing or incorrectly routed URLs.
-// Seam-corrected vector endpaper artwork is stored as separate, cacheable files.
+// Restored photographic print textures instead of destructive vector tracing.
 const assetUrls=designs.map(name=>[
- '/endpapers/'+name+'.svg',
- '/public/endpapers/'+name+'.svg',
- 'https://raw.githubusercontent.com/clay-swartz/reread-publishing/main/public/endpapers/'+name+'.svg',
- '/endpapers/'+name+'.png'
+ '/endpapers/'+name+'.png',
+ '/public/endpapers/'+name+'.png',
+ 'https://raw.githubusercontent.com/clay-swartz/reread-publishing/main/public/endpapers/'+name+'.png'
 ]);
 const cached=designs.map((_,index)=>new Promise(resolve=>{
  let attempt=0;
