@@ -1,0 +1,61 @@
+name: Repair endpaper image resolution
+on:
+  push:
+    paths:
+      - .github/workflows/repair-endpaper-resolution.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow opencv-contrib-python-headless numpy
+      - name: Enhance original endpaper designs
+        run: |
+          cat > /tmp/enhance.py <<'PY'
+          from PIL import Image, ImageFilter
+          from pathlib import Path
+          import cv2, urllib.request
+          source = Path("public/endpapers")
+          model_path = Path("/tmp/espcn_x4.pb")
+          try:
+              urllib.request.urlretrieve("https://github.com/Saafke/ESPCN_Tensorflow/raw/refs/heads/master/models/ESPCN_x4.pb",model_path)
+              model = cv2.dnn_superres.DnnSuperResImpl_create()
+              model.readModel(str(model_path))
+              model.setModel("espcn",4)
+              print("Using neural detail reconstruction",flush=True)
+          except Exception as ex:
+              print("Using high quality resampling fallback:",ex,flush=True)
+              model = None
+          for name in ["sage","starburst","sepia","blush","birds"]:
+              path=source/f"{name}.png"
+              image=Image.open(path).convert("RGB")
+              if image.width>=600:
+                  print(name, image.size, "already sharp")
+                  continue
+              if model is not None:
+                  import numpy as np
+                  inp=cv2.cvtColor(np.array(image),cv2.COLOR_RGB2BGR)
+                  out=model.upsample(inp)
+                  enhanced=Image.fromarray(cv2.cvtColor(out,cv2.COLOR_BGR2RGB))
+              else:
+                  enhanced=image.resize((image.width*4,image.height*4),Image.Resampling.LANCZOS)
+              enhanced=enhanced.filter(ImageFilter.UnsharpMask(radius=1.1,percent=115,threshold=3))
+              enhanced.save(path,optimize=True)
+              print(name,"upscaled",image.size,"to",enhanced.size,flush=True)
+          PY
+          python /tmp/enhance.py
+      - name: Commit enhanced artwork
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/endpapers/*.png
+          if ! git diff --cached --quiet; then
+            git commit -m "Enhance endpaper image assets for enlarged website backgrounds"
+            git push
+          fi
