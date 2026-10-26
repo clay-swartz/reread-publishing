@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install pillow vtracer
+      - run: pip install pillow numpy vtracer
       - name: Trace print shapes into scalable SVG assets
         run: |
           python - <<'PY'
@@ -29,6 +29,30 @@ jobs:
               # Recover distinct printed shapes as smooth vector outlines rather
               # than letting browsers interpolate the enlarged pixel previews.
               img=img.resize((480,600),Image.Resampling.LANCZOS)
+              # Join opposing edges smoothly; these generated illustrations
+              # were not actually seamless and created visible horizontal bands.
+              import numpy as np, math
+              a=np.array(img,dtype=np.float32)
+              height,width=a.shape[:2]
+              bx=int(width*.16)
+              by=int(height*.16)
+              orig=a.copy()
+              for x in range(bx):
+                  t=x/max(1,bx-1)
+                  weight=.5+.5*math.sin(t*math.pi/2)
+                  left=orig[:,x,:]
+                  right=orig[:,width-1-x,:]
+                  a[:,x,:]=weight*left+(1-weight)*right
+                  a[:,width-1-x,:]=weight*right+(1-weight)*left
+              orig=a.copy()
+              for y in range(by):
+                  t=y/max(1,by-1)
+                  weight=.5+.5*math.sin(t*math.pi/2)
+                  top=orig[y,:,:]
+                  bottom=orig[height-1-y,:,:]
+                  a[y,:,:]=weight*top+(1-weight)*bottom
+                  a[height-1-y,:,:]=weight*bottom+(1-weight)*top
+              img=Image.fromarray(np.uint8(np.clip(a,0,255)))
               interim=folder/('_trace_'+name+'.png')
               img.save(interim)
               vtracer.convert_image_to_svg_py(
