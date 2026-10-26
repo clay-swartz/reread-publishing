@@ -1,0 +1,44 @@
+name: Build crisp peacock background
+on:
+  push:
+    paths:
+      - .github/workflows/build-crisp-peacock.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow
+      - name: Create lossless-edged native-resolution marbling tile
+        run: |
+          python - <<'PY'
+          from PIL import Image, ImageOps, ImageFilter
+          from pathlib import Path
+          p=Path('public/endpapers/peacock-approved.png')
+          image=Image.open(p).convert('RGB')
+          image=image.filter(ImageFilter.UnsharpMask(radius=.65,percent=90,threshold=3))
+          w,h=image.size
+          tile=Image.new('RGB',(w*2,h*2))
+          tile.paste(image,(0,0))
+          tile.paste(ImageOps.mirror(image),(w,0))
+          tile.paste(ImageOps.flip(image),(0,h))
+          tile.paste(ImageOps.flip(ImageOps.mirror(image)),(w,h))
+          output=Path('public/endpapers/peacock-seamless.webp')
+          tile.save(output,'WEBP',quality=96,method=6)
+          print('Created',output,tile.size,output.stat().st_size,flush=True)
+          PY
+      - name: Commit background asset
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/endpapers/peacock-seamless.webp
+          if ! git diff --cached --quiet; then
+            git commit -m "Add seamless native-resolution peacock background"
+            git push
+          fi
