@@ -15,8 +15,8 @@ a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}:focus-v
 header{height:64px;background:var(--paper);position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,4vw,62px);border-bottom:1px solid rgba(63,35,18,.1)}
 .wordmark{display:inline-flex;align-items:baseline;white-space:nowrap;font-size:28px;line-height:1;font-weight:700;letter-spacing:-.082em}.part-read{display:inline-block;position:relative;isolation:isolate}.read-width{visibility:hidden;display:inline-block}.read-face{position:absolute;left:0;top:0;white-space:nowrap;transform-origin:left center}.colon{color:var(--red)}.wordmark.shift .read-face{animation:readMorph 1.7s steps(1,end)}nav a{font-size:14px;font-weight:500}
 .background{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;padding:clamp(35px,7vh,64px) 22px;overflow:hidden;isolation:isolate}
-.endpaper{position:absolute;inset:0;z-index:0;pointer-events:none;background-color:#bd433f;background-image:url('https://raw.githubusercontent.com/clay-swartz/reread-publishing/main/public/endpapers/peacock-approved.png');background-size:cover;background-position:center 44%;background-repeat:no-repeat}
-@media(max-width:700px){.endpaper{background-size:cover;background-position:center center}}
+.endpaper{position:absolute;inset:0;z-index:0;pointer-events:none;background-color:#bd433f;background-image:url('https://raw.githubusercontent.com/clay-swartz/reread-publishing/main/public/endpapers/peacock-approved.png');background-size:var(--endpaper-size,860px) auto;background-position:center center;background-repeat:repeat}
+@media(max-width:700px){.endpaper{background-size:var(--endpaper-size,640px) auto;background-position:center center}}
 .card{z-index:1;width:min(910px,100%);background:var(--card);border:1px solid rgba(159,117,75,.48);box-shadow:0 4px 4px rgba(51,32,28,.08),0 20px 45px rgba(51,32,28,.22);padding:clamp(40px,5vw,63px) clamp(30px,5vw,67px) clamp(37px,4.5vw,53px);text-align:center;position:relative;border-radius:7px}
 .card:before{content:"";position:absolute;inset:9px;border:1px solid rgba(181,139,88,.26);border-radius:3px;pointer-events:none}
 h1{font-size:clamp(45px,5vw,71px);letter-spacing:-.072em;line-height:1.04;font-weight:700;margin:0 auto 29px;max-width:800px}
@@ -34,8 +34,52 @@ dialog{border:0;border-radius:7px;padding:30px;max-width:min(440px,calc(100vw - 
 </main>
 <dialog id="aboutDialog"><h2>About Re:Read</h2><p>Re:Read is a new independent press bringing overlooked books back to readers and publishing unexpected original work in themed seasons.</p><button id="closeAbout">Close</button></dialog>
 <dialog id="submitDialog"><h2>Submissions</h2><p>Submissions are not open yet. Re:Read will announce the reading window here.</p><button id="closeSubmit">Close</button></dialog>
-<script>// Approved crimson-peacock endpaper preview: the single background is intentional.
-// The asset is uploaded separately to public/endpapers/peacock-approved.png.
+<script>// The approved 13 endpapers: #02 and #14–#20 are deliberately excluded.
+const paperNames=[
+ '01-french-blue.webp','03-ebony-marble.webp','04-block-print-floral.webp',
+ '05-crimson-peacock.webp','06-acanthus-leaf.webp','07-classic-speckle.webp',
+ '08-botanical-ivy.webp','09-lapis-pebble.webp','10-terracotta-fan.webp',
+ '12-ink-petal.webp','13-soft-confetti.webp','21-saffron-tesserae.webp',
+ '22-lilac-stencil.webp'
+];
+const paperSizes=[
+ [860,620],[860,620],[850,610],[860,620],[850,610],[990,720],
+ [850,610],[990,720],[850,610],[850,610],[990,720],[990,720],[990,720]
+];
+const backdrop=document.getElementById('endpaperBackdrop');
+const backgroundSurface=document.querySelector('.background');
+let lastIndex=-1;
+try {const v=sessionStorage.getItem('reread-paper-index');if(v!==null)lastIndex=Number(v);}catch(e){}
+let paperIndex=Math.floor(Math.random()*(paperNames.length-(lastIndex>=0&&lastIndex<paperNames.length?1:0)));
+if(lastIndex>=0&&lastIndex<paperNames.length&&paperIndex>=lastIndex)paperIndex++;
+const preload=paperNames.map(filename=>new Promise(resolve=>{
+ const src='/endpapers/collection/'+filename;
+ const img=new Image();
+ img.onload=()=>resolve(src);
+ img.onerror=()=>resolve(null);
+ img.src=src;
+}));
+let requestSerial=0;
+function scalePaper(index){
+ const size=paperSizes[index];
+ backdrop.style.setProperty('--endpaper-size',(matchMedia('(max-width:700px)').matches?size[1]:size[0])+'px');
+}
+async function showPaper(index){
+ const call=++requestSerial;
+ paperIndex=index;
+ scalePaper(index);
+ try{sessionStorage.setItem('reread-paper-index',String(index));}catch(e){}
+ const src=await preload[index];
+ if(call!==requestSerial)return;
+ if(src) backdrop.style.backgroundImage='url("'+src+'")';
+}
+showPaper(paperIndex);
+window.addEventListener('resize',()=>scalePaper(paperIndex));
+backgroundSurface.addEventListener('click',e=>{
+ if(e.target!==backgroundSurface&&e.target!==backdrop)return;
+ const jump=1+Math.floor(Math.random()*(paperNames.length-1));
+ showPaper((paperIndex+jump)%paperNames.length);
+});
 const wordmark=document.getElementById('wordmark');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){let busy=false;function pulse(){if(busy)return;busy=true;wordmark.classList.remove('shift');void wordmark.offsetWidth;wordmark.classList.add('shift');setTimeout(()=>{wordmark.classList.remove('shift');busy=false},1750)}wordmark.addEventListener('mouseenter',pulse);wordmark.addEventListener('focus',pulse);setInterval(pulse,9500)}
 const about=document.getElementById('aboutDialog'),submit=document.getElementById('submitDialog');document.getElementById('aboutLink').onclick=e=>{e.preventDefault();about.showModal()};document.getElementById('closeAbout').onclick=()=>about.close();document.getElementById('submitButton').onclick=()=>submit.showModal();document.getElementById('closeSubmit').onclick=()=>submit.close();
 </script></body></html>
