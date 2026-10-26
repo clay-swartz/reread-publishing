@@ -1,0 +1,41 @@
+name: Install approved ReRead endpaper images
+on:
+  push:
+    paths:
+      - reread_approved_13_files_and_preview.zip
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Verify and install the exact approved files
+        run: |
+          set -e
+          test -f reread_approved_13_files_and_preview.zip || { echo 'Upload the approved ZIP to the root of this branch'; exit 0; }
+          mkdir -p public/endpapers/collection
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile
+          src=Path("reread_approved_13_files_and_preview.zip")
+          target=Path("public/endpapers/collection")
+          keep=["01-french-blue.webp","03-ebony-marble.webp","04-block-print-floral.webp","05-crimson-peacock.webp","06-acanthus-leaf.webp","07-classic-speckle.webp","08-botanical-ivy.webp","09-lapis-pebble.webp","10-terracotta-fan.webp","12-ink-petal.webp","13-soft-confetti.webp","21-saffron-tesserae.webp","22-lilac-stencil.webp"]
+          with zipfile.ZipFile(src) as z:
+              assert z.testzip() is None, "Archive corrupt"
+              for name in keep:
+                  assert name in z.namelist(), f"Missing {name}"
+                  (target/name).write_bytes(z.read(name))
+                  print("Installed",name)
+          print("Verified",len(keep),"selected files")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/endpapers/collection
+          if ! git diff --cached --quiet; then
+            git commit -m "Install 13 approved endpaper image assets"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
