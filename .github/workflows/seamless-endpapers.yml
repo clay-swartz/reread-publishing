@@ -1,0 +1,54 @@
+name: Repair endpaper tile seams
+on:
+  push:
+    paths:
+      - .github/workflows/seamless-endpapers.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy pillow opencv-python-headless
+      - name: Remove hard tile boundaries without converting art to vectors
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          import cv2
+          import numpy as np
+          from pathlib import Path
+          folder=Path("public/endpapers")
+          for name in ["sage","starburst","sepia","blush","birds"]:
+              p=folder/(name+".png")
+              rgb=np.asarray(Image.open(p).convert("RGB"))
+              h,w=rgb.shape[:2]
+              # Shift tile by half in each direction: original edge joins
+              # move to the center and all four outer edges now wrap.
+              rolled=np.roll(rgb,shift=(h//2,w//2),axis=(0,1))
+              mask=np.zeros((h,w),np.uint8)
+              seam_width=round(min(h,w)*.045)
+              mask[:,w//2-seam_width:w//2+seam_width]=255
+              mask[h//2-seam_width:h//2+seam_width,:]=255
+              # Restore artwork through a narrow band over the former hard
+              # seams, preserving the source's original painted texture.
+              bgr=cv2.cvtColor(rolled,cv2.COLOR_RGB2BGR)
+              repaired=cv2.inpaint(bgr,mask,5,cv2.INPAINT_TELEA)
+              repaired=cv2.cvtColor(repaired,cv2.COLOR_BGR2RGB)
+              # Store each seamless tile losslessly at existing dimensions.
+              Image.fromarray(repaired).save(p,optimize=True)
+              print(name,Image.open(p).size)
+          PY
+      - name: Commit seam-repaired artwork
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/endpapers/*.png
+          if ! git diff --cached --quiet; then
+            git commit -m "Remove hard repeat seams from printed endpapers"
+            git push
+          fi
