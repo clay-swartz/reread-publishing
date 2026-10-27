@@ -1,0 +1,102 @@
+[
+  {
+    "id": "cover-01",
+    "title": "The man with the black feather",
+    "year": 1912,
+    "src": "/covers/cover-01.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cover--The_man_with_the_black_feather.jpg",
+    "commonsFile": "Cover--The man with the black feather.jpg",
+    "rights": "Wikimedia Commons: public-domain-marked historical cover; inspect linked file page for full rights statement",
+    "alt": "Historical 1912 cover of The man with the black feather"
+  },
+  {
+    "id": "cover-02",
+    "title": "The Olive Fairy Book",
+    "year": 1907,
+    "src": "/covers/cover-02.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Olive_Fairy_Book%2C_Andrew_Lang%2C_Cover%2C_1st_edition.jpg",
+    "commonsFile": "The Olive Fairy Book, Andrew Lang, Cover, 1st edition.jpg",
+    "rights": "Wikimedia Commons: public-domain-marked historical cover; inspect linked file page for full rights statement",
+    "alt": "Historical 1907 cover of The Olive Fairy Book"
+  },
+  {
+    "id": "cover-03",
+    "title": "The Window at the White Cat",
+    "year": 1910,
+    "src": "/covers/cover-03.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cover--Window_at_the_White_Cat.png",
+    "commonsFile": "Cover--Window at the White Cat.png",
+    "rights": "Wikimedia Commons: public-domain-marked historical cover; inspect linked file page for full rights statement",
+    "alt": "Historical 1910 cover of The Window at the White Cat"
+  },
+  {
+    "id": "cover-04",
+    "title": "The Book of the Motor Car",
+    "year": 1912,
+    "src": "/covers/cover-04.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cover%2C_'The_Book_of_the_Motor_Car'%2C_1912.jpg",
+    "commonsFile": "Cover, 'The Book of the Motor Car', 1912.jpg",
+    "rights": "Wikimedia Commons: public-domain-marked historical cover; inspect linked file page for full rights statement",
+    "alt": "Historical 1912 cover of The Book of the Motor Car"
+  },
+  {
+    "id": "cover-05",
+    "title": "Tom, Dick and Harriet",
+    "year": 1907,
+    "src": "/covers/cover-05.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cover--Tom%2C_dick_and_Harriet.jpg",
+    "commonsFile": "Cover--Tom, dick and Harriet.jpg",
+    "rights": "Wikimedia Commons: public-domain-marked historical cover; inspect linked file page for full rights statement",
+    "alt": "Historical 1907 cover of Tom, Dick and Harriet"
+  },
+  {
+    "id": "cover-06",
+    "title": "How to Read and What to Read",
+    "year": 1907,
+    "src": "/covers/cover-06.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:How_To_Read_and_What_To_Read_-_book_cover.png",
+    "commonsFile": "How To Read and What To Read - book cover.png",
+    "rights": "Wikimedia Commons: public-domain-marked historical cover; inspect linked file page for full rights statement",
+    "alt": "Historical 1907 cover of How to Read and What to Read"
+  },
+  {
+    "id": "cover-07",
+    "title": "A Dreamer's Tales",
+    "year": 1910,
+    "src": "/covers/cover-07.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:ADreamersTales.jpg",
+    "commonsFile": "ADreamersTales.jpg",
+    "rights": "Wikimedia Commons: public-domain-marked historical cover; inspect linked file page for full rights statement",
+    "alt": "Historical 1910 cover of A Dreamer's Tales"
+  },
+  {
+    "id": "cover-08",
+    "title": "Lord of the World",
+    "year": 1907,
+    "src": "/covers/cover-08.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Lord_of_the_World_book_cover_1907.jpg",
+    "commonsFile": "Lord of the World book cover 1907.jpg",
+    "rights": "Wikimedia Commons: public-domain-marked historical cover; inspect linked file page for full rights statement",
+    "alt": "Historical 1907 cover of Lord of the World"
+  },
+  {
+    "id": "cover-09",
+    "title": "Come Rack! Come Rope!",
+    "year": 1912,
+    "src": "/covers/cover-09.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Benson_cover.jpg",
+    "commonsFile": "Benson cover.jpg",
+    "rights": "Wikimedia Commons: public-domain-marked historical cover; inspect linked file page for full rights statement",
+    "alt": "Historical 1912 cover of Come Rack! Come Rope!"
+  },
+  {
+    "id": "cover-10",
+    "title": "Touch and Go",
+    "year": 1920,
+    "src": "/covers/cover-10.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Touch_and_Go_1920.jpg",
+    "commonsFile": "Touch and Go 1920.jpg",
+    "rights": "Wikimedia Commons: public-domain-marked historical cover; inspect linked file page for full rights statement",
+    "alt": "Historical 1920 cover of Touch and Go"
+  }
+]
