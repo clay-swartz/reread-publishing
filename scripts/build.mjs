@@ -17,7 +17,12 @@ let success=0;
 for(const cover of manifest){
   const url='https://commons.wikimedia.org/wiki/Special:Redirect/file/'+encodeURIComponent(cover.commonsFile)+'?width=560';
   try {
-    const response=await fetch(url,{headers:{'User-Agent':'ReReadPublishing/1.0 (historical cover editorial research)'}});
+    let response;
+    for(let attempt=0;attempt<5;attempt++){
+      response=await fetch(url,{headers:{'User-Agent':'ReReadPublishing/1.0 (historical cover editorial research)'}});
+      if(response.status!==429&&response.status!==503)break;
+      await new Promise(resolve=>setTimeout(resolve,2000*(attempt+1)));
+    }
     if(!response.ok)throw Error('HTTP '+response.status);
     const type=response.headers.get('content-type')||'';
     if(!type.startsWith('image/'))throw Error('Not an image: '+type);
@@ -25,6 +30,7 @@ for(const cover of manifest){
     if(data.length<1500)throw Error('Image too small');
     await fs.writeFile(path.join(dist,cover.src.slice(1)),data);
     success++;
+    await new Promise(resolve=>setTimeout(resolve,950));
     console.log('Cover ready:',cover.title,data.length,type);
   }catch(e){console.warn('Cover failed:',cover.title,String(e));}
 }
