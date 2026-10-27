@@ -28,7 +28,7 @@ for(const cover of manifest){
     console.log('Cover ready:',cover.title,data.length,type);
   }catch(e){console.warn('Cover failed:',cover.title,String(e));}
 }
-if(success<4)throw Error('Only '+success+' cover images downloaded; refusing incomplete deployment');
+if(success!==manifest.length)throw Error('Only '+success+' of '+manifest.length+' cover images downloaded; refusing incomplete deployment');
 const first=await fs.stat(path.join(dist,'endpapers/collection/01-french-blue.webp'));
 if(first.size<10000)throw Error('Endpaper missing or empty');
 console.log('Hero v2 build verified:',success,'covers and endpapers available');
