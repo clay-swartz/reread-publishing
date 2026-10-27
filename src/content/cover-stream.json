@@ -61,13 +61,13 @@
   },
   {
     "id": "cover-07",
-    "title": "A Dreamer's Tales",
-    "year": 1910,
+    "title": "Sky Island",
+    "year": 1912,
     "src": "/covers/cover-07.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:ADreamersTales.jpg",
-    "commonsFile": "ADreamersTales.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sky_Island_(cover).jpg",
+    "commonsFile": "Sky Island (cover).jpg",
     "rights": "Wikimedia Commons: public-domain-marked historical cover; inspect linked file page for full rights statement",
-    "alt": "Historical 1910 cover of A Dreamer's Tales"
+    "alt": "Historical 1912 cover of Sky Island"
   },
   {
     "id": "cover-08",
@@ -91,12 +91,12 @@
   },
   {
     "id": "cover-10",
-    "title": "Touch and Go",
-    "year": 1920,
+    "title": "Birds of our Country",
+    "year": 1912,
     "src": "/covers/cover-10.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Touch_and_Go_1920.jpg",
-    "commonsFile": "Touch and Go 1920.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Book_cover_-_'Birds_of_our_Country'_-_1912.jpg",
+    "commonsFile": "Book cover - 'Birds of our Country' - 1912.jpg",
     "rights": "Wikimedia Commons: public-domain-marked historical cover; inspect linked file page for full rights statement",
-    "alt": "Historical 1920 cover of Touch and Go"
+    "alt": "Historical 1912 cover of Birds of our Country"
   }
 ]
