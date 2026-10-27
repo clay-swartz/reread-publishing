@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fffaf2"><title>Re:Read — Hero component review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Cormorant+Garamond:wght@600&family=IBM+Plex+Mono:wght@500&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fffaf2;--ink:#1b1b19;--red:#c64b2e;--btn:#293e52;--line:rgba(159,117,75,.48);--font-ui:"Space Grotesk",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-ui);-webkit-font-smoothing:antialiased}button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}:focus-visible{outline:3px solid #d57f3d;outline-offset:5px}
+.site-header{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,4vw,62px);background:var(--paper);position:relative;z-index:4;border-bottom:1px solid rgba(63,35,18,.1)}
+.wordmark{display:inline-flex;align-items:baseline;white-space:nowrap;font-size:28px;line-height:1;font-weight:700;letter-spacing:-.082em}.colon{color:var(--red)}.part-read{position:relative;isolation:isolate;display:inline-block}.read-width{visibility:hidden;display:inline-block}.read-face{position:absolute;left:0;top:0;white-space:nowrap}.wordmark.shift .read-face{animation:readMorph 1.7s steps(1,end)}.nav-item{font-size:14px;font-weight:500}
+@keyframes readMorph{0%,100%{color:var(--ink);font-family:"Space Grotesk",Arial,sans-serif;transform:translateY(0)}19%{color:#c05c3d;font-family:"Cormorant Garamond",serif;transform:translateY(-1px)}42%{color:#b08236;font-family:"Special Elite",monospace;transform:translateY(1px)}65%{color:#3b5e81;font-family:"IBM Plex Mono",monospace;transform:translateY(0)}84%{color:#7d3b51;font-family:"Space Grotesk",sans-serif;transform:skewX(-8deg)}}
+.hero-surface{position:relative;isolation:isolate;min-height:calc(100svh - 64px);padding:clamp(28px,5vw,66px) clamp(14px,4vw,48px);display:grid;place-items:center;overflow:hidden}
+.hero-pattern{position:absolute;inset:0;z-index:-1;background-image:url("/endpapers/collection/01-french-blue.webp");background-size:860px auto;background-position:center;background-repeat:repeat;background-color:#335b75}
+.hero-card{width:min(1100px,100%);min-height:500px;border:1px solid var(--line);border-radius:7px;background:var(--paper);box-shadow:0 4px 5px #33201c14,0 20px 45px #33201c38;position:relative;display:grid;grid-template-columns:minmax(0,1.18fr) minmax(270px,.82fr);align-items:center;gap:clamp(24px,4vw,65px);padding:clamp(39px,5vw,68px)}
+.hero-card:before{content:"";position:absolute;inset:9px;border:1px solid rgba(181,139,88,.26);border-radius:3px;pointer-events:none}
+.hero-copy{position:relative;z-index:1}.hero-title{font-size:clamp(46px,5vw,72px);letter-spacing:-.075em;line-height:1.04;margin:0 0 25px;font-weight:700;max-width:665px}
+.hero-intro{font-size:clamp(17px,1.5vw,20px);line-height:1.56;letter-spacing:-.018em;max-width:570px;margin:0 0 31px}
+.action-row{display:flex;align-items:center;flex-wrap:wrap;gap:15px}.button-primary{background:var(--btn);border:0;border-radius:5px;color:#fff;padding:14px 19px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:18px}.button-primary:hover{background:#1d2f41}.text-link{border:0;background:transparent;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;font-size:15px;font-weight:600;padding:8px 1px}
+.book-area{display:grid;justify-items:center;align-items:center;position:relative;z-index:1}.book-stage{width:min(100%,335px);aspect-ratio: .76;position:relative;perspective:1300px;display:grid;place-items:center}
+.book-page{position:absolute;width:86%;height:93%;top:2%;left:8%;border:1px solid #bdaf92;background:#f8f0dc;box-shadow:14px 18px 23px #1113,3px 4px 3px #1112;border-radius:1px 4px 4px 1px}
+.book-interior{background-image:url('/endpapers/collection/05-crimson-peacock.webp');background-size:550px auto;background-position:center}
+.book-front{position:absolute;width:86%;height:93%;top:2%;left:8%;transform-origin:left center;transition:transform 720ms cubic-bezier(.2,.8,.2,1);background:#293e52;color:#fff4dc;border-radius:2px 5px 5px 2px;border-left:10px solid #233449;box-shadow:10px 13px 18px #10162130,1px 2px 2px #10162140;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;text-align:left;padding:25px 22px 24px;backface-visibility:hidden}
+.book-front:after{content:"";position:absolute;inset:15px;border:1px solid #d8bd7e6b;pointer-events:none}.book-mark{font-weight:700;font-size:14px;letter-spacing:-.06em}.book-name{font-weight:700;font-size:clamp(29px,3.7vw,43px);line-height:.99;letter-spacing:-.06em}.book-bottom{font-size:12px;font-weight:500;letter-spacing:.01em}
+.book-stage.open .book-front{transform:rotateY(-145deg)}.book-stage.open .book-page{box-shadow:7px 13px 18px #1112}
+.book-caption{font-size:12px;color:#6e6a61;line-height:1.45;text-align:center;max-width:260px;margin:14px 0 0}
+.book-control{margin-top:14px;border:0;background:transparent;color:#293e52;text-decoration:underline;text-underline-offset:4px;font-size:14px;font-weight:700;padding:8px}
+.context{padding:30px 24px 44px;max-width:900px;margin:auto;text-align:center}.context p{margin:0;font-size:15px;line-height:1.5}
+.review-note{padding:11px 18px;border-bottom:1px solid #e4dac9;background:#f1e7d6;color:#514a3e;font-size:12px;text-align:center}
+dialog{border:0;border-radius:7px;padding:32px;max-width:min(480px,calc(100vw - 32px));background:var(--paper);box-shadow:0 20px 80px #0004}dialog::backdrop{background:#14120f77}dialog h2{font-size:27px;line-height:1.2;letter-spacing:-.05em;margin:0 0 12px}dialog p{line-height:1.55}dialog button{margin-top:12px;background:var(--btn);color:#fff;border:0;border-radius:5px;padding:10px 17px}
+@media(max-width:800px){.hero-card{grid-template-columns:1fr;gap:25px;text-align:center;padding:46px 28px}.hero-copy{display:grid;justify-items:center}.hero-intro{margin-bottom:20px}.action-row{justify-content:center}.book-stage{width:235px}.book-caption{margin-top:6px}.book-name{font-size:32px}.hero-pattern{background-size:640px auto}}
+@media(max-width:540px){.site-header{height:60px}.wordmark{font-size:24px}.hero-surface{min-height:calc(100svh - 60px);padding:19px 13px}.hero-card{padding:42px 22px 32px}.hero-card:before{inset:7px}.hero-title{font-size:clamp(39px,10vw,55px);margin-bottom:19px}.hero-intro{font-size:17px}.book-stage{width:190px}.book-front{padding:19px 15px}.book-name{font-size:26px}.book-mark,.book-bottom{font-size:11px}.button-primary{font-size:14px}.book-control{margin-top:4px}}
+@media(prefers-reduced-motion:reduce){.book-front{transition:none}.wordmark.shift .read-face{animation:none!important}}
+</style></head>
+<body>
+<div class="review-note">Component review only · not published on the homepage · book artwork is illustrative</div>
+<header class="site-header"><a href="/" class="wordmark" aria-label="Re:Read home" id="wordmark"><span>Re</span><span class="colon">:</span><span class="part-read"><span class="read-width" aria-hidden="true">Read</span><span class="read-face">Read</span></span></a><a class="nav-item" href="/" aria-label="View current site">Current site ↗</a></header>
+<main>
+<section class="hero-surface" aria-labelledby="hero-title">
+<div class="hero-pattern" aria-hidden="true"></div>
+<div class="hero-card">
+<div class="hero-copy">
+<h1 class="hero-title" id="hero-title" data-field="hero.headline">Great books don't have an expiration date.</h1>
+<p class="hero-intro" data-field="hero.description">We bring overlooked books back into print and introduce readers to new work worth discovering. Thoughtfully chosen, beautifully made, and meant to be read.</p>
+<div class="action-row"><button class="button-primary" id="heroPrimary" type="button" data-field="hero.primaryCtaLabel">Explore American Myths <span aria-hidden="true">↗</span></button><button class="text-link" id="heroSecondary" type="button" data-field="hero.secondaryCtaLabel">See inside a book</button></div>
+</div>
+<div class="book-area"><div class="book-stage" id="bookStage" role="img" aria-label="Concept book for American Myths. Open it to see the endpaper."><div class="book-page book-interior"></div><div class="book-front"><div class="book-mark">Re:Read</div><div class="book-name">American<br>Myths</div><div class="book-bottom">A first-collection concept</div></div></div><button class="book-control" type="button" id="bookControl" aria-expanded="false">Open the book ↗</button><p class="book-caption">Design study only. No individual titles have been acquired or announced.</p></div>
+</div></section>
+</main>
+<dialog id="collectionDialog" aria-labelledby="collectionTitle"><h2 id="collectionTitle">American Myths</h2><p>Our first collection explores the archetypes that shape the American imagination. We're currently researching and acquiring books for the collection.</p><p>Specific titles have not been announced. This is a preview of the direction, not a book for sale.</p><button type="button" id="closeDialog">Close</button></dialog>
+<script>
+const content={hero:{headline:"Great books don't have an expiration date.",description:"We bring overlooked books back into print and introduce readers to new work worth discovering. Thoughtfully chosen, beautifully made, and meant to be read.",primaryCtaLabel:"Explore American Myths",secondaryCtaLabel:"See inside a book",bookConcept:"American Myths",bookEndpaper:"/endpapers/collection/05-crimson-peacock.webp"}};
+const stage=document.getElementById('bookStage'),control=document.getElementById('bookControl');
+function setBookOpen(open){stage.classList.toggle('open',open);control.textContent=open?'Close the book ↗':'Open the book ↗';control.setAttribute('aria-expanded',String(open))}
+control.addEventListener('click',()=>setBookOpen(!stage.classList.contains('open')));
+document.getElementById('heroSecondary').addEventListener('click',()=>setBookOpen(true));
+const dialog=document.getElementById('collectionDialog');document.getElementById('heroPrimary').addEventListener('click',()=>dialog.showModal());document.getElementById('closeDialog').addEventListener('click',()=>dialog.close());
+const wordmark=document.getElementById('wordmark');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){let busy=false;function pulse(){if(busy)return;busy=true;wordmark.classList.remove('shift');void wordmark.offsetWidth;wordmark.classList.add('shift');setTimeout(()=>{wordmark.classList.remove('shift');busy=false},1750)}wordmark.addEventListener('mouseenter',pulse);wordmark.addEventListener('focus',pulse);setInterval(pulse,9500)}
+</script></body></html>
