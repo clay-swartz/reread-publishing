@@ -10,7 +10,7 @@ el.querySelector('[data-primary]').textContent=content.primaryLabel;
 el.querySelector('[data-secondary]').textContent=content.secondaryLabel;
 el.querySelector('[data-collection-title]').textContent=content.collectionTitle;
 el.querySelector('[data-collection-body]').textContent=content.collectionBody;
-el.querySelector('[data-submission-body]').textContent=content.submissionBody;
+document.querySelector('[data-submission-body]').textContent=content.submissionBody;
 const coverImage=el.querySelector('[data-cover-image]');
 const playable=[];
 for(const cover of covers){playable.push(cover);}
