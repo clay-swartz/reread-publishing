@@ -14,3 +14,8 @@
 
 /* Locked artwork for this readability review. */
 .layout-a .hero-pattern{background-image:url('/endpapers/collection/21-saffron-tesserae.webp')!important}
+
+/* Quieter fine-grain approved endpaper; full-strength color, editorial navy ink. */
+.layout-a .hero-pattern{background-image:url('/endpapers/collection/07-classic-speckle.webp')!important;background-size:760px auto!important}
+.layout-a .hero-text{color:#25384a}
+.layout-a .hero:before{display:none}
