@@ -19,3 +19,12 @@
 .layout-a .hero-pattern{background-image:url('/endpapers/collection/07-classic-speckle.webp')!important;background-size:760px auto!important}
 .layout-a .hero-text{color:#25384a}
 .layout-a .hero:before{display:none}
+
+/* Dark archival marble trial: full-bleed art, strong typographic contrast. */
+.layout-a .hero{background:#20272e}
+.layout-a .hero-pattern{background-image:url('/endpapers/collection/03-ebony-marble.webp')!important;background-size:940px auto!important}
+.layout-a .hero-text{color:#fffaf2}
+.layout-a .primary{background:#fffaf2;color:#25384a;border:1px solid #fffaf2}
+.layout-a .primary:hover{background:#eee5d7}
+.layout-a .secondary{color:#fffaf2}
+.layout-a .secondary:hover{color:#fff0ce}
