@@ -80,3 +80,21 @@
 .collection-progress__step h4{font-size:clamp(23px,2.3vw,34px);line-height:1.12;letter-spacing:-.06em;margin:0 0 15px;font-weight:700}
 .collection-progress__step p{font-size:clamp(15px,1.25vw,18px);line-height:1.55;margin:0;color:#e8e5df;max-width:390px}
 @media(max-width:760px){.collection-progress__steps{grid-template-columns:1fr;gap:30px}.collection-progress{padding:45px 25px 75px}.collection-progress__step{display:grid;grid-template-columns:76px 1fr;column-gap:12px}.collection-progress__when{margin:5px 0 0}.collection-progress__step h4{font-size:27px}}
+
+/* American Myths is a single editorial spread: introduction and publishing progress share the right column. */
+.collection-feature__intro{padding-bottom:clamp(78px,8vw,128px);align-items:start}
+.collection-feature__heading{position:sticky;top:45px}
+.collection-feature__story{padding-top:clamp(8px,2vw,35px)}
+.collection-journey{margin-top:clamp(48px,5vw,78px);border:1px solid rgba(255,250,242,.38);background:#fffaf2;color:#293e52}
+.collection-journey__current{padding:clamp(24px,3vw,42px)}
+.collection-journey__tag{display:block;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#956a42;margin-bottom:17px}
+.collection-journey__current h3{font-size:clamp(35px,3.2vw,49px);line-height:1.05;letter-spacing:-.065em;margin:0 0 17px}
+.collection-journey__current p{font-size:clamp(16px,1.35vw,19px);line-height:1.55;margin:0;max-width:520px}
+.collection-journey__ahead{border-top:1px solid #293e5230;display:grid;grid-template-columns:1fr 1fr}
+.collection-journey__ahead>div{padding:21px clamp(18px,2.2vw,31px) 25px;display:flex;flex-direction:column;gap:9px}
+.collection-journey__ahead>div+div{border-left:1px solid #293e5230}
+.collection-journey__ahead span{font-size:13px;font-weight:700;color:#956a42}
+.collection-journey__ahead strong{font-size:clamp(17px,1.5vw,21px);line-height:1.2;letter-spacing:-.04em}
+.collection-progress{display:none}
+@media(max-width:900px){.collection-feature__heading{position:static}.collection-feature__intro{gap:42px}.collection-journey{margin-top:44px}}
+@media(max-width:420px){.collection-journey__ahead strong{font-size:16px}.collection-journey__ahead>div{padding:19px 17px}}
