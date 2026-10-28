@@ -1,12 +1,9 @@
 const paperNames=['01-french-blue.webp','03-ebony-marble.webp','04-block-print-floral.webp','05-crimson-peacock.webp','06-acanthus-leaf.webp','07-classic-speckle.webp','08-botanical-ivy.webp','09-lapis-pebble.webp','10-terracotta-fan.webp','12-ink-petal.webp','13-soft-confetti.webp','21-saffron-tesserae.webp','22-lilac-stencil.webp'];
-const paper=document.getElementById('paper');const art=document.getElementById('endpaperArt');
+const paper=document.getElementById('paper');
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
-let index=Math.floor(Math.random()*paperNames.length);let pending=false;
-function showPaper(n){if(pending)return;pending=true;const image=new Image();image.onload=()=>{paper.style.backgroundImage='url("'+image.src+'")';art.style.backgroundImage='url("'+image.src+'")';index=n;pending=false};image.onerror=()=>{pending=false};image.src='/endpapers/collection/'+paperNames[n]}
+let index=paperNames.indexOf('08-botanical-ivy.webp');let pending=false;
+function showPaper(n){if(pending)return;pending=true;const image=new Image();image.onload=()=>{paper.style.backgroundImage='url("'+image.src+'")';index=n;pending=false};image.onerror=()=>{pending=false};image.src='/endpapers/collection/'+paperNames[n]}
 showPaper(index);
-let cycle=null;
-function setCycle(){clearInterval(cycle);if(!reduce.matches){cycle=setInterval(()=>{if(document.visibilityState==='visible')showPaper((index+1+Math.floor(Math.random()*(paperNames.length-1)))%paperNames.length)},11000)}}
-setCycle();reduce.addEventListener('change',setCycle);
 const about=document.getElementById('aboutDialog'),submission=document.getElementById('submissionDialog');
 document.getElementById('aboutButton').onclick=()=>about.showModal();document.getElementById('submissions').onclick=()=>submission.showModal();
 for(const d of [about,submission]){d.querySelector('[data-close]').onclick=()=>d.close();d.onclick=e=>{if(e.target===d)d.close()}}
