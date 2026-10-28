@@ -28,3 +28,6 @@
 .layout-a .primary:hover{background:#eee5d7}
 .layout-a .secondary{color:#fffaf2}
 .layout-a .secondary:hover{color:#fff0ce}
+
+/* Chocolate tone adjustment — preserve original marbling detail and layout. */
+.layout-a .hero-pattern{filter:brightness(.86) sepia(.12) saturate(1.12)}
