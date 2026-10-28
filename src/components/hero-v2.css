@@ -11,3 +11,6 @@
 .layout-a .hero-actions{margin-top:45px}
 @media(max-width:800px){.layout-a .hero{min-height:calc(100svh - 66px)}.layout-a .hero-pattern{inset:0;background-size:730px auto;background-position:center}.layout-a .hero:before{background:none}.layout-a .hero-content{padding:70px 25px 90px}.layout-a .hero-text{width:100%}.layout-a .hero-text h1{font-size:clamp(43px,9vw,65px)}.layout-a .hero-text p{font-size:18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Locked artwork for this readability review. */
+.layout-a .hero-pattern{background-image:url('/endpapers/collection/21-saffron-tesserae.webp')!important}
