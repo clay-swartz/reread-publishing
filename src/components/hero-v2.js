@@ -1,34 +1,14 @@
-const content=await fetch('/src/content/hero-v2.json').then(r=>{if(!r.ok)throw Error('Hero data unavailable');return r.json()});
-const el=document.querySelector('[data-hero]');
-el.querySelector('[data-headline]').textContent=content.headline;
-el.querySelector('[data-description]').textContent=content.description;
-el.querySelector('[data-primary]').textContent=content.primaryLabel;
-el.querySelector('[data-secondary]').textContent=content.secondaryLabel;
-el.querySelector('[data-collection-title]').textContent=content.collectionTitle;
-el.querySelector('[data-collection-body]').textContent=content.collectionBody;
-document.querySelector('[data-submission-body]').textContent=content.submissionBody;
+const root=document.getElementById('experience');
+const controls=[...document.querySelectorAll('[data-option]')];
+const layouts={a:'layout-a',b:'layout-b',c:'layout-c'};
+function setOption(option){if(!layouts[option])return;root.className=layouts[option];controls.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.option===option)));history.replaceState(null,'','#'+option)}
+controls.forEach(b=>b.addEventListener('click',()=>setOption(b.dataset.option)));
+if(layouts[location.hash.slice(1)])setOption(location.hash.slice(1));
 const paperNames=['01-french-blue.webp','03-ebony-marble.webp','04-block-print-floral.webp','05-crimson-peacock.webp','06-acanthus-leaf.webp','07-classic-speckle.webp','08-botanical-ivy.webp','09-lapis-pebble.webp','10-terracotta-fan.webp','12-ink-petal.webp','13-soft-confetti.webp','21-saffron-tesserae.webp','22-lilac-stencil.webp'];
-const stage=document.querySelector('.hero-surround'),paper=document.querySelector('.hero-endpaper');
-let current=Math.floor(Math.random()*paperNames.length);
-async function choosePaper(index){
- const src='/endpapers/collection/'+paperNames[index];
- const test=new Image();
- await new Promise(resolve=>{test.onload=resolve;test.onerror=resolve;test.src=src});
- if(test.naturalWidth){paper.style.backgroundImage='url("'+src+'")';current=index;}
-}
-choosePaper(current);
-stage.addEventListener('click',e=>{if(e.target!==stage&&e.target!==paper)return;choosePaper((current+1+Math.floor(Math.random()*(paperNames.length-1)))%paperNames.length)});
-const about=document.getElementById('aboutDialog');
-const submission=document.getElementById('submitDialog');
-document.querySelector('[data-about]').addEventListener('click',()=>about.showModal());
-document.querySelector('[data-secondary]').addEventListener('click',()=>submission.showModal());
-for(const dialog of [about,submission]){
- dialog.querySelector('[data-close]').addEventListener('click',()=>dialog.close());
- dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
-}
-const brand=document.querySelector('.wordmark');
-if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
- const pulse=()=>{brand.classList.remove('shift');void brand.offsetWidth;brand.classList.add('shift')};
- brand.addEventListener('mouseenter',pulse);brand.addEventListener('focus',pulse);
- setInterval(pulse,9500);
-}
+const paper=document.getElementById('paper');let index=Math.floor(Math.random()*paperNames.length);
+function changePaper(n){const image=new Image();image.onload=()=>{paper.style.backgroundImage='url("'+image.src+'")';index=n};image.src='/endpapers/collection/'+paperNames[n]}
+changePaper(index);document.querySelector('.hero').addEventListener('click',e=>{if(e.target===paper||e.target===document.querySelector('.hero'))changePaper((index+1+Math.floor(Math.random()*(paperNames.length-1)))%paperNames.length)});
+const about=document.getElementById('aboutDialog'),submission=document.getElementById('submissionDialog');
+document.getElementById('aboutButton').onclick=()=>about.showModal();document.getElementById('submissions').onclick=()=>submission.showModal();
+for(const d of [about,submission]){d.querySelector('[data-close]').onclick=()=>d.close();d.onclick=e=>{if(e.target===d)d.close()}}
+const mark=document.querySelector('.wordmark');if(!matchMedia('(prefers-reduced-motion:reduce)').matches){const pulse=()=>{mark.classList.remove('shift');void mark.offsetWidth;mark.classList.add('shift')};mark.addEventListener('mouseenter',pulse);mark.addEventListener('focus',pulse);setInterval(pulse,9500)}
