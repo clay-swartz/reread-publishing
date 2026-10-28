@@ -113,3 +113,7 @@
 /* Refined publishing stages: stronger gold editorial rules, no numbering. */
 .myths-sequence__stage,.myths-sequence__stage:first-child{border-top:3px solid #d4a775}
 .myths-sequence__index{letter-spacing:.065em}
+
+/* Current gold; upcoming stages white. */
+.myths-sequence__stage{border-top:3px solid #fffaf2}
+.myths-sequence__stage:first-child{border-top:3px solid #d4a775}
