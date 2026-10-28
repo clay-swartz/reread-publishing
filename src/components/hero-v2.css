@@ -98,3 +98,14 @@
 .collection-progress{display:none}
 @media(max-width:900px){.collection-feature__heading{position:static}.collection-feature__intro{gap:42px}.collection-journey{margin-top:44px}}
 @media(max-width:420px){.collection-journey__ahead strong{font-size:16px}.collection-journey__ahead>div{padding:19px 17px}}
+
+/* A restrained editorial colophon, integrated with the original introduction. */
+.collection-feature__intro{grid-template-columns:minmax(0,1fr) minmax(0,.87fr);align-items:start;padding-bottom:clamp(82px,8vw,126px)}
+.collection-feature__heading{position:static}
+.myths-sequence{margin-top:clamp(46px,5vw,76px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.myths-sequence__stage{border-top:1px solid rgba(255,250,242,.58);padding-top:14px}
+.myths-sequence__stage:first-child{border-color:#d4a775}
+.myths-sequence__index{font-size:12px;font-weight:700;letter-spacing:.03em;color:#d4a775;display:block;margin-bottom:11px}
+.myths-sequence__stage strong{display:block;font-size:clamp(15px,1.24vw,19px);letter-spacing:-.035em;line-height:1.22;font-weight:500}
+@media(max-width:900px){.myths-sequence{margin-top:40px}.collection-feature__intro{padding-bottom:80px}}
+@media(max-width:480px){.myths-sequence{gap:12px}.myths-sequence__stage strong{font-size:14px}.myths-sequence__index{font-size:11px}}
