@@ -47,3 +47,18 @@
 .signup-status{font-size:14px;line-height:1.5;margin:12px 0 0;color:#293e52;min-height:0}
 @media(max-width:900px){.newsletter-inner{grid-template-columns:1fr;gap:42px}.newsletter-signup{padding:0}}
 @media(max-width:450px){.newsletter-inner{padding:66px 24px}.newsletter-copy h2{font-size:43px}.newsletter-fields{flex-direction:column;gap:10px}.newsletter-fields input,.newsletter-fields button{border-radius:3px;min-height:54px}}
+
+/* American Myths — a reusable editorial collection feature, distinct from the hero. */
+.collection-feature{background:#293e52;color:#fffaf2;overflow:hidden}
+.collection-feature__inner{max-width:1600px;margin:0 auto}
+.collection-feature__intro{padding:clamp(80px,8vw,132px) clamp(32px,7vw,120px) clamp(70px,7vw,114px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.87fr);align-items:start;gap:clamp(45px,7vw,130px)}
+.collection-feature__heading h2{font-size:clamp(82px,10.5vw,178px);letter-spacing:-.095em;line-height:.85;font-weight:700;margin:0 0 35px}
+.collection-feature__period{color:#d4a775}
+.collection-feature__status{font-size:14px;letter-spacing:.01em;font-weight:500;margin:0;color:#ded8ce}
+.collection-feature__story{padding-top:clamp(8px,2vw,35px)}
+.collection-feature__lead{font-size:clamp(28px,3.1vw,45px);line-height:1.16;letter-spacing:-.045em;font-weight:500;margin:0 0 31px}
+.collection-feature__story>p:not(.collection-feature__lead){font-size:clamp(17px,1.4vw,20px);line-height:1.59;margin:0 0 26px;max-width:600px;color:#f0eae0}
+.collection-feature__story .collection-feature__note{margin-top:44px!important;padding-top:19px;border-top:1px solid #fffaf248;font-size:15px!important;color:#ded8ce!important}
+.collection-feature__motif{height:clamp(90px,12vw,180px);background-image:url('/endpapers/collection/03-ebony-marble.webp');background-repeat:repeat;background-position:50% 48%;background-size:900px auto;filter:sepia(.18) hue-rotate(160deg) saturate(.75) brightness(.95);border-top:1px solid #ffffff27}
+@media(max-width:900px){.collection-feature__intro{grid-template-columns:1fr;gap:50px}.collection-feature__heading h2{font-size:clamp(76px,15vw,130px)}.collection-feature__story{padding-top:0}.collection-feature__lead{max-width:660px}}
+@media(max-width:540px){.collection-feature__intro{padding:74px 25px 66px;gap:39px}.collection-feature__heading h2{font-size:clamp(73px,18vw,105px)}.collection-feature__motif{height:100px}.collection-feature__lead{font-size:29px}}
