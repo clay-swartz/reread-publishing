@@ -62,3 +62,10 @@
 .collection-feature__motif{height:clamp(90px,12vw,180px);background-image:url('/endpapers/collection/03-ebony-marble.webp');background-repeat:repeat;background-position:50% 48%;background-size:900px auto;filter:sepia(.18) hue-rotate(160deg) saturate(.75) brightness(.95);border-top:1px solid #ffffff27}
 @media(max-width:900px){.collection-feature__intro{grid-template-columns:1fr;gap:50px}.collection-feature__heading h2{font-size:clamp(76px,15vw,130px)}.collection-feature__story{padding-top:0}.collection-feature__lead{max-width:660px}}
 @media(max-width:540px){.collection-feature__intro{padding:74px 25px 66px;gap:39px}.collection-feature__heading h2{font-size:clamp(73px,18vw,105px)}.collection-feature__motif{height:100px}.collection-feature__lead{font-size:29px}}
+
+/* Approved review refinements: shorter hero and one consistent editorial copy tier. */
+.layout-a .hero{min-height:clamp(535px,calc(83svh - 66px),760px)}
+.layout-a .hero-content{padding-top:clamp(54px,6vw,88px);padding-bottom:clamp(54px,6vw,88px)}
+.collection-feature__story{padding-top:clamp(8px,2vw,35px)}
+.collection-feature__story>p{font-size:clamp(20px,1.7vw,25px)!important;line-height:1.48!important;letter-spacing:-.025em;color:#fffaf2!important;max-width:630px;margin:0!important}
+@media(max-width:800px){.layout-a .hero{min-height:clamp(520px,78svh,700px)}.layout-a .hero-content{padding-top:55px;padding-bottom:55px}}
