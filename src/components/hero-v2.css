@@ -69,3 +69,14 @@
 .collection-feature__story{padding-top:clamp(8px,2vw,35px)}
 .collection-feature__story>p{font-size:clamp(20px,1.7vw,25px)!important;line-height:1.48!important;letter-spacing:-.025em;color:#fffaf2!important;max-width:630px;margin:0!important}
 @media(max-width:800px){.layout-a .hero{min-height:clamp(520px,78svh,700px)}.layout-a .hero-content{padding-top:55px;padding-bottom:55px}}
+
+/* Collection progress: a real editorial process, not a decorative stripe. */
+.collection-progress{border-top:1px solid rgba(255,250,242,.28);padding:clamp(36px,5vw,72px) clamp(32px,7vw,120px) clamp(75px,8vw,132px)}
+.collection-progress h3{margin:0 0 34px;font-size:clamp(24px,2.6vw,36px);letter-spacing:-.055em;font-weight:700}
+.collection-progress__steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,3vw,55px)}
+.collection-progress__step{border-top:2px solid rgba(255,250,242,.37);padding-top:20px}
+.collection-progress__step.is-current{border-color:#d4a775}
+.collection-progress__when{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.02em;color:#d4a775;margin:0 0 20px}
+.collection-progress__step h4{font-size:clamp(23px,2.3vw,34px);line-height:1.12;letter-spacing:-.06em;margin:0 0 15px;font-weight:700}
+.collection-progress__step p{font-size:clamp(15px,1.25vw,18px);line-height:1.55;margin:0;color:#e8e5df;max-width:390px}
+@media(max-width:760px){.collection-progress__steps{grid-template-columns:1fr;gap:30px}.collection-progress{padding:45px 25px 75px}.collection-progress__step{display:grid;grid-template-columns:76px 1fr;column-gap:12px}.collection-progress__when{margin:5px 0 0}.collection-progress__step h4{font-size:27px}}
