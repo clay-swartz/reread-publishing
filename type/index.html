@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fffaf2">
+  <meta name="description" content="Meet Re:Read, an independent publisher bringing overlooked books back to life and introducing new writing worth discovering.">
+  <title>Headline Type Review — Re:Read</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=IBM+Plex+Mono:wght@500&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/system/tokens.css">
+  <link rel="stylesheet" href="/src/system/components.css">
+  <link rel="stylesheet" href="/src/system/announcement.css">
+  <link rel="stylesheet" href="/src/system/hero-acquisition.css">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bricolage+Grotesque:wght@800&family=Fraunces:wght@900&family=Syne:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/system/type-lab.css">
+</head>
+<body>
+<a href="#content" class="rr-skip">Skip to content</a>
+<header class="rr-header">
+  <a class="rr-wordmark" href="/" aria-label="Re:Read home"><span>Re</span><span class="rr-wordmark__colon">:</span><span class="rr-wordmark__part"><span class="rr-wordmark__spacer" aria-hidden="true">Read</span><span class="rr-wordmark__face">Read</span></span></a>
+  <nav class="rr-header__nav" aria-label="Main navigation">
+    <a class="rr-header__link" href="#book-ideas">Submissions</a>
+    <button type="button" class="rr-header__link" data-dialog-open="contactDialog">Contact</button>
+    <a class="rr-header__link" href="/journal/">Updates</a>
+  </nav>
+</header>
+<section class="rr-type-lab" aria-label="Headline typography comparison">
+  <div class="rr-type-lab__inner">
+    <div class="rr-type-lab__heading"><strong>Headline type test</strong><a href="/">Back to site</a></div>
+    <div class="rr-type-lab__choices" role="group" aria-label="Choose headline font">
+      <button type="button" data-type="space" aria-pressed="true" class="is-selected">Space Grotesk</button>
+      <button type="button" data-type="bricolage" aria-pressed="false">Bricolage</button>
+      <button type="button" data-type="archivo" aria-pressed="false">Archivo Black</button>
+      <button type="button" data-type="syne" aria-pressed="false">Syne</button>
+      <button type="button" data-type="fraunces" aria-pressed="false">Fraunces</button>
+    </div>
+    <div class="rr-type-lab__scale"><label for="typeScale">Size <output for="typeScale" id="typeScaleValue">100%</output></label><input type="range" id="typeScale" min="90" max="115" step="5" value="100"></div>
+  </div>
+  <div class="rr-type-lab__description" id="typeDescription" aria-live="polite">Space Grotesk — our current reference.</div>
+</section>
+<main id="content">
+  <div class="rr-top">
+    <section class="rr-hero rr-hero--acquisition" aria-labelledby="hero-title">
+      <div class="rr-hero__paper" aria-hidden="true"></div>
+      <div class="rr-hero__inner rr-hero__layout">
+        <div class="rr-hero__copy">
+          <h1 id="hero-title"><span class="rr-hero__headline-line">Great books</span><span class="rr-hero__headline-line">don’t expire<span class="rr-hero__headline-punctuation">.</span></span></h1>
+          <p>Introducing <strong class="rr-hero__brand">Re:Read</strong>. An independent publisher hellbent on reviving overlooked books, old and new.</p>
+        </div>
+        <div class="rr-hero__intake" id="american-myths" aria-labelledby="collection-title">
+          <h2 id="collection-title">Our first collection: <strong>American Myths.</strong></h2>
+          <p class="rr-hero__intake-description">We’re looking for overlooked books and original manuscripts that capture the American imagination. Adventurers, dreamers, outlaws, renegades, and the myths still taking shape.</p>
+          <form class="rr-book-idea" id="bookIdeaForm" aria-label="Suggest a book for American Myths" enctype="multipart/form-data">
+            <h3 id="book-ideas">Have something for us to consider?</h3>
+            <div class="rr-book-idea__fields">
+              <div><label for="bookIdea">Book or project</label><input id="bookIdea" name="bookIdea" type="text" autocomplete="off" maxlength="160" placeholder="Title or working idea" required></div>
+              <div><label for="bookEmail">Your email</label><input id="bookEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+            </div>
+            <div class="rr-book-idea__bottom">
+              <div class="rr-book-idea__file">
+                <input type="file" id="bookAttachment" name="attachment" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-describedby="bookFileName">
+                <label for="bookAttachment" class="rr-book-idea__attach">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5 12.5 20a6 6 0 0 1-8.5-8.5l9-9a4 4 0 0 1 5.7 5.7l-9 9a2 2 0 0 1-2.8-2.8l8.5-8.5"/></svg>
+                  <span>Attach a file</span>
+                </label>
+                
+                <span class="rr-book-idea__file-name" id="bookFileName" aria-live="polite"></span>
+              </div>
+              <button class="rr-book-idea__send" type="submit">Submit <span aria-hidden="true">↗</span></button>
+            </div>
+            <p class="rr-book-idea__status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="rr-signup rr-ann-signup" id="newsletter" aria-labelledby="newsletter-title">
+    <div class="rr-signup__inner">
+      <div class="rr-ann-signup__intro">
+        <h2 id="newsletter-title">Come along from the beginning.</h2>
+        <p class="rr-signup__copy">We're just getting started. Join the list for the books we're discovering, glimpses of the creative process, and publication news when the time comes.</p>
+        <p class="rr-ann-signup__membership">It's free to follow along. If we introduce a membership, you'll hear about it here first.</p>
+      </div>
+      <form id="newsletterForm" class="rr-signup__form" aria-label="Newsletter signup">
+        <label for="emailAddress">Email address</label>
+        <div class="rr-signup__inputrow">
+          <input type="email" name="email" id="emailAddress" autocomplete="email" placeholder="you@example.com" required>
+          <button type="submit">Join the list</button>
+        </div>
+        <p class="rr-signup__note">Review preview only — signups aren't being collected yet.</p>
+        <p class="rr-signup__status" aria-live="polite" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="rr-ann-books" id="books" aria-labelledby="books-title">
+    <div class="rr-ann-container">
+      <div class="rr-ann-books__heading">
+        <h2 id="books-title">What kind of books?</h2>
+        <p>Old favorites that shouldn't have disappeared. New writing that deserves a place on the shelf. Every Re:Read edition starts with a story worth sharing.</p>
+      </div>
+      <div class="rr-ann-types" aria-label="Publishing focus">
+        <article><h3>Rediscovered.</h3><p>Overlooked works with something to say today, thoughtfully reintroduced to new readers. Sometimes a great book simply needs another chance.</p></article>
+        <article><h3>Original.</h3><p>Compelling new writing and distinctive voices. We believe the next book worth keeping may be one that hasn't reached readers yet.</p></article>
+      </div>
+      <div class="rr-ann-process" id="process">
+        <div class="rr-ann-process__lead">
+          <h3>From a good story<br>to a great book.</h3>
+          <p>The words come first. Then the choices that turn those words into an edition someone will want to read, give, and keep.</p>
+        </div>
+        <ol class="rr-ann-stages">
+          <li><h4>Acquisition</h4><p>We search for overlooked work, discover new voices, and secure the rights needed to publish.</p></li>
+          <li><h4>Editorial &amp; design</h4><p>We edit with care and shape the cover, type, illustrations, and reading experience around the work.</p></li>
+          <li><h4>Printing &amp; binding</h4><p>Paper, endpapers, headbands, jackets, and finishes all offer possibilities. We'll choose materials that suit each edition.</p></li>
+          <li><h4>Distribution</h4><p>We prepare the finished editions to reach the readers and booksellers who will help them find a home.</p></li>
+          <li><h4>Into your hands</h4><p>The part that matters most: opening the book, reading it, sharing it, and making it yours.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="rr-ann-notes" id="updates" aria-labelledby="updates-title">
+    <div class="rr-ann-container rr-ann-notes__inner">
+      <h2 id="updates-title">Updates.</h2>
+      <article class="rr-ann-note-preview" aria-labelledby="first-note-title">
+        <h3 id="first-note-title"><a href="/journal/">Before the first book.</a></h3>
+        <p>We're introducing Re:Read before there's a catalog to browse. Here's why we're beginning with the search—and what we hope to discover along the way.</p>
+        <a class="rr-ann-textlink" href="/journal/">Read the first note <span aria-hidden="true">↗</span></a>
+      </article>
+    </div>
+  </section>
+
+  <section class="rr-ann-creators" id="creators" aria-labelledby="creators-title">
+    <div class="rr-ann-container">
+      <div class="rr-ann-creators__intro">
+        <h2 id="creators-title">Good books are made together.</h2>
+        <p>Re:Read exists to champion literature and the people who bring it into the world. We want to build relationships with authors, rights holders, designers, and illustrators.</p>
+      </div>
+      <div class="rr-ann-creators__lanes">
+        <article><h3>Authors &amp; rights holders</h3><p>Know an overlooked work that deserves a new edition? Have original writing that might belong with Re:Read? We'd like to know what's out there.</p></article>
+        <article><h3>Designers &amp; illustrators</h3><p>We care about covers, lettering, illustration, print, and the materials of books. We want to meet creative people who share that curiosity.</p></article>
+      </div>
+      <div class="rr-ann-creators__closing"><p>We aren't accepting formal submissions yet. We'll share guidelines and a contact route when they're ready.</p><a href="#newsletter" class="rr-ann-textlink">Hear when opportunities open <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </section>
+</main>
+<footer class="rr-footer">
+  <div class="rr-footer__inner"><div><div class="rr-footer__name">Re:Read</div><p class="rr-footer__line">An independent publishing house for stories worth finding.</p></div>
+  <nav class="rr-footer__nav" aria-label="Footer navigation"><a href="#american-myths">American Myths</a><a href="#process">Our process</a><a href="#creators">Submissions</a><a href="/journal/">Updates</a><button type="button" data-dialog-open="contactDialog">Contact</button><a href="#newsletter">Newsletter</a></nav></div>
+</footer>
+<dialog class="rr-dialog" id="aboutDialog" aria-labelledby="about-title"><h2 id="about-title">About Re:Read</h2><p>Re:Read is an independent publisher bringing overlooked books back to life as thoughtfully designed editions and introducing original writing worth discovering. Our first collection, American Myths, is in research and acquisitions.</p><button type="button" data-close>Close</button></dialog>
+<dialog class="rr-dialog" id="contactDialog" aria-labelledby="contact-title"><h2 id="contact-title">Contact Re:Read</h2><p>We're setting up a dedicated contact address for the press. It's not ready yet. For news about the first collection and when submissions open, you can join our updates list.</p><a class="rr-dialog__cta" href="#newsletter" data-close-on-nav>Get updates</a><button type="button" data-close>Close</button></dialog>
+<script type="module" src="/src/system/site.js"></script>
+<script type="module" src="/src/system/type-lab.js"></script>
+</body>
+</html>
