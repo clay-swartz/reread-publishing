@@ -12,13 +12,11 @@ await fs.copyFile(path.join(root,'src/content/hero-v2.json'),path.join(dist,'src
 await fs.mkdir(path.join(dist,'src/components'),{recursive:true});
 for(const name of ['hero-v2.js','hero-v2.css','newsletter.js']) await fs.copyFile(path.join(root,'src/components',name),path.join(dist,'src/components',name));
 await fs.mkdir(path.join(dist,'src/system'),{recursive:true});
-for(const name of ['tokens.css','components.css','announcement.css','hero-acquisition.css','site.js','type-lab.css','type-lab.js']) await fs.copyFile(path.join(root,'src/system',name),path.join(dist,'src/system',name));
+for(const name of ['tokens.css','components.css','announcement.css','hero-acquisition.css','email-capture.css','site.js']) await fs.copyFile(path.join(root,'src/system',name),path.join(dist,'src/system',name));
 await fs.mkdir(path.join(dist,'system'),{recursive:true});
 await fs.copyFile(path.join(root,'system/index.html'),path.join(dist,'system/index.html'));
 await fs.mkdir(path.join(dist,'journal'),{recursive:true});
 await fs.copyFile(path.join(root,'journal/index.html'),path.join(dist,'journal/index.html'));
-await fs.mkdir(path.join(dist,'type'),{recursive:true});
-await fs.copyFile(path.join(root,'type/index.html'),path.join(dist,'type/index.html'));
 const asset=await fs.stat(path.join(dist,'endpapers/collection/01-french-blue.webp'));
 if(asset.size<10000)throw Error('Approved endpaper asset missing or empty');
 console.log('Re:Read hero review built; approved endpapers present');
