@@ -128,3 +128,16 @@
 .rr-join__fields button.rr-cta--endpaper .rr-cta__paper{min-width:47px}
 .rr-join__fields button.rr-cta--endpaper .rr-cta__paper svg{color:var(--rr-paper)}
 @media(max-width:520px){.rr-join__fields button.rr-cta--endpaper{padding-left:19px}}
+
+
+/* 29 October: pale, warm editorial signup rather than a colored slab. */
+.rr-join{
+ background:#f0eee9;
+ color:#293e52;
+ border-top:5px solid transparent;
+ border-image:url("/endpapers/collection/01-french-blue.webp") 6 round;
+}
+.rr-join__message h2 em{color:#64758b}
+.rr-join__note{color:#5d6672;opacity:1}
+.rr-join__fields input{border-color:#cbd2d9}
+.rr-join__fields button .rr-button-arrow{color:#fffaf2}
