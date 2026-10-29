@@ -11,7 +11,7 @@
 .rr-header__nav{display:flex;align-items:center;gap:25px}
 .rr-header__link{font-size:15px;font-weight:500;border:0;background:none;padding:12px 0;color:var(--rr-ink)}
 .rr-header__link:hover{text-decoration:underline;text-underline-offset:5px}
-@keyframes rr-morph{0%,100%{font-family:"Space Grotesk";color:var(--rr-ink);transform:translateY(0)}20%{font-family:"Cormorant Garamond";color:#216b5c;transform:translateY(-1px)}42%{font-family:"Special Elite";color:#6f8353;transform:translateY(1px)}65%{font-family:"IBM Plex Mono";color:#3b5e81;transform:translateY(0)}85%{font-family:"Space Grotesk";color:#73516e;transform:skewX(-8deg)}}
+@keyframes rr-morph{0%,100%{font-family:"Space Grotesk";color:var(--rr-ink);transform:translateY(0)}20%{font-family:"Cormorant Garamond";color:#7e527c;transform:translateY(-1px)}42%{font-family:"Special Elite";color:#8c7488;transform:translateY(1px)}65%{font-family:"IBM Plex Mono";color:#3b5e81;transform:translateY(0)}85%{font-family:"Space Grotesk";color:#73516e;transform:skewX(-8deg)}}
 
 /* Shared action primitives (not distinct decorative sections). */
 .rr-actions{display:flex;align-items:center;flex-wrap:wrap;gap:25px;margin-top:37px}
@@ -81,53 +81,52 @@
  .rr-header__nav{display:none}
 }
 
-/* Re:Read's signature CTA uses the actual marbled endpaper artwork, not a
-   synthetic texture. Two colorways, one source motif; artwork sits behind text. */
-.rr-cta--marbled{
-  position:relative;
-  isolation:isolate;
+/* Endpaper as a binding detail rather than a patterned button.
+   Both CTAs share one subtler, real Re:Read French-blue endpaper asset.
+   The principal button face is always solid for legibility. */
+.rr-cta--endpaper{
+  display:inline-flex;
+  align-items:stretch;
+  justify-content:space-between;
+  gap:0;
   overflow:hidden;
-  background:var(--rr-cta-color,var(--rr-navy));
-  border-color:var(--rr-cta-color,var(--rr-navy));
+  border-radius:2px;
+  background:var(--rr-cta-bg,var(--rr-navy));
+  border-color:var(--rr-cta-bg,var(--rr-navy));
   color:var(--rr-paper);
+  isolation:isolate;
 }
-.rr-cta--marbled::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:0;
-  pointer-events:none;
-  background-image:url("/endpapers/collection/03-ebony-marble.webp");
-  background-size:700px auto;
-  background-position:53% 42%;
+.rr-cta--endpaper .rr-cta__text{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+  font-weight:700;
+  white-space:nowrap;
+  padding-right:14px;
+}
+.rr-cta--endpaper .rr-cta__paper{
+  flex:none;
+  min-width:41px;
+  align-self:stretch;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  color:var(--rr-paper);
+  border-left:1px solid rgba(255,250,242,.23);
+  background-image:linear-gradient(rgba(24,29,45,.30),rgba(24,29,45,.30)),url("/endpapers/collection/01-french-blue.webp");
   background-repeat:no-repeat;
-  opacity:.78;
-  filter:grayscale(1) contrast(2.35) brightness(1.16);
-  mix-blend-mode:screen;
-  transition:opacity .2s ease,transform .25s ease;
+  background-size:cover,185px auto;
+  background-position:center,54% 42%;
 }
-.rr-cta--marbled > .rr-cta__text,
-.rr-cta--marbled > .rr-button-arrow{
-  position:relative;
-  z-index:1;
-  text-shadow:0 1px 4px rgba(13,34,33,.72);
+.rr-cta--endpaper .rr-cta__paper svg{color:var(--rr-paper);display:block;flex:none}
+.rr-cta--endpaper.rr-cta--plum{
+  --rr-cta-bg:var(--rr-accent);
+  background:var(--rr-accent);border-color:var(--rr-accent)
 }
-.rr-cta--marbled.rr-cta--marbled--green{
-  --rr-cta-color:var(--rr-accent);
-  background:var(--rr-accent);
-  border-color:var(--rr-accent);
-  color:var(--rr-paper)
+.rr-cta--endpaper.rr-cta--navy{
+  --rr-cta-bg:var(--rr-navy);
+  background:var(--rr-navy);border-color:var(--rr-navy)
 }
-.rr-cta--marbled.rr-cta--marbled--navy{
-  --rr-cta-color:var(--rr-navy);
-  background:var(--rr-navy);
-  border-color:var(--rr-navy);
-  color:var(--rr-paper)
-}
-.rr-cta--marbled.rr-cta--marbled--green:hover{background:var(--rr-accent-hover);border-color:var(--rr-accent-hover)}
-.rr-cta--marbled.rr-cta--marbled--navy:hover{background:#182b3d;border-color:#182b3d}
-.rr-cta--marbled:hover::before{opacity:.95;transform:scale(1.035)}
-@media(prefers-reduced-motion:reduce){
- .rr-cta--marbled::before{transition:none}
- .rr-cta--marbled:hover::before{transform:none}
-}
+.rr-cta--endpaper.rr-cta--plum:hover{background:var(--rr-accent-hover);border-color:var(--rr-accent-hover)}
+.rr-cta--endpaper.rr-cta--navy:hover{background:#1c3043;border-color:#1c3043}
