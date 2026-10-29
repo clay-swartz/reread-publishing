@@ -12,7 +12,7 @@
 }
 .rr-hero--acquisition .rr-hero__copy{max-width:760px}
 .rr-hero--acquisition .rr-hero__copy h1{
-  font-size:clamp(55px,5.25vw,86px);
+  font-size:clamp(66px,6.1vw,104px);
   line-height:1.055;
   letter-spacing:-.075em;
   max-width:760px;
@@ -142,22 +142,33 @@
   .rr-book-idea__bottom{align-items:flex-start}
 }
 
-/* Deliberate three-line display typography: one literary italic for personality.
-   Keep every word as real, selectable text rather than graphic lettering. */
-.rr-hero--acquisition .rr-hero__copy h1{max-width:790px}
+/* Brand type treatment: the message stays steady. Only its punctuation echoes
+   the brief wordmark type/color cycle; the signal is small and purposeful. */
+.rr-hero--acquisition .rr-hero__copy h1{max-width:800px;line-height:.99;letter-spacing:-.079em;margin-bottom:clamp(30px,3.2vw,48px)}
 .rr-hero__headline-line{display:block;white-space:nowrap}
-.rr-hero__headline-emphasis{
-  display:inline-block;
-  font-family:"Cormorant Garamond",Georgia,serif;
-  font-size:1.25em;
-  font-style:italic;
-  font-weight:600;
-  color:#f1c38f;
-  letter-spacing:-.083em;
-  line-height:.75;
-  transform:rotate(-3deg) translateY(.014em);
-  transform-origin:45% 75%;
-  margin-right:.015em;
+.rr-hero__headline-punctuation{display:inline-block;color:#ea7755;min-width:.16em;transform-origin:50% 80%;text-align:center}
+.rr-hero__headline-punctuation.is-morphing{animation:rr-hero-punctuation-morph 1.65s steps(1,end)}
+@keyframes rr-hero-punctuation-morph{
+  0%,100%{color:#ea7755;transform:translateY(0)}
+  20%{color:#f0bd7f;transform:translateY(-.025em)}
+  43%{color:#bad2e2;transform:translateY(0)}
+  66%{color:#fffaf2;transform:translateY(-.025em)}
+  85%{color:#ea7755;transform:translateY(0)}
 }
-@media(max-width:850px){.rr-hero__headline-line{white-space:normal}}
-@media(prefers-reduced-motion:reduce){.rr-hero__headline-emphasis{transform:none}}
+/* Color serves the action, not a new decorative banner. */
+.rr-book-idea__send{background:#c64b2e;border-color:#c64b2e;color:#fffaf2}
+.rr-book-idea__send:hover{background:#a83c29;border-color:#a83c29}
+.rr-hero__intake h2 strong{color:#f0c493}
+@media(max-width:1150px){
+ .rr-hero--acquisition .rr-hero__copy h1{font-size:clamp(60px,6vw,86px)}
+}
+@media(max-width:850px){
+ .rr-hero--acquisition .rr-hero__copy h1{font-size:clamp(54px,9vw,79px)}
+ .rr-hero__headline-line{white-space:normal}
+}
+@media(max-width:520px){
+ .rr-hero--acquisition .rr-hero__copy h1{font-size:clamp(46px,10.6vw,60px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .rr-hero__headline-punctuation.is-morphing{animation:none}
+}
