@@ -172,3 +172,6 @@
 @media(prefers-reduced-motion:reduce){
  .rr-hero__headline-punctuation.is-morphing{animation:none}
 }
+
+/* Publisher name is the one colored accent in the subhead; no extra animation or styling tricks. */
+.rr-hero--acquisition .rr-hero__copy .rr-hero__brand{font-weight:700;color:#ffac85}
