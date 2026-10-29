@@ -1,7 +1,7 @@
 /* EmailCapture / "Don't miss the plot".
    A compact, reusable conversion band: one invitation, one input, one action. */
 .rr-join{
-  background:#c64b2e;
+  background:var(--rr-red);
   color:#fffaf2;
 }
 .rr-join__inner{
@@ -78,8 +78,8 @@
   white-space:nowrap;
 }
 .rr-join__fields button:hover{background:#1b2d3f;border-color:#1b2d3f}
-.rr-join__fields button span{font-size:21px;line-height:1;color:#ffe0a7;transition:transform .16s ease}
-.rr-join__fields button:hover span{transform:translate(2px,-2px)}
+.rr-join__fields button .rr-button-arrow{color:#ffe0a7;flex:none;transition:transform .16s ease}
+.rr-join__fields button:hover .rr-button-arrow{transform:translate(2px,-2px)}
 .rr-join__note{
   margin:9px 0 0;
   font-size:12px;
@@ -97,7 +97,7 @@
 .rr-footer--compact{padding-top:23px;padding-bottom:24px}
 .rr-footer--compact .rr-footer__inner{align-items:center}
 .rr-footer--compact .rr-footer__name{font-size:22px}
-.rr-footer__period{color:#c64b2e}
+.rr-footer__period{color:var(--rr-red)}
 .rr-footer--compact .rr-footer__nav{gap:clamp(16px,3vw,35px)}
 @media(max-width:1180px){
   .rr-join__inner{grid-template-columns:1fr 1fr;gap:38px}
@@ -120,5 +120,5 @@
   .rr-footer--compact .rr-footer__nav{gap:19px}
 }
 @media(prefers-reduced-motion:reduce){
-  .rr-join__fields button span{transition:none}
+  .rr-join__fields button .rr-button-arrow{transition:none}
 }
