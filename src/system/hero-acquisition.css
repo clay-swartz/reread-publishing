@@ -266,3 +266,10 @@
 .rr-book-idea__send.rr-submit-solid{display:inline-flex;align-items:center;justify-content:center;padding:12px 25px;gap:0;min-height:46px;min-width:126px;background:#a75d4b;border:1px solid #a75d4b;color:#fffaf2;border-radius:2px;box-shadow:none}
 .rr-book-idea__send.rr-submit-solid:hover{background:#884839;border-color:#884839}
 .rr-book-idea__send.rr-submit-solid .rr-cta__text{margin:0;padding:0}
+
+/* Electric Cobalt: color only. Keep approved hero sizing and solid CTA geometry. */
+.rr-hero__intake h2 strong,
+.rr-hero--acquisition .rr-hero__copy .rr-hero__brand{color:#8aa6ff}
+.rr-hero__headline-punctuation{color:#5984ff}
+.rr-book-idea__send.rr-submit-solid{background:#244ddb;border-color:#244ddb}
+.rr-book-idea__send.rr-submit-solid:hover{background:#1b3db9;border-color:#1b3db9}
