@@ -12,7 +12,7 @@
 }
 .rr-hero--acquisition .rr-hero__copy{max-width:760px}
 .rr-hero--acquisition .rr-hero__copy h1{
-  font-size:clamp(50px,4.65vw,74px);
+  font-size:clamp(55px,5.25vw,86px);
   line-height:1.055;
   letter-spacing:-.075em;
   max-width:760px;
@@ -28,16 +28,16 @@
   margin:0
 }
 
-/* Inset ink panel: contained without becoming the page's brightest focal point. */
+/* Muted navy panel: enough chroma to complement the original marbling without competing with the hero. */
 .rr-hero__intake{
   min-width:0;
   width:100%;
   max-width:460px;
   justify-self:end;
-  border:1px solid rgba(255,250,242,.46);
+  border:1px solid rgba(255,250,242,.38);
   border-radius:3px;
   padding:clamp(25px,2.45vw,34px);
-  background:rgba(30,28,27,.89);
+  background:rgba(41,62,82,.95);
   color:var(--rr-paper)
 }
 .rr-hero__intake h2{
@@ -120,7 +120,7 @@
 .rr-book-idea__status:empty{display:none}
 @media(max-width:1150px){
   .rr-hero__layout{grid-template-columns:minmax(0,1.25fr) minmax(330px,.84fr);gap:clamp(34px,4vw,60px)}
-  .rr-hero--acquisition .rr-hero__copy h1{font-size:clamp(49px,5vw,66px)}
+  .rr-hero--acquisition .rr-hero__copy h1{font-size:clamp(51px,5.5vw,72px)}
   .rr-hero__intake{padding:clamp(24px,2.4vw,32px)}
   .rr-book-idea__fields{grid-template-columns:1fr;gap:10px}
 }
@@ -134,10 +134,30 @@
 }
 @media(max-width:520px){
   .rr-hero__layout{gap:34px;padding-top:57px;padding-bottom:57px}
-  .rr-hero--acquisition .rr-hero__copy h1{font-size:clamp(43px,10vw,54px)}
+  .rr-hero--acquisition .rr-hero__copy h1{font-size:clamp(40px,9.8vw,54px)}
   .rr-hero--acquisition .rr-hero__copy p{font-size:17px}
   .rr-hero__intake{padding:25px 22px}
   .rr-hero__intake h2{font-size:28px}
   .rr-book-idea__fields{grid-template-columns:1fr}
   .rr-book-idea__bottom{align-items:flex-start}
 }
+
+/* Deliberate three-line display typography: one literary italic for personality.
+   Keep every word as real, selectable text rather than graphic lettering. */
+.rr-hero--acquisition .rr-hero__copy h1{max-width:790px}
+.rr-hero__headline-line{display:block;white-space:nowrap}
+.rr-hero__headline-emphasis{
+  display:inline-block;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:1.25em;
+  font-style:italic;
+  font-weight:600;
+  color:#f1c38f;
+  letter-spacing:-.083em;
+  line-height:.75;
+  transform:rotate(-3deg) translateY(.014em);
+  transform-origin:45% 75%;
+  margin-right:.015em;
+}
+@media(max-width:850px){.rr-hero__headline-line{white-space:normal}}
+@media(prefers-reduced-motion:reduce){.rr-hero__headline-emphasis{transform:none}}
