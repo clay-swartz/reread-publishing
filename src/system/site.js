@@ -27,13 +27,35 @@ if(form){
   });
 }
 
-/* Acquisition preview: validate locally; never collect or imply submission before backend approval. */
+/* Attachment picker is functional in the review, but no submission receiver is connected. */
 const bookIdeaForm=document.getElementById('bookIdeaForm');
 if(bookIdeaForm){
+  const fileInput=bookIdeaForm.querySelector('#bookAttachment');
+  const fileName=bookIdeaForm.querySelector('#bookFileName');
+  const status=bookIdeaForm.querySelector('[role="status"]');
+  const maxSize=10*1024*1024;
+  const validExtension=/\.(pdf|doc|docx)$/i;
+  fileInput?.addEventListener('change',()=>{
+    if(status)status.textContent='';
+    const file=fileInput.files?.[0];
+    if(!file){if(fileName)fileName.textContent='';return;}
+    if(!validExtension.test(file.name)){
+      fileInput.value='';
+      if(fileName)fileName.textContent='';
+      if(status)status.textContent='Please attach a PDF or Word document.';
+      return;
+    }
+    if(file.size>maxSize){
+      fileInput.value='';
+      if(fileName)fileName.textContent='';
+      if(status)status.textContent='This file is larger than 10 MB. Please choose a smaller file.';
+      return;
+    }
+    if(fileName)fileName.textContent=file.name;
+  });
   bookIdeaForm.addEventListener('submit',event=>{
     event.preventDefault();
     if(!bookIdeaForm.reportValidity())return;
-    const status=bookIdeaForm.querySelector('[role="status"]');
-    if(status)status.textContent="This form is a design preview. Your book idea wasn't submitted or saved.";
+    if(status)status.textContent="Submissions aren't being received yet. Your information and attachment have not been sent or saved.";
   });
 }
