@@ -2,7 +2,7 @@
 const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 const mark=document.querySelector('.rr-wordmark');
 if(mark){
-  const morph=()=>{if(prefersReducedMotion.matches)return;mark.classList.remove('is-morphing');void mark.offsetWidth;mark.classList.add('is-morphing')};
+  const morph=()=>{if(prefersReducedMotion.matches)return;mark.classList.remove('is-morphing');void mark.offsetWidth;mark.classList.add('is-morphing');const period=document.querySelector('.rr-hero__headline-punctuation');if(period){period.classList.remove('is-morphing');void period.offsetWidth;period.classList.add('is-morphing')}};
   mark.addEventListener('mouseenter',morph);
   mark.addEventListener('focus',morph);
   window.setInterval(()=>{if(document.visibilityState==='visible')morph()},9500);
