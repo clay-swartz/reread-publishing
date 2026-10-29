@@ -18,28 +18,34 @@
 <header class="rr-header">
   <a class="rr-wordmark" href="/" aria-label="Re:Read home"><span>Re</span><span class="rr-wordmark__colon">:</span><span class="rr-wordmark__part"><span class="rr-wordmark__spacer" aria-hidden="true">Read</span><span class="rr-wordmark__face">Read</span></span></a>
   <nav class="rr-header__nav" aria-label="Main navigation">
-    <a class="rr-header__link" href="#creators">Submissions</a>
+    <a class="rr-header__link" href="#book-ideas">Submissions</a>
     <button type="button" class="rr-header__link" data-dialog-open="contactDialog">Contact</button>
     <a class="rr-header__link" href="/journal/">Updates</a>
   </nav>
 </header>
 <main id="content">
   <div class="rr-top">
-    <section class="rr-hero" aria-labelledby="hero-title">
+    <section class="rr-hero rr-hero--acquisition" aria-labelledby="hero-title">
       <div class="rr-hero__paper" aria-hidden="true"></div>
-      <div class="rr-hero__inner"><div class="rr-hero__copy">
-        <h1 id="hero-title">Great books don’t have an expiration date.</h1>
-        <p>Introducing Re:Read, an independent publisher bringing overlooked books back to life as beautifully made new editions—and publishing original writing worth discovering.</p>
-        <div class="rr-actions">
-          <a class="rr-action-primary" href="#newsletter">Get the first word</a>
-          <a class="rr-action-secondary" href="#books">See our plans</a>
+      <div class="rr-hero__inner rr-hero__layout">
+        <div class="rr-hero__copy">
+          <h1 id="hero-title">Great books don’t have an expiration date.</h1>
+          <p>Introducing Re:Read, an independent publisher bringing overlooked books back to life as beautifully made new editions—and publishing original writing worth discovering.</p>
         </div>
-      </div>
-      <div class="rr-hero__collection" id="american-myths" aria-labelledby="collection-title">
-        <p class="rr-hero__question">So, what's our first collection?</p>
-        <h2 id="collection-title">American Myths<span>.</span></h2>
-        <p class="rr-hero__collection-copy">Stories about America and the people who become larger than life. We're exploring overlooked books and new voices about adventurers, dreamers, outlaws, and renegades.</p>
-      </div>
+        <div class="rr-hero__intake" id="american-myths" aria-labelledby="collection-title">
+          <p class="rr-hero__intake-intro">We're acquiring books for our first collection.</p>
+          <h2 id="collection-title">American Myths<span>.</span></h2>
+          <p class="rr-hero__intake-description">We're looking for overlooked books and original writing about the people and stories that shape the American imagination—adventurers, dreamers, outlaws, renegades.</p>
+          <form class="rr-book-idea" id="bookIdeaForm" aria-label="Suggest a book for American Myths">
+            <h3 id="book-ideas">Have something for us to consider?</h3>
+            <div class="rr-book-idea__fields">
+              <div><label for="bookIdea">Book or project</label><input id="bookIdea" name="bookIdea" type="text" autocomplete="off" maxlength="160" placeholder="Title or working idea" required></div>
+              <div><label for="bookEmail">Your email</label><input id="bookEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+            </div>
+            <div class="rr-book-idea__submit"><button type="submit">Submit <span aria-hidden="true">↗</span></button><p class="rr-book-idea__note">Preview only—submissions aren't being received yet.</p></div>
+            <p class="rr-book-idea__status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
       </div>
     </section>
 
