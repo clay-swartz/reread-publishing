@@ -141,3 +141,12 @@
 .rr-join__note{color:#5d6672;opacity:1}
 .rr-join__fields input{border-color:#cbd2d9}
 .rr-join__fields button .rr-button-arrow{color:#fffaf2}
+
+/* Confident book-cloth color, simple solid action. */
+.rr-join{background:#884c4e;color:#fffaf2;border:0}
+.rr-join__message h2 em{color:#f4c7a2}
+.rr-join__note{color:#f9ece7;opacity:.92}
+.rr-join__fields button.rr-join-solid{display:inline-flex;justify-content:center;align-items:center;padding:14px 24px;min-height:56px;background:#25394a;border:2px solid #25394a;color:#fffaf2;border-radius:2px;gap:0}
+.rr-join__fields button.rr-join-solid:hover{background:#142a3a;border-color:#142a3a}
+.rr-join__fields button.rr-join-solid .rr-cta__text{padding:0;margin:0}
+@media(max-width:520px){.rr-join__fields button.rr-join-solid{width:100%}}
