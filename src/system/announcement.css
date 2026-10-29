@@ -98,3 +98,52 @@
  .rr-ann-creators__closing .rr-ann-textlink{white-space:normal}
 }
 @media(prefers-reduced-motion:reduce){.rr-ann-textlink{transition:none}}
+
+/* 2026-10-29: The collection is an intrinsic conversational continuation of the hero.
+   No second color band or standalone collection panel. */
+.rr-hero__paper{filter:brightness(.72) sepia(.12) saturate(1.12)}
+.rr-hero__inner{padding-top:clamp(70px,7.2vw,116px);padding-bottom:clamp(38px,4.4vw,74px)}
+.rr-hero__copy{max-width:930px}
+.rr-hero__collection{margin-top:clamp(55px,6vw,92px);padding-top:clamp(26px,3.3vw,45px);border-top:1px solid rgba(255,250,242,.66);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,.95fr) minmax(0,1.2fr);gap:clamp(20px,3.1vw,55px);align-items:start}
+.rr-hero__collection .rr-hero__question{margin:5px 0 0;font-size:clamp(18px,1.55vw,23px);font-weight:500;line-height:1.31;letter-spacing:-.025em;max-width:280px}
+.rr-hero__collection h2{margin:0;font-size:clamp(37px,3.7vw,60px);font-weight:700;letter-spacing:-.077em;line-height:1.05;max-width:420px}
+.rr-hero__collection h2 span{color:#d4a775}
+.rr-hero__collection .rr-hero__collection-copy{margin:3px 0 0;font-size:clamp(16px,1.23vw,19px);line-height:1.5;letter-spacing:-.015em;max-width:520px;font-weight:400}
+.rr-hero{min-height:0}
+
+/* Updates is a true editorial preview with one article, not a second display headline. */
+.rr-ann-notes{background:#e4d8c8}
+.rr-ann-notes__inner{grid-template-columns:minmax(160px,.35fr) minmax(0,1fr);gap:clamp(45px,7vw,130px);padding-top:clamp(64px,6.5vw,100px);padding-bottom:clamp(70px,7vw,108px);align-items:start}
+.rr-ann-notes h2{font-size:clamp(29px,2.7vw,43px);line-height:1.1;letter-spacing:-.055em;margin:4px 0 0;font-weight:700}
+.rr-ann-note-preview{border-top:2px solid #293e52;padding-top:20px}
+.rr-ann-note-preview h3{font-size:clamp(33px,3.5vw,57px);line-height:1.1;letter-spacing:-.07em;margin:0 0 19px;font-weight:700;max-width:670px}
+.rr-ann-note-preview h3 a:hover{text-decoration:underline;text-underline-offset:6px}
+.rr-ann-notes .rr-ann-note-preview p{font-size:clamp(18px,1.4vw,22px);line-height:1.52;letter-spacing:-.018em;max-width:695px;margin:0 0 16px}
+.rr-ann-note-preview .rr-ann-textlink{margin-top:16px}
+
+/* The only three links in the sticky header remain visible at mobile widths. */
+.rr-header__nav{gap:clamp(14px,2vw,30px)}
+.rr-header__link{white-space:nowrap}
+.rr-dialog__cta{display:inline-block;margin-top:22px;padding:12px 18px;background:#293e52;color:#fffaf2;border-radius:2px;font-size:15px;font-weight:700}
+.rr-dialog__cta:hover{background:#192d3c}
+.rr-dialog__cta+button[data-close]{margin-left:12px;background:transparent;color:#293e52;border:1px solid #293e52}
+@media(max-width:1050px){
+ .rr-hero__collection{grid-template-columns:minmax(0,.75fr) minmax(0,1.15fr);row-gap:12px}
+ .rr-hero__collection .rr-hero__collection-copy{grid-column:2}
+}
+@media(max-width:700px){
+ .rr-hero__inner{padding-top:65px;padding-bottom:55px}
+ .rr-hero__collection{grid-template-columns:1fr;gap:14px;margin-top:55px;padding-top:23px}
+ .rr-hero__collection h2{font-size:clamp(38px,7.3vw,54px)}
+ .rr-hero__collection .rr-hero__collection-copy{grid-column:1;font-size:17px;line-height:1.5}
+ .rr-ann-notes__inner{grid-template-columns:1fr;gap:24px}
+ .rr-ann-notes h2{font-size:30px}
+ .rr-ann-note-preview h3{font-size:clamp(32px,7vw,46px)}
+}
+@media(max-width:480px){
+ .rr-header{padding-left:16px;padding-right:16px}
+ .rr-wordmark{font-size:25px}
+ .rr-header__nav{gap:11px}
+ .rr-header__link{font-size:12.5px;padding:10px 0}
+ .rr-hero__collection{margin-top:40px}
+}
