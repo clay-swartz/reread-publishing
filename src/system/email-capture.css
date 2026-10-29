@@ -1,0 +1,124 @@
+/* EmailCapture / "Don't miss the plot".
+   A compact, reusable conversion band: one invitation, one input, one action. */
+.rr-join{
+  background:#c64b2e;
+  color:#fffaf2;
+}
+.rr-join__inner{
+  width:100%;
+  max-width:1512px;
+  margin:0 auto;
+  padding:clamp(38px,4.3vw,65px) var(--rr-gutter);
+  display:grid;
+  grid-template-columns:minmax(0,1.07fr) minmax(320px,.93fr);
+  gap:clamp(35px,6vw,115px);
+  align-items:center;
+}
+.rr-join__message h2{
+  font-size:clamp(42px,4.45vw,70px);
+  line-height:1;
+  font-weight:700;
+  letter-spacing:-.078em;
+  margin:0 0 15px;
+  text-wrap:balance;
+  white-space:nowrap;
+}
+.rr-join__message h2 em{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-style:italic;
+  font-weight:600;
+  font-size:1.12em;
+  letter-spacing:-.06em;
+  color:#ffe0a7;
+}
+.rr-join__message p{
+  margin:0;
+  max-width:590px;
+  font-size:clamp(16px,1.25vw,19px);
+  line-height:1.45;
+  font-weight:500;
+  letter-spacing:-.019em;
+}
+.rr-join__form{min-width:0;align-self:center}
+.rr-join__form label{
+  display:block;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.4;
+  margin-bottom:9px;
+}
+.rr-join__fields{display:flex;min-width:0;gap:7px}
+.rr-join__fields input{
+  flex:1;
+  min-width:0;
+  min-height:56px;
+  padding:13px 16px;
+  border:2px solid #fffaf2;
+  border-radius:2px;
+  background:#fffaf2;
+  color:#293e52;
+  font-size:17px;
+  font-family:var(--rr-font)
+}
+.rr-join__fields input::placeholder{color:#6a6760}
+.rr-join__fields button{
+  display:inline-flex;
+  flex-shrink:0;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  min-height:56px;
+  padding:13px 20px;
+  background:#293e52;
+  color:#fffaf2;
+  border:2px solid #293e52;
+  border-radius:2px;
+  font-size:15px;
+  font-weight:700;
+  white-space:nowrap;
+}
+.rr-join__fields button:hover{background:#1b2d3f;border-color:#1b2d3f}
+.rr-join__fields button span{font-size:21px;line-height:1;color:#ffe0a7;transition:transform .16s ease}
+.rr-join__fields button:hover span{transform:translate(2px,-2px)}
+.rr-join__note{
+  margin:9px 0 0;
+  font-size:12px;
+  line-height:1.4;
+  color:#fffaf2;
+  opacity:.86;
+}
+.rr-join__status{
+  margin:9px 0 0;
+  font-size:13px;
+  line-height:1.45;
+  font-weight:500;
+}
+.rr-join__status:empty{display:none}
+.rr-footer--compact{padding-top:23px;padding-bottom:24px}
+.rr-footer--compact .rr-footer__inner{align-items:center}
+.rr-footer--compact .rr-footer__name{font-size:22px}
+.rr-footer__period{color:#c64b2e}
+.rr-footer--compact .rr-footer__nav{gap:clamp(16px,3vw,35px)}
+@media(max-width:1180px){
+  .rr-join__inner{grid-template-columns:1fr 1fr;gap:38px}
+  .rr-join__message h2{font-size:clamp(38px,4.1vw,56px);white-space:normal}
+  .rr-join__fields button{padding-left:15px;padding-right:15px;gap:8px}
+}
+@media(max-width:850px){
+  .rr-join__inner{grid-template-columns:1fr;gap:27px;padding-top:42px;padding-bottom:44px}
+  .rr-join__message h2{font-size:clamp(43px,7vw,64px);margin-bottom:13px}
+  .rr-join__message p{font-size:17px}
+  .rr-join__form{width:100%;max-width:680px}
+  .rr-footer--compact .rr-footer__inner{flex-direction:row}
+}
+@media(max-width:520px){
+  .rr-join__inner{padding-top:40px;padding-bottom:42px}
+  .rr-join__message h2{font-size:clamp(37px,8.9vw,48px)}
+  .rr-join__fields{flex-direction:column;gap:8px}
+  .rr-join__fields input,.rr-join__fields button{width:100%;min-height:53px}
+  .rr-footer--compact .rr-footer__inner{flex-direction:column;align-items:flex-start;gap:18px}
+  .rr-footer--compact .rr-footer__nav{gap:19px}
+}
+@media(prefers-reduced-motion:reduce){
+  .rr-join__fields button span{transition:none}
+}
