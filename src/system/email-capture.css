@@ -1,7 +1,7 @@
 /* EmailCapture / "Don't miss the plot".
    A compact, reusable conversion band: one invitation, one input, one action. */
 .rr-join{
-  background:var(--rr-red);
+  background:var(--rr-accent);
   color:#fffaf2;
 }
 .rr-join__inner{
@@ -29,7 +29,7 @@
   font-weight:600;
   font-size:1.12em;
   letter-spacing:-.06em;
-  color:#ffe0a7;
+  color:var(--rr-accent-light);
 }
 .rr-join__message p{
   margin:0;
@@ -78,7 +78,7 @@
   white-space:nowrap;
 }
 .rr-join__fields button:hover{background:#1b2d3f;border-color:#1b2d3f}
-.rr-join__fields button .rr-button-arrow{color:#ffe0a7;flex:none;transition:transform .16s ease}
+.rr-join__fields button .rr-button-arrow{color:var(--rr-accent-light);flex:none;transition:transform .16s ease}
 .rr-join__fields button:hover .rr-button-arrow{transform:translate(2px,-2px)}
 .rr-join__note{
   margin:9px 0 0;
@@ -97,7 +97,7 @@
 .rr-footer--compact{padding-top:23px;padding-bottom:24px}
 .rr-footer--compact .rr-footer__inner{align-items:center}
 .rr-footer--compact .rr-footer__name{font-size:22px}
-.rr-footer__period{color:var(--rr-red)}
+.rr-footer__period{color:var(--rr-accent)}
 .rr-footer--compact .rr-footer__nav{gap:clamp(16px,3vw,35px)}
 @media(max-width:1180px){
   .rr-join__inner{grid-template-columns:1fr 1fr;gap:38px}
