@@ -11,6 +11,8 @@ await fs.mkdir(path.join(dist,'src/content'),{recursive:true});
 await fs.copyFile(path.join(root,'src/content/hero-v2.json'),path.join(dist,'src/content/hero-v2.json'));
 await fs.mkdir(path.join(dist,'src/components'),{recursive:true});
 for(const name of ['hero-v2.js','hero-v2.css','newsletter.js']) await fs.copyFile(path.join(root,'src/components',name),path.join(dist,'src/components',name));
+await fs.mkdir(path.join(dist,'src/system'),{recursive:true});
+for(const name of ['tokens.css','components.css','site.js']) await fs.copyFile(path.join(root,'src/system',name),path.join(dist,'src/system',name));
 const asset=await fs.stat(path.join(dist,'endpapers/collection/01-french-blue.webp'));
 if(asset.size<10000)throw Error('Approved endpaper asset missing or empty');
 console.log('Re:Read hero review built; approved endpapers present');
