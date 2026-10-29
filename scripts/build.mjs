@@ -12,7 +12,7 @@ await fs.copyFile(path.join(root,'src/content/hero-v2.json'),path.join(dist,'src
 await fs.mkdir(path.join(dist,'src/components'),{recursive:true});
 for(const name of ['hero-v2.js','hero-v2.css','newsletter.js']) await fs.copyFile(path.join(root,'src/components',name),path.join(dist,'src/components',name));
 await fs.mkdir(path.join(dist,'src/system'),{recursive:true});
-for(const name of ['tokens.css','components.css','announcement.css','site.js']) await fs.copyFile(path.join(root,'src/system',name),path.join(dist,'src/system',name));
+for(const name of ['tokens.css','components.css','announcement.css','hero-acquisition.css','site.js']) await fs.copyFile(path.join(root,'src/system',name),path.join(dist,'src/system',name));
 await fs.mkdir(path.join(dist,'system'),{recursive:true});
 await fs.copyFile(path.join(root,'system/index.html'),path.join(dist,'system/index.html'));
 await fs.mkdir(path.join(dist,'journal'),{recursive:true});
