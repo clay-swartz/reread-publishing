@@ -150,12 +150,12 @@
 .rr-hero__headline-punctuation.is-morphing{animation:rr-hero-punctuation-morph 1.65s steps(1,end)}
 @keyframes rr-hero-punctuation-morph{
   0%,100%{color:var(--rr-accent-light);transform:translateY(0)}
-  20%{color:#d1e2c0;transform:translateY(-.025em)}
-  43%{color:#b2c8dd;transform:translateY(0)}
+  20%{color:#dec3ae;transform:translateY(-.025em)}
+  43%{color:#b0b9d2;transform:translateY(0)}
   66%{color:#fffaf2;transform:translateY(-.025em)}
   85%{color:var(--rr-accent-light);transform:translateY(0)}
 }
-/* Color serves the action, not a new decorative banner. */
+/* The primary action remains a solid button with a paper-edge detail. */
 .rr-book-idea__send{background:var(--rr-accent);border-color:var(--rr-accent);color:#fffaf2}
 .rr-book-idea__send:hover{background:var(--rr-accent-hover);border-color:var(--rr-accent-hover)}
 .rr-hero__intake h2 strong{color:var(--rr-accent-light)}
@@ -249,3 +249,7 @@
  .rr-hero__intake .rr-hero__intake-description{font-size:13px}
 }
 @media(prefers-reduced-motion:reduce){.rr-book-idea__chevron{transition:none}}
+
+/* The shared endpaper corner is the only patterned part of this action. */
+.rr-book-idea__send.rr-cta--endpaper{padding:0 0 0 16px;min-height:45px;gap:0}
+.rr-book-idea__send.rr-cta--endpaper .rr-cta__paper{min-width:42px}
