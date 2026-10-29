@@ -32,13 +32,17 @@
       <div class="rr-hero__inner rr-hero__layout">
         <div class="rr-hero__copy">
           <h1 id="hero-title"><span class="rr-hero__headline-line">Great books</span><span class="rr-hero__headline-line">don’t expire<span class="rr-hero__headline-punctuation">.</span></span></h1>
-          <p>Introducing <strong class="rr-hero__brand">Re:Read</strong>. An independent publisher hellbent on reviving overlooked books, old and new.</p>
+          <p class="rr-hero__intro"><span class="rr-hero__subhead-desktop">Introducing <strong class="rr-hero__brand">Re:Read</strong>. An independent publisher hellbent on reviving overlooked books, old and new.</span><span class="rr-hero__subhead-mobile">Introducing <strong class="rr-hero__brand">Re:Read</strong>.<span class="rr-hero__subhead-line">Hellbent on reviving books.</span></span></p>
         </div>
         <div class="rr-hero__intake" id="american-myths" aria-labelledby="collection-title">
           <h2 id="collection-title">Our first collection: <strong>American Myths.</strong></h2>
           <p class="rr-hero__intake-description">We’re looking for overlooked books and original manuscripts that capture the American imagination. Adventurers, dreamers, outlaws, renegades, and the myths still taking shape.</p>
           <form class="rr-book-idea" id="bookIdeaForm" aria-label="Suggest a book for American Myths" enctype="multipart/form-data">
-            <h3 id="book-ideas">Have something for us to consider?</h3>
+            <details class="rr-book-idea__details" open>
+              <summary class="rr-book-idea__trigger" id="book-ideas">Have something for us to consider?
+                <svg class="rr-book-idea__chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="rr-book-idea__body">
             <div class="rr-book-idea__fields">
               <div><label for="bookIdea">Book or project</label><input id="bookIdea" name="bookIdea" type="text" autocomplete="off" maxlength="160" placeholder="Title or working idea" required></div>
               <div><label for="bookEmail">Your email</label><input id="bookEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
@@ -53,9 +57,11 @@
                 
                 <span class="rr-book-idea__file-name" id="bookFileName" aria-live="polite"></span>
               </div>
-              <button class="rr-book-idea__send" type="submit">Submit <span aria-hidden="true">↗</span></button>
+              <button class="rr-book-idea__send" type="submit">Submit <svg class="rr-button-arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></button>
             </div>
             <p class="rr-book-idea__status" role="status" aria-live="polite"></p>
+              </div>
+            </details>
           </form>
         </div>
       </div>
@@ -73,7 +79,7 @@
         <label for="emailAddress">Your email</label>
         <div class="rr-join__fields">
           <input type="email" name="email" id="emailAddress" autocomplete="email" placeholder="you@example.com" required>
-          <button type="submit">Count me in <span aria-hidden="true">↗</span></button>
+          <button type="submit">Count me in <svg class="rr-button-arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></button>
         </div>
         <p class="rr-join__note">Preview only. Signups aren't being saved yet.</p>
         <p class="rr-join__status" aria-live="polite" role="status"></p>
