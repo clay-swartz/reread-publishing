@@ -3,9 +3,12 @@
   --rr-paper:#fffaf2;
   --rr-ink:#1b1b19;
   --rr-navy:#293e52;
-  --rr-red:#b42c36;
-  --rr-red-hover:#8f202a;
-  --rr-red-bright:#df6870;
+  --rr-accent:#216b5c;
+  --rr-accent-hover:#185247;
+  --rr-accent-light:#bfe1cb;
+  --rr-accent-deep:#174d44;
+  /* Existing non-homepage system instances may still reference this alias. */
+  --rr-red:var(--rr-accent);
   --rr-gold:#d4a775;
   --rr-line:rgba(27,27,25,.18);
   --rr-muted:#625d56;
@@ -16,7 +19,7 @@
   --rr-h1:clamp(52px,5.9vw,95px);
   --rr-h2:clamp(44px,4.8vw,74px);
   --rr-body:clamp(18px,1.45vw,23px);
-  --rr-focus:#d06c42;
+  --rr-focus:#7ec9ae;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--rr-header-height) + 16px)}
