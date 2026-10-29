@@ -150,3 +150,11 @@
 .rr-join__fields button.rr-join-solid:hover{background:#142a3a;border-color:#142a3a}
 .rr-join__fields button.rr-join-solid .rr-cta__text{padding:0;margin:0}
 @media(max-width:520px){.rr-join__fields button.rr-join-solid{width:100%}}
+
+/* Approved Electric Cobalt. Color-only change, retaining layout and solid buttons. */
+.rr-join{background:#244ddb;color:#fffaf2;border:0}
+.rr-join__message h2 em{color:#fffaf2}
+.rr-join__note{color:#e4eaff;opacity:1}
+.rr-join__fields input{border-color:#fffaf2}
+.rr-join__fields button.rr-join-solid{background:#192c47;border-color:#192c47}
+.rr-join__fields button.rr-join-solid:hover{background:#102039;border-color:#102039}
