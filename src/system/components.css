@@ -80,3 +80,36 @@
  .rr-wordmark{font-size:27px}
  .rr-header__nav{display:none}
 }
+
+/* Signature CTA treatment: one original Re:Read marble, two intentional colorways.
+   Keep the image on the primary action surface only, not on every button. */
+.rr-cta--marbled{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:var(--rr-cta-color,var(--rr-navy));
+  border-color:var(--rr-cta-color,var(--rr-navy));
+  color:var(--rr-paper);
+}
+.rr-cta--marbled::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  z-index:0;
+  pointer-events:none;
+  background-image:url("/endpapers/collection/03-ebony-marble.webp");
+  background-size:390px auto;
+  background-position:53% 47%;
+  background-repeat:no-repeat;
+  opacity:.30;
+  filter:grayscale(1) contrast(1.3);
+  mix-blend-mode:screen;
+  transition:opacity .2s ease,transform .25s ease;
+}
+.rr-cta--marbled > .rr-cta__text,.rr-cta--marbled > .rr-button-arrow{position:relative;z-index:1}
+.rr-cta--marbled.rr-cta--marbled--red{--rr-cta-color:var(--rr-red);background:var(--rr-red);border-color:var(--rr-red);color:var(--rr-paper)}
+.rr-cta--marbled.rr-cta--marbled--navy{--rr-cta-color:var(--rr-navy);background:var(--rr-navy);border-color:var(--rr-navy);color:var(--rr-paper)}
+.rr-cta--marbled.rr-cta--marbled--red:hover{background:var(--rr-red-hover);border-color:var(--rr-red-hover)}
+.rr-cta--marbled.rr-cta--marbled--navy:hover{background:#182b3d;border-color:#182b3d}
+.rr-cta--marbled:hover::before{opacity:.44;transform:scale(1.055)}
+@media(prefers-reduced-motion:reduce){.rr-cta--marbled::before{transition:none}.rr-cta--marbled:hover::before{transform:none}}
