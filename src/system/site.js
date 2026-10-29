@@ -59,3 +59,16 @@ if(bookIdeaForm){
     if(status)status.textContent="Submissions aren't being received yet. Your information and attachment have not been sent or saved.";
   });
 }
+
+/* On narrow viewports keep the collection invitation visible, but reveal
+   fields on demand. Preserve user's expanded state during desktop changes. */
+const intakeDetails=document.querySelector('.rr-book-idea__details');
+if(intakeDetails){
+  const smallScreen=window.matchMedia('(max-width:700px)');
+  const onBreakpoint=(query)=>{intakeDetails.open=!query.matches;};
+  onBreakpoint(smallScreen);
+  smallScreen.addEventListener?.('change',onBreakpoint);
+  document.querySelectorAll('a[href="#book-ideas"]').forEach(link=>{
+    link.addEventListener('click',()=>{intakeDetails.open=true;});
+  });
+}
