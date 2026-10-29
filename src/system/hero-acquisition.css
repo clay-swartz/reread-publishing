@@ -149,11 +149,11 @@
 .rr-hero__headline-punctuation{display:inline-block;color:var(--rr-red-bright);min-width:.16em;transform-origin:50% 80%;text-align:center}
 .rr-hero__headline-punctuation.is-morphing{animation:rr-hero-punctuation-morph 1.65s steps(1,end)}
 @keyframes rr-hero-punctuation-morph{
-  0%,100%{color:#ff555c;transform:translateY(0)}
+  0%,100%{color:#df6870;transform:translateY(0)}
   20%{color:#f0bd7f;transform:translateY(-.025em)}
   43%{color:#bad2e2;transform:translateY(0)}
   66%{color:#fffaf2;transform:translateY(-.025em)}
-  85%{color:#ff555c;transform:translateY(0)}
+  85%{color:#df6870;transform:translateY(0)}
 }
 /* Color serves the action, not a new decorative banner. */
 .rr-book-idea__send{background:var(--rr-red);border-color:var(--rr-red);color:#fffaf2}
