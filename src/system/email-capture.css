@@ -122,3 +122,9 @@
 @media(prefers-reduced-motion:reduce){
   .rr-join__fields button .rr-button-arrow{transition:none}
 }
+
+/* Compact signup action: solid navy face with a small physical-paper detail. */
+.rr-join__fields button.rr-cta--endpaper{padding:0 0 0 19px;min-height:56px;gap:0}
+.rr-join__fields button.rr-cta--endpaper .rr-cta__paper{min-width:47px}
+.rr-join__fields button.rr-cta--endpaper .rr-cta__paper svg{color:var(--rr-paper)}
+@media(max-width:520px){.rr-join__fields button.rr-cta--endpaper{padding-left:19px}}
