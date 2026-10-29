@@ -146,18 +146,18 @@
    the brief wordmark type/color cycle; the signal is small and purposeful. */
 .rr-hero--acquisition .rr-hero__copy h1{max-width:800px;line-height:.99;letter-spacing:-.079em;margin-bottom:clamp(30px,3.2vw,48px)}
 .rr-hero__headline-line{display:block;white-space:nowrap}
-.rr-hero__headline-punctuation{display:inline-block;color:#ea7755;min-width:.16em;transform-origin:50% 80%;text-align:center}
+.rr-hero__headline-punctuation{display:inline-block;color:var(--rr-red-bright);min-width:.16em;transform-origin:50% 80%;text-align:center}
 .rr-hero__headline-punctuation.is-morphing{animation:rr-hero-punctuation-morph 1.65s steps(1,end)}
 @keyframes rr-hero-punctuation-morph{
-  0%,100%{color:#ea7755;transform:translateY(0)}
+  0%,100%{color:#ff555c;transform:translateY(0)}
   20%{color:#f0bd7f;transform:translateY(-.025em)}
   43%{color:#bad2e2;transform:translateY(0)}
   66%{color:#fffaf2;transform:translateY(-.025em)}
-  85%{color:#ea7755;transform:translateY(0)}
+  85%{color:#ff555c;transform:translateY(0)}
 }
 /* Color serves the action, not a new decorative banner. */
-.rr-book-idea__send{background:#c64b2e;border-color:#c64b2e;color:#fffaf2}
-.rr-book-idea__send:hover{background:#a83c29;border-color:#a83c29}
+.rr-book-idea__send{background:var(--rr-red);border-color:var(--rr-red);color:#fffaf2}
+.rr-book-idea__send:hover{background:var(--rr-red-hover);border-color:var(--rr-red-hover)}
 .rr-hero__intake h2 strong{color:#f0c493}
 @media(max-width:1150px){
  .rr-hero--acquisition .rr-hero__copy h1{font-size:clamp(60px,6vw,86px)}
@@ -174,7 +174,7 @@
 }
 
 /* Publisher name is the one colored accent in the subhead; no extra animation or styling tricks. */
-.rr-hero--acquisition .rr-hero__copy .rr-hero__brand{font-weight:700;color:#ffac85}
+.rr-hero--acquisition .rr-hero__copy .rr-hero__brand{font-weight:700;color:var(--rr-red-bright)}
 
 /* Bigger master headline. The display family can be auditioned in the type workbench. */
 .rr-hero--acquisition .rr-hero__copy{max-width:850px}
@@ -196,3 +196,56 @@
 @media(max-width:520px){
  .rr-hero--acquisition .rr-hero__copy h1{font-size:clamp(45px,11vw,62px)}
 }
+
+/* Acquisition form: progressive disclosure on phones and compact mobile hierarchy. */
+.rr-hero__subhead-mobile{display:none}
+.rr-book-idea__details{display:block}
+.rr-book-idea__trigger{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  list-style:none;cursor:pointer;color:#fffaf2;
+  font-size:clamp(16px,1.26vw,19px);font-weight:700;
+  line-height:1.26;letter-spacing:-.035em
+}
+.rr-book-idea__trigger::-webkit-details-marker{display:none}
+.rr-book-idea__trigger::marker{content:""}
+.rr-book-idea__chevron{flex:none;transition:transform .18s ease}
+.rr-book-idea__details[open] .rr-book-idea__chevron{transform:rotate(180deg)}
+.rr-book-idea__body{padding-top:16px}
+.rr-book-idea__send{display:inline-flex;align-items:center;gap:10px}
+.rr-book-idea__send .rr-button-arrow{margin:0;flex:none}
+@media(min-width:701px){.rr-book-idea__chevron{display:none}.rr-book-idea__trigger{cursor:default;pointer-events:none}}
+@media(max-width:700px){
+ .rr-hero--acquisition{min-height:0}
+ .rr-hero__layout{gap:clamp(20px,3.2svh,26px);padding-top:clamp(25px,4.5svh,37px);padding-bottom:clamp(28px,4.5svh,40px)}
+ .rr-hero--acquisition .rr-hero__copy h1{
+   font-size:clamp(52px,13.15vw,78px);
+   line-height:.96;
+   letter-spacing:-.086em;
+   margin-bottom:clamp(14px,2.5svh,20px);
+   max-width:100%
+ }
+ .rr-hero__headline-line{white-space:normal}
+ .rr-hero__subhead-desktop{display:none}
+ .rr-hero__subhead-mobile{display:block}
+ .rr-hero__subhead-line{display:block}
+ .rr-hero--acquisition .rr-hero__copy .rr-hero__intro{
+   font-size:clamp(15px,4.1vw,17px);
+   line-height:1.36;
+   font-weight:500;
+   max-width:460px;
+   margin:0;
+ }
+ .rr-hero__intake{padding:clamp(17px,4.5vw,23px);max-width:100%}
+ .rr-hero__intake h2{font-size:clamp(23px,6.5vw,31px);line-height:1.12;margin-bottom:10px}
+ .rr-hero__intake .rr-hero__intake-description{font-size:clamp(13.5px,3.55vw,15px);line-height:1.42}
+ .rr-book-idea{margin-top:16px;padding-top:15px}
+ .rr-book-idea__trigger{font-size:15px}
+ .rr-book-idea__body{padding-top:15px}
+ .rr-book-idea__fields{grid-template-columns:1fr;gap:11px}
+ .rr-book-idea__bottom{margin-top:14px}
+}
+@media(max-width:360px){
+ .rr-hero--acquisition .rr-hero__copy h1{font-size:clamp(47px,12.8vw,52px)}
+ .rr-hero__intake .rr-hero__intake-description{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){.rr-book-idea__chevron{transition:none}}
