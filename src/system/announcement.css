@@ -13,3 +13,6 @@
  .rr-header__nav{gap:11px}
  .rr-header__link{font-size:12.5px;padding:10px 0}
 }
+
+/* Utility links are retained in the footer; mobile header is identity-only. */
+@media(max-width:700px){.rr-header__nav{display:none}}
