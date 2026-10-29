@@ -68,3 +68,7 @@
 @media(max-width:800px){.rr-hero{min-height:clamp(545px,76svh,700px)}.rr-hero__inner{padding:67px var(--rr-gutter)}.rr-hero h1{font-size:clamp(48px,9vw,73px)}.rr-collection-teaser__inner{grid-template-columns:1fr;gap:14px;padding-top:30px;padding-bottom:35px}.rr-collection-teaser__progress{grid-column:auto;margin-top:7px}.rr-signup__inner{grid-template-columns:1fr;gap:42px}.rr-footer__inner{flex-direction:column}}
 @media(max-width:450px){:root{--rr-header-height:64px}.rr-header__link{font-size:14px}.rr-wordmark{font-size:27px}.rr-hero h1{font-size:clamp(42px,10vw,53px)}.rr-hero p{font-size:17px}.rr-hero__paper{background-size:780px auto}.rr-actions{gap:16px}.rr-action-primary{font-size:14px;padding:15px 17px}.rr-action-secondary{font-size:14px}.rr-signup__inputrow{display:flex;flex-direction:column;gap:9px}.rr-signup__inputrow input,.rr-signup__inputrow button{width:100%;border-radius:2px}.rr-signup h2{font-size:clamp(43px,11vw,56px)}}
 @media(prefers-reduced-motion:reduce){.rr-wordmark.is-morphing .rr-wordmark__face{animation:none!important}}
+
+/* Skip link stays off-screen until keyboard focus. */
+.rr-skip{position:fixed;z-index:200;top:-90px;left:20px;padding:12px 18px;background:var(--rr-paper);color:var(--rr-ink);font-size:15px;font-weight:700;box-shadow:0 4px 12px #0002}
+.rr-skip:focus{top:12px}
