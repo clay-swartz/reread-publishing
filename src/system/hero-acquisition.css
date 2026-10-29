@@ -253,3 +253,16 @@
 /* The shared endpaper corner is the only patterned part of this action. */
 .rr-book-idea__send.rr-cta--endpaper{padding:0 0 0 16px;min-height:45px;gap:0}
 .rr-book-idea__send.rr-cta--endpaper .rr-cta__paper{min-width:42px}
+
+/* Revised composition: content-led height, left copy optically anchored to form. */
+@media(min-width:851px){
+ .rr-hero--acquisition{min-height:0;}
+ .rr-hero__layout{padding-top:clamp(62px,5.6vw,86px);padding-bottom:clamp(62px,5.6vw,86px);align-items:center;gap:clamp(38px,4.7vw,78px)}
+ .rr-hero--acquisition .rr-hero__copy{transform:translateY(-15px)}
+ .rr-hero--acquisition .rr-hero__copy h1{margin-bottom:clamp(24px,2.4vw,36px)}
+}
+.rr-hero__intake h2 strong,.rr-hero--acquisition .rr-hero__copy .rr-hero__brand{color:#e0a879}
+.rr-hero__headline-punctuation{color:#dba576}
+.rr-book-idea__send.rr-submit-solid{display:inline-flex;align-items:center;justify-content:center;padding:12px 25px;gap:0;min-height:46px;min-width:126px;background:#a75d4b;border:1px solid #a75d4b;color:#fffaf2;border-radius:2px;box-shadow:none}
+.rr-book-idea__send.rr-submit-solid:hover{background:#884839;border-color:#884839}
+.rr-book-idea__send.rr-submit-solid .rr-cta__text{margin:0;padding:0}
