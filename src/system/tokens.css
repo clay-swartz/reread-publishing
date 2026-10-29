@@ -1,0 +1,26 @@
+/* Re:Read foundations. Shared by every approved component; no per-page token drift. */
+:root {
+  --rr-paper:#fffaf2;
+  --rr-ink:#1b1b19;
+  --rr-navy:#293e52;
+  --rr-red:#c64b2e;
+  --rr-gold:#d4a775;
+  --rr-line:rgba(27,27,25,.18);
+  --rr-muted:#625d56;
+  --rr-gutter:clamp(24px,6vw,108px);
+  --rr-max:1512px;
+  --rr-header-height:70px;
+  --rr-font:"Space Grotesk",Arial,sans-serif;
+  --rr-h1:clamp(52px,5.9vw,95px);
+  --rr-h2:clamp(44px,4.8vw,74px);
+  --rr-body:clamp(18px,1.45vw,23px);
+  --rr-focus:#d06c42;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--rr-header-height) + 16px)}
+body{margin:0;font-family:var(--rr-font);-webkit-font-smoothing:antialiased;background:var(--rr-paper);color:var(--rr-ink)}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--rr-focus);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
