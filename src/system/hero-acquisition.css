@@ -175,3 +175,24 @@
 
 /* Publisher name is the one colored accent in the subhead; no extra animation or styling tricks. */
 .rr-hero--acquisition .rr-hero__copy .rr-hero__brand{font-weight:700;color:#ffac85}
+
+/* Bigger master headline. The display family can be auditioned in the type workbench. */
+.rr-hero--acquisition .rr-hero__copy{max-width:850px}
+.rr-hero--acquisition .rr-hero__copy h1{
+  font-family:var(--rr-display-font,"Space Grotesk",sans-serif);
+  font-weight:var(--rr-display-weight,700);
+  font-size:clamp(73px,7.1vw,120px);
+  letter-spacing:var(--rr-display-tracking,-.079em);
+  max-width:850px;
+  line-height:.97
+}
+.rr-hero__layout{gap:clamp(43px,5.2vw,95px)}
+@media(max-width:1150px){
+ .rr-hero--acquisition .rr-hero__copy h1{font-size:clamp(59px,6.9vw,86px)}
+}
+@media(max-width:850px){
+ .rr-hero--acquisition .rr-hero__copy h1{font-size:clamp(54px,9.3vw,82px)}
+}
+@media(max-width:520px){
+ .rr-hero--acquisition .rr-hero__copy h1{font-size:clamp(45px,11vw,62px)}
+}
