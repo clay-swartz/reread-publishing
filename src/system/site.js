@@ -26,3 +26,14 @@ if(form){
     form.querySelector('[role="status"]').textContent="This is a design preview. Your email wasn't saved.";
   });
 }
+
+/* Acquisition preview: validate locally; never collect or imply submission before backend approval. */
+const bookIdeaForm=document.getElementById('bookIdeaForm');
+if(bookIdeaForm){
+  bookIdeaForm.addEventListener('submit',event=>{
+    event.preventDefault();
+    if(!bookIdeaForm.reportValidity())return;
+    const status=bookIdeaForm.querySelector('[role="status"]');
+    if(status)status.textContent="This form is a design preview. Your book idea wasn't submitted or saved.";
+  });
+}
