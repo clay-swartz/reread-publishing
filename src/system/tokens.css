@@ -3,11 +3,11 @@
   --rr-paper:#fffaf2;
   --rr-ink:#1b1b19;
   --rr-navy:#293e52;
-  /* Book-cloth aubergine, softened lilac and the permanent ink/navy foundation. */
-  --rr-accent:#64758b;
-  --rr-accent-hover:#4c5d73;
-  --rr-accent-light:#d5dfeb;
-  --rr-accent-deep:#40536a;
+  /* Approved Electric Cobalt palette: vibrant modern contrast with archival chocolate endpaper. */
+  --rr-accent:#244ddb;
+  --rr-accent-hover:#1b3db9;
+  --rr-accent-light:#5984ff;
+  --rr-accent-deep:#192c47;
   /* Existing non-homepage system instances may still reference this alias. */
   --rr-red:var(--rr-accent);
   --rr-gold:#d4a775;
@@ -20,7 +20,7 @@
   --rr-h1:clamp(52px,5.9vw,95px);
   --rr-h2:clamp(44px,4.8vw,74px);
   --rr-body:clamp(18px,1.45vw,23px);
-  --rr-focus:#7994b3;
+  --rr-focus:#5984ff;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--rr-header-height) + 16px)}
