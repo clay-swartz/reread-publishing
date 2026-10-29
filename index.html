@@ -34,16 +34,26 @@
           <p>Introducing Re:Read, an independent publisher bringing overlooked books back to life as beautifully made new editions—and publishing original writing worth discovering.</p>
         </div>
         <div class="rr-hero__intake" id="american-myths" aria-labelledby="collection-title">
-          <p class="rr-hero__intake-intro">We're acquiring books for our first collection.</p>
-          <h2 id="collection-title">American Myths<span>.</span></h2>
-          <p class="rr-hero__intake-description">We're looking for overlooked books and original writing about the people and stories that shape the American imagination—adventurers, dreamers, outlaws, renegades.</p>
-          <form class="rr-book-idea" id="bookIdeaForm" aria-label="Suggest a book for American Myths">
+          <h2 id="collection-title">Our first collection: <strong>American Myths.</strong></h2>
+          <p class="rr-hero__intake-description">We’re looking for overlooked books and original manuscripts that capture the American imagination. Adventurers, dreamers, outlaws, renegades, and the myths still taking shape.</p>
+          <form class="rr-book-idea" id="bookIdeaForm" aria-label="Suggest a book for American Myths" enctype="multipart/form-data">
             <h3 id="book-ideas">Have something for us to consider?</h3>
             <div class="rr-book-idea__fields">
               <div><label for="bookIdea">Book or project</label><input id="bookIdea" name="bookIdea" type="text" autocomplete="off" maxlength="160" placeholder="Title or working idea" required></div>
               <div><label for="bookEmail">Your email</label><input id="bookEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
             </div>
-            <div class="rr-book-idea__submit"><button type="submit">Submit <span aria-hidden="true">↗</span></button><p class="rr-book-idea__note">Preview only—submissions aren't being received yet.</p></div>
+            <div class="rr-book-idea__bottom">
+              <div class="rr-book-idea__file">
+                <input type="file" id="bookAttachment" name="attachment" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-describedby="attachmentHelp">
+                <label for="bookAttachment" class="rr-book-idea__attach">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5 12.5 20a6 6 0 0 1-8.5-8.5l9-9a4 4 0 0 1 5.7 5.7l-9 9a2 2 0 0 1-2.8-2.8l8.5-8.5"/></svg>
+                  <span>Attach a file</span>
+                </label>
+                <span id="attachmentHelp" class="rr-book-idea__file-hint">PDF or Word, up to 10 MB</span>
+                <span class="rr-book-idea__file-name" id="bookFileName" aria-live="polite"></span>
+              </div>
+              <button class="rr-book-idea__send" type="submit">Submit <span aria-hidden="true">↗</span></button>
+            </div>
             <p class="rr-book-idea__status" role="status" aria-live="polite"></p>
           </form>
         </div>
