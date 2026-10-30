@@ -5,7 +5,7 @@ const mark=document.querySelector('.rr-wordmark');
 if(mark){
   const face=mark.querySelector('.rr-wordmark__face');
   const colors=['#1b1b19','#f15a36','#244ddb','#293e52','#5984ff','#992c2b','#192c47','#b5762b','#3f4f63','#d94729'];
-  let index=0,changing=false;
+  let index=0;
   face.style.fontFamily='"Space Grotesk", Arial, sans-serif';
   face.style.fontWeight='700';
   face.style.fontStyle='normal';
@@ -13,22 +13,16 @@ if(mark){
   face.style.fontSize='1em';
   face.style.color=colors[0];
   const shuffle=()=>{
-    if(prefersReducedMotion.matches||document.visibilityState!=='visible'||changing)return;
-    changing=true;
-    face.classList.add('is-changing');
-    window.setTimeout(()=>{
-      index=(index+1)%colors.length;
-      face.style.color=colors[index];
-      face.classList.remove('is-changing');
-      changing=false;
-    },230);
+    if(prefersReducedMotion.matches||document.visibilityState!=='visible')return;
+    index=(index+1)%colors.length;
+    face.style.color=colors[index];
   };
-  let interval=window.setInterval(shuffle,2350);
+  let interval=window.setInterval(shuffle,1050);
   mark.addEventListener('mouseenter',shuffle);
   mark.addEventListener('focusin',shuffle);
   prefersReducedMotion.addEventListener?.('change',()=>{
-    if(prefersReducedMotion.matches){window.clearInterval(interval);face.classList.remove('is-changing');index=0;face.style.color=colors[0];}
-    else{window.clearInterval(interval);interval=window.setInterval(shuffle,2350);}
+    if(prefersReducedMotion.matches){window.clearInterval(interval);index=0;face.style.color=colors[0];}
+    else{window.clearInterval(interval);interval=window.setInterval(shuffle,1050);}
   });
 }
 document.querySelectorAll('[data-dialog-open]').forEach(button=>{
