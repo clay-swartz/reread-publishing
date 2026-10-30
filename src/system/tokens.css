@@ -8,6 +8,15 @@
   --rr-accent-hover:#1b3db9;
   --rr-accent-light:#5984ff;
   --rr-accent-deep:#192c47;
+  /* Re:Read approved working palette — October 30, 2026.
+     Primary: electric cobalt #244DDB (newsletter, primary actions)
+     Secondary: electric blue #5984FF (interactive/focus)
+     Tertiary: vivid vermilion #F15A36 (hero punctuation and editorial highlights)
+     Foundation: paper #FFFAF2, ink #1B1B19, navy #293E52,
+     deep ink-blue #192C47, archival chocolate endpaper (image asset).
+     No sage/mint, mauve, plum, or pale pastel section fills. */
+  --rr-tertiary:#f15a36;
+  --rr-tertiary-hover:#d94729;
   /* Existing non-homepage system instances may still reference this alias. */
   --rr-red:var(--rr-accent);
   --rr-gold:#d4a775;
