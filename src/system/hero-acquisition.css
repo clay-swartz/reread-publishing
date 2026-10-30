@@ -273,3 +273,16 @@
 .rr-hero__headline-punctuation{color:#5984ff}
 .rr-book-idea__send.rr-submit-solid{background:#244ddb;border-color:#244ddb}
 .rr-book-idea__send.rr-submit-solid:hover{background:#1b3db9;border-color:#1b3db9}
+
+/* Approved tertiary vermilion — only three editorial hero accents.
+   Cobalt CTAs, hero proportions, and cobalt newsletter stay untouched. */
+.rr-hero__intake h2 strong,
+.rr-hero--acquisition .rr-hero__copy .rr-hero__brand,
+.rr-hero__headline-punctuation{color:var(--rr-tertiary)}
+@keyframes rr-hero-punctuation-morph{
+  0%,100%{color:var(--rr-tertiary);transform:translateY(0)}
+  20%{color:#fffaf2;transform:translateY(-.025em)}
+  43%{color:var(--rr-tertiary);transform:translateY(0)}
+  66%{color:#fffaf2;transform:translateY(-.025em)}
+  85%{color:var(--rr-tertiary);transform:translateY(0)}
+}
