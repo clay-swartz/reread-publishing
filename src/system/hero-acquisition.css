@@ -290,3 +290,12 @@
 /* Editorial headline period: fixed vermilion, logo alone has motion. */
 .rr-hero__headline-punctuation,
 .rr-hero__headline-punctuation.is-morphing{animation:none!important;color:var(--rr-tertiary)!important;transform:none!important}
+
+/* Intake form: compact, balanced, readable labels and controls. */
+.rr-book-idea__fields{gap:14px}
+.rr-book-idea__fields input{font-size:13px;padding:10px 12px;min-height:46px;text-overflow:ellipsis}
+.rr-book-idea__fields input::placeholder{font-size:13px}
+.rr-book-idea__bottom{margin-top:20px;gap:18px}
+.rr-book-idea__attach{font-size:13px;font-weight:600}
+.rr-book-idea__send.rr-submit-solid{min-width:120px;min-height:46px}
+@media(max-width:700px){.rr-book-idea__bottom{margin-top:16px}}
