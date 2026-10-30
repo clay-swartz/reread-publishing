@@ -7,8 +7,8 @@
 .rr-wordmark__part{display:inline-block;position:relative}
 .rr-wordmark__spacer{visibility:hidden}
 .rr-wordmark__face{position:absolute;top:0;left:0;white-space:nowrap}
-.rr-wordmark__face{transition:opacity .22s ease, transform .22s ease;transform-origin:left center;will-change:opacity}
-.rr-wordmark__face.is-changing{opacity:0;transform:translateY(2px)}
+.rr-wordmark__face{transition:none;transform:none;will-change:color}
+
 @media(prefers-reduced-motion:reduce){.rr-wordmark__face{transition:none}}
 .rr-header__nav{display:flex;align-items:center;gap:25px}
 .rr-header__link{font-size:15px;font-weight:500;border:0;background:none;padding:12px 0;color:var(--rr-ink)}
