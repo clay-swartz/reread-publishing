@@ -286,3 +286,7 @@
   66%{color:#fffaf2;transform:translateY(-.025em)}
   85%{color:var(--rr-tertiary);transform:translateY(0)}
 }
+
+/* Editorial headline period: fixed vermilion, logo alone has motion. */
+.rr-hero__headline-punctuation,
+.rr-hero__headline-punctuation.is-morphing{animation:none!important;color:var(--rr-tertiary)!important;transform:none!important}
