@@ -318,3 +318,12 @@
 @media(max-width:1150px){.rr-book-idea__fields{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.rr-book-idea__fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.rr-book-idea__fields input{height:43px}.rr-book-idea__bottom{margin-top:12px}}
 @media(max-width:350px){.rr-book-idea__fields{grid-template-columns:1fr}}
+
+/* October 30: give hero supporting copy more editorial presence. */
+@media(min-width:851px){
+ .rr-hero--acquisition .rr-hero__copy .rr-hero__intro{font-size:clamp(21px,1.8vw,27px);line-height:1.43;max-width:740px;letter-spacing:-.028em}
+}
+@media(min-width:701px) and (max-width:850px){
+ .rr-hero--acquisition .rr-hero__copy .rr-hero__intro{font-size:clamp(20px,2.6vw,23px);line-height:1.46;max-width:690px}
+}
+@media(max-width:700px){.rr-hero--acquisition .rr-hero__copy .rr-hero__intro{font-size:clamp(17px,4.5vw,19px);line-height:1.43}}
