@@ -1,36 +1,35 @@
 /* Page behavior — accessible interactions; no invented signup backend. */
 const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
-/* Re:Read cover-history shuffle: ten distinct typographic idioms, not random loading effects.
-   One word at a time, Re: remains fixed. Pause on each cover-language reading. */
+/* Color-only shuffle: Re:Read wordmark remains in one fixed Space Grotesk face. */
 const mark=document.querySelector('.rr-wordmark');
 if(mark){
   const face=mark.querySelector('.rr-wordmark__face');
-  const variants=[
-    {font:'"Space Grotesk", sans-serif',color:'#1b1b19',weight:'700',style:'normal',spacing:'-.082em',size:'1em'},
-    {font:'"UnifrakturCook", serif',color:'#992c2b',weight:'700',style:'normal',spacing:'-.035em',size:'1.04em'},
-    {font:'"Abril Fatface", serif',color:'#244ddb',weight:'400',style:'normal',spacing:'-.07em',size:'1.02em'},
-    {font:'"Bebas Neue", sans-serif',color:'#f15a36',weight:'400',style:'normal',spacing:'.018em',size:'1.12em'},
-    {font:'"Cinzel Decorative", serif',color:'#293e52',weight:'700',style:'normal',spacing:'-.045em',size:'.94em'},
-    {font:'"Bangers", cursive',color:'#244ddb',weight:'400',style:'normal',spacing:'.025em',size:'1.08em'},
-    {font:'"Bodoni Moda", serif',color:'#a12d24',weight:'700',style:'italic',spacing:'-.075em',size:'1.02em'},
-    {font:'"Special Elite", monospace',color:'#26374a',weight:'400',style:'normal',spacing:'-.095em',size:'.95em'},
-    {font:'"Ultra", serif',color:'#f15a36',weight:'400',style:'normal',spacing:'-.065em',size:'.89em'},
-    {font:'"Josefin Sans", sans-serif',color:'#244ddb',weight:'700',style:'normal',spacing:'-.075em',size:'1.06em'},
-    {font:'"Permanent Marker", cursive',color:'#1b1b19',weight:'400',style:'normal',spacing:'-.08em',size:'.94em'},
-    {font:'"Anton", sans-serif',color:'#cb432b',weight:'400',style:'normal',spacing:'-.035em',size:'1.05em'}
-  ];
+  const colors=['#1b1b19','#f15a36','#244ddb','#293e52','#5984ff','#992c2b','#192c47','#b5762b','#3f4f63','#d94729'];
   let index=0,changing=false;
-  const paint=()=>{const v=variants[index];face.style.fontFamily=v.font;face.style.color=v.color;face.style.fontWeight=v.weight;face.style.fontStyle=v.style;face.style.letterSpacing=v.spacing;face.style.fontSize=v.size;};
-  paint();
+  face.style.fontFamily='"Space Grotesk", Arial, sans-serif';
+  face.style.fontWeight='700';
+  face.style.fontStyle='normal';
+  face.style.letterSpacing='-.082em';
+  face.style.fontSize='1em';
+  face.style.color=colors[0];
   const shuffle=()=>{
     if(prefersReducedMotion.matches||document.visibilityState!=='visible'||changing)return;
-    changing=true;face.classList.add('is-changing');
-    window.setTimeout(()=>{index=(index+1)%variants.length;paint();face.classList.remove('is-changing');changing=false;},230);
+    changing=true;
+    face.classList.add('is-changing');
+    window.setTimeout(()=>{
+      index=(index+1)%colors.length;
+      face.style.color=colors[index];
+      face.classList.remove('is-changing');
+      changing=false;
+    },230);
   };
   let interval=window.setInterval(shuffle,2350);
   mark.addEventListener('mouseenter',shuffle);
   mark.addEventListener('focusin',shuffle);
-  prefersReducedMotion.addEventListener?.('change',()=>{if(prefersReducedMotion.matches){window.clearInterval(interval);face.classList.remove('is-changing');index=0;paint();}else{window.clearInterval(interval);interval=window.setInterval(shuffle,2350)}});
+  prefersReducedMotion.addEventListener?.('change',()=>{
+    if(prefersReducedMotion.matches){window.clearInterval(interval);face.classList.remove('is-changing');index=0;face.style.color=colors[0];}
+    else{window.clearInterval(interval);interval=window.setInterval(shuffle,2350);}
+  });
 }
 document.querySelectorAll('[data-dialog-open]').forEach(button=>{
   button.addEventListener('click',()=>{
