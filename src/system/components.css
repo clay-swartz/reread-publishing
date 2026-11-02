@@ -154,3 +154,12 @@
 .rr-cta--endpaper .rr-cta__paper svg{width:15px;height:15px}
 .rr-book-idea__send.rr-cta--endpaper .rr-cta__paper,
 .rr-join__fields button.rr-cta--endpaper .rr-cta__paper{min-width:29px!important}
+
+/* Single-screen publishing overview for prospective rights partners. */
+.rr-publisher-dialog{width:min(680px,calc(100% - 32px));max-height:min(88vh,900px);overflow-y:auto;padding:clamp(24px,4vw,42px);background:#fffaf2;color:#1b1b19;border:1px solid #ddd1c3;border-radius:5px;box-shadow:0 25px 80px #14243a50}
+.rr-publisher-dialog::backdrop{background:#192c47a8}
+.rr-publisher-dialog .rr-publisher-kicker{font-size:11px;font-weight:700;letter-spacing:.12em;color:#244ddb;text-transform:uppercase;margin:0 0 16px}
+.rr-publisher-dialog h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(30px,4vw,44px);letter-spacing:-.065em;line-height:1.05;margin:0 0 18px}
+.rr-publisher-dialog h3{font-size:15px;letter-spacing:-.02em;margin:22px 0 7px}
+.rr-publisher-dialog p{font-size:15px;line-height:1.55;max-width:60ch;margin:0 0 8px}
+.rr-publisher-dialog [data-close]{margin-top:23px;background:#244ddb;color:#fffaf2;border:0;padding:11px 17px;border-radius:3px;font-weight:700;cursor:pointer}
