@@ -17,14 +17,16 @@ body{background:#fffaf2;color:#1b1b19}
 .rr-about__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 55px;border-top:1px solid #d9cec0;padding-top:38px}
 .rr-about__grid h2{font-size:20px;letter-spacing:-.035em;margin:0 0 12px}
 .rr-about__grid p{font-size:16px;line-height:1.65;margin:0;color:#40403b}
-.rr-about__note{margin-top:60px;font-size:13px;line-height:1.55;color:#605d58;max-width:700px}
-.rr-about__footer{border-top:1px solid #d9cec0;padding:26px clamp(24px,5vw,64px);display:flex;align-items:center;justify-content:space-between}
-.rr-about__footer a{color:#244ddb;text-decoration:none;font-weight:700}
+
+
+
 @media(max-width:650px){.rr-about{padding-top:65px;padding-bottom:80px}.rr-about__grid{grid-template-columns:1fr;gap:30px}.rr-about__lede{margin-bottom:48px}}
 </style>
 </head>
 <body><a href="#content" class="rr-skip">Skip to content</a>
-<header class="rr-header"><a class="rr-wordmark" href="/" aria-label="Re:Read home"><span>Re</span><span class="rr-wordmark__colon">:</span><span class="rr-wordmark__part"><span class="rr-wordmark__spacer" aria-hidden="true">Read</span><span class="rr-wordmark__face">Read</span></span></a></header>
+<header class="rr-header">
+  <a class="rr-wordmark" href="/" aria-label="Re:Read home"><span>Re</span><span class="rr-wordmark__colon">:</span><span class="rr-wordmark__part"><span class="rr-wordmark__spacer" aria-hidden="true">Read</span><span class="rr-wordmark__face">Read</span></span></a>
+</header>
 <main class="rr-about" id="content">
 <p class="rr-about__eyebrow">About Re:Read</p>
 <h1>Great books deserve another chapter<span style="color:#f15a36">.</span></h1>
@@ -35,8 +37,12 @@ body{background:#fffaf2;color:#1b1b19}
 <section><h2>How we see books</h2><p>Each edition deserves a reason to exist: fresh editorial perspective, beautiful contemporary design, and a clear invitation for the next generation of readers.</p></section>
 <section><h2>Publishing partnerships</h2><p>We welcome conversations with authors, agents, estates, and publishers about print reissues, special editions, original work, and selected audiobook opportunities.</p></section>
 </div>
-<p class="rr-about__note">Our debut list is in development. Publication dates, distribution arrangements, and future collections have not yet been announced.</p>
 </main>
-<footer class="rr-about__footer"><span>Re:Read<span style="color:#f15a36">.</span></span><a href="/">Back to home</a></footer>
+<footer class="rr-footer rr-footer--compact">
+  <div class="rr-footer__inner">
+    <span class="rr-footer__name">Re:Read<span class="rr-footer__period">.</span></span>
+    <nav class="rr-footer__nav" aria-label="Footer navigation"><a href="/about/">About</a></nav>
+  </div>
+</footer>
 <script type="module" src="/src/system/site.js"></script>
 </body></html>
