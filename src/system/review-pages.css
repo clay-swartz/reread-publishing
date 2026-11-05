@@ -24,3 +24,22 @@
 /* Navigation remains accessible in the mobile header. */
 @media(max-width:700px){.rr-header .rr-header__nav{display:flex;gap:12px}.rr-header .rr-header__link{font-size:13px;padding:8px 0}}
 .rr-hero__intake--newsletter h2{margin-bottom:23px}
+
+/* Submissions promise sits directly under the principal headline. */
+.rr-submissions-page .rr-hero__copy .rr-submissions__lede{
+  margin:clamp(22px,2.6vw,34px) 0 0;
+  max-width:590px;
+  font-size:clamp(18px,1.6vw,24px);
+  line-height:1.45;
+  letter-spacing:-.025em;
+  font-weight:500;
+  color:#fffaf2;
+}
+/* Tighter single-row footer; About lives here, Submissions in the header. */
+.rr-footer--compact{padding-top:14px;padding-bottom:15px}
+.rr-footer--compact .rr-footer__inner{min-height:27px;gap:14px}
+@media(max-width:520px){
+ .rr-footer--compact .rr-footer__inner{flex-direction:row;align-items:center;justify-content:space-between;gap:12px}
+ .rr-footer--compact{padding-top:14px;padding-bottom:14px}
+ .rr-submissions-page .rr-hero__copy .rr-submissions__lede{font-size:18px;margin-top:20px}
+}
