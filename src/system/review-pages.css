@@ -43,3 +43,10 @@
  .rr-footer--compact{padding-top:14px;padding-bottom:14px}
  .rr-submissions-page .rr-hero__copy .rr-submissions__lede{font-size:18px;margin-top:20px}
 }
+
+/* Homepage footer: occupy the full viewport without an empty paper strip below it. */
+body:not(.rr-submissions-page){min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
+body:not(.rr-submissions-page)>main{flex:1;display:flex;flex-direction:column;min-height:0}
+body:not(.rr-submissions-page) .rr-top{flex:1;display:flex;flex-direction:column}
+body:not(.rr-submissions-page) .rr-top>.rr-hero{flex:1}
+body:not(.rr-submissions-page)>footer{flex-shrink:0}
