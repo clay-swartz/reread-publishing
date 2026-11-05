@@ -7,6 +7,8 @@ await fs.rm(dist,{recursive:true,force:true});
 await fs.mkdir(dist,{recursive:true});
 await fs.cp(path.join(root,'public'),dist,{recursive:true});
 await fs.copyFile(path.join(root,'index.html'),path.join(dist,'index.html'));
+await fs.mkdir(path.join(dist,'submissions'),{recursive:true});
+await fs.copyFile(path.join(root,'submissions/index.html'),path.join(dist,'submissions/index.html'));
 await fs.mkdir(path.join(dist,'about'),{recursive:true});
 await fs.copyFile(path.join(root,'about/index.html'),path.join(dist,'about/index.html'));
 await fs.mkdir(path.join(dist,'src/content'),{recursive:true});
@@ -14,7 +16,7 @@ await fs.copyFile(path.join(root,'src/content/hero-v2.json'),path.join(dist,'src
 await fs.mkdir(path.join(dist,'src/components'),{recursive:true});
 for(const name of ['hero-v2.js','hero-v2.css','newsletter.js']) await fs.copyFile(path.join(root,'src/components',name),path.join(dist,'src/components',name));
 await fs.mkdir(path.join(dist,'src/system'),{recursive:true});
-for(const name of ['tokens.css','components.css','announcement.css','hero-acquisition.css','email-capture.css','site.js']) await fs.copyFile(path.join(root,'src/system',name),path.join(dist,'src/system',name));
+for(const name of ['tokens.css','components.css','announcement.css','hero-acquisition.css','email-capture.css','review-pages.css','site.js']) await fs.copyFile(path.join(root,'src/system',name),path.join(dist,'src/system',name));
 await fs.mkdir(path.join(dist,'system'),{recursive:true});
 await fs.copyFile(path.join(root,'system/index.html'),path.join(dist,'system/index.html'));
 const asset=await fs.stat(path.join(dist,'endpapers/collection/01-french-blue.webp'));
