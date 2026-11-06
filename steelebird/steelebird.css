@@ -7,13 +7,13 @@ a{color:inherit}button,input{font:inherit}button{cursor:pointer}.sb-skip{positio
 .sb-home{display:inline-flex;align-items:center;text-decoration:none;flex:none}
 .sb-logo{font-family:var(--sb-display);font-weight:700;font-size:clamp(25px,2.5vw,35px);letter-spacing:-.043em;line-height:1.38;white-space:nowrap;font-kerning:normal}
 .sb-logo-steele{color:var(--sb-primary)}.sb-logo-bird{color:var(--sb-secondary)}.sb-logo-i{position:relative;display:inline-block}
-.sb-icon{display:block;position:absolute;width:.41em;height:.41em;top:-.085em;left:50%;transform:translateX(-49%) rotate(-13deg);transform-origin:55% 61%;color:var(--sb-primary);pointer-events:none}
+.sb-icon{display:block;position:absolute;width:.55em;height:.55em;top:-.16em;left:50%;transform:translateX(-49%) rotate(-13deg);transform-origin:55% 61%;color:var(--sb-primary);pointer-events:none}
 .sb-icon svg{width:100%;height:100%;fill:currentColor;display:block}
 .sb-nav{display:flex;align-items:center;gap:clamp(17px,2.6vw,40px)}
 .sb-nav a{font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}.sb-nav a:hover{text-decoration:underline;text-underline-offset:5px}
 .sb-nav .sb-nav-feature{border:1px solid var(--sb-ink);padding:12px 16px;border-radius:2px}
 .sb-hero{background:var(--sb-navy);color:var(--sb-cream);position:relative;overflow:hidden;isolation:isolate}
-.sb-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(103deg,rgba(10,22,46,.98) 1%,rgba(10,22,46,.92) 49%,rgba(10,22,46,.58) 100%),url('/endpapers/collection/03-ebony-marble.webp') center / cover;opacity:1}
+.sb-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(103deg,rgba(10,22,46,.78) 0%,rgba(10,22,46,.62) 48%,rgba(10,22,46,.28) 100%),url('/endpapers/collection/03-ebony-marble.webp') center / cover;opacity:1}
 .sb-hero-wrap{min-height:clamp(520px,64vw,760px);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.72fr);align-items:center;gap:clamp(42px,7vw,110px);padding-block:clamp(70px,10vw,135px)}
 .sb-kicker{text-transform:uppercase;font-size:12px;letter-spacing:.17em;font-weight:700;margin:0 0 27px}.sb-kicker.blue{color:var(--sb-primary)}.sb-hero h1{font-size:clamp(52px,6vw,105px);line-height:1.04;letter-spacing:-.08em;margin:0;max-width:900px;font-weight:700}
 .sb-hero h1 em{color:#8ba8ff;font-style:normal}
@@ -47,13 +47,20 @@ a{color:inherit}button,input{font:inherit}button{cursor:pointer}.sb-skip{positio
 .sb-about-rows{display:grid;grid-template-columns:1fr 1fr;gap:45px 100px;padding-bottom:110px}
 .sb-about-rows section{border-top:1px solid var(--sb-line);padding-top:25px}.sb-about-rows h2{font-size:23px;letter-spacing:-.04em;margin:0 0 18px}.sb-about-rows p{font-size:16px;line-height:1.75;color:var(--sb-muted);margin:0}
 .sb-tiny{font-size:13px;color:var(--sb-muted);line-height:1.6}
-body[data-theme="night"]{--sb-paper:#172348;--sb-ink:#fffaf2;--sb-primary:#5984ff;--sb-secondary:#fffaf2;--sb-muted:#d5d9e7;--sb-line:rgba(255,250,242,.18);--sb-navy:#101b39}
-body[data-theme="night"] .sb-card{background:#fffaf2;color:#171c29;--sb-ink:#171c29;--sb-muted:#555d68;--sb-primary:#244ddb}
-body[data-theme="night"] .sb-imprint-text{color:#171c29;--sb-muted:#404960;--sb-primary:#244ddb}
-body[data-theme="night"] .sb-imprint-text .sb-kicker{color:#244ddb}
-.sb-theme{display:flex;gap:5px;border:1px solid var(--sb-line);padding:4px;border-radius:100px}
-.sb-theme button{background:transparent;color:var(--sb-ink);border:0;padding:7px 10px;border-radius:100px;font-size:11px;font-weight:700}
-.sb-theme button[aria-pressed="true"]{background:var(--sb-primary);color:white}
 @media(max-width:980px){.sb-hero-wrap{grid-template-columns:1fr;min-height:0}.sb-card{max-width:620px}.sb-intro{grid-template-columns:1fr;gap:30px}.sb-imprint{grid-template-columns:1fr}.sb-imprint-art{min-height:370px}.sb-bridge-inner{grid-template-columns:1fr;gap:20px}}
-@media(max-width:650px){.sb-header{flex-wrap:wrap;row-gap:10px;padding-block:14px}.sb-logo{font-size:27px}.sb-nav{width:100%;justify-content:space-between;gap:10px}.sb-nav a{font-size:12px}.sb-nav .sb-nav-feature{padding:9px}.sb-theme button{padding:7px}.sb-hero h1{font-size:clamp(46px,10vw,66px)}.sb-hero-wrap{padding-top:68px;padding-bottom:70px;gap:45px}.sb-sections-grid{grid-template-columns:1fr;gap:34px}.sb-imprint-art strong{font-size:67px}.sb-footer-in{align-items:start;flex-direction:column}.sb-about-rows{grid-template-columns:1fr;gap:35px}.sb-bridge-inner{padding-block:65px}}
+@media(max-width:650px){.sb-header{flex-wrap:wrap;row-gap:10px;padding-block:14px}.sb-logo{font-size:27px}.sb-nav{width:100%;justify-content:space-between;gap:10px}.sb-nav a{font-size:12px}.sb-nav .sb-nav-feature{padding:9px}.sb-hero h1{font-size:clamp(46px,10vw,66px)}.sb-hero-wrap{padding-top:68px;padding-bottom:70px;gap:45px}.sb-sections-grid{grid-template-columns:1fr;gap:34px}.sb-imprint-art strong{font-size:67px}.sb-footer-in{align-items:start;flex-direction:column}.sb-about-rows{grid-template-columns:1fr;gap:35px}.sb-bridge-inner{padding-block:65px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Steelebird inquiry page */
+.sb-contact-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,7vw,110px);padding-block:clamp(70px,9vw,135px)}
+.sb-contact-intro h1{font-size:clamp(49px,5.8vw,88px);letter-spacing:-.078em;line-height:1.07;margin:0 0 29px}
+.sb-contact-intro p:not(.sb-kicker){font-size:clamp(17px,1.5vw,21px);line-height:1.65;max-width:510px;color:var(--sb-muted)}
+.sb-contact-form{background:#eef1fc;padding:clamp(25px,4vw,60px);color:#171c29}
+.sb-contact-form label{display:block;font-size:13px;font-weight:700;margin-bottom:9px}
+.sb-contact-form input,.sb-contact-form select,.sb-contact-form textarea{border:1px solid #9daac5;background:#fffaf2;color:#171c29;width:100%;border-radius:2px;padding:14px 15px;font:inherit;font-size:15px;min-height:52px}
+.sb-contact-form textarea{min-height:170px;resize:vertical}
+.sb-contact-form .field{margin-bottom:23px}
+.sb-contact-form input:focus,.sb-contact-form select:focus,.sb-contact-form textarea:focus{outline:3px solid #9bb3ff;outline-offset:1px}
+.sb-contact-form button{background:#244ddb;color:white;border:0;padding:17px 27px;font:700 15px var(--sb-body);border-radius:2px}
+.sb-contact-form button:disabled{opacity:.65;cursor:not-allowed}
+.sb-contact-form .form-note{font-size:12px;line-height:1.55;color:#555d68;margin-top:16px}
+@media(max-width:850px){.sb-contact-layout{grid-template-columns:1fr}.sb-contact-intro h1{max-width:640px}}
