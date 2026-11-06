@@ -9,6 +9,8 @@ await fs.cp(path.join(root,'public'),dist,{recursive:true});
 await fs.copyFile(path.join(root,'index.html'),path.join(dist,'index.html'));
 await fs.mkdir(path.join(dist,'submissions'),{recursive:true});
 await fs.copyFile(path.join(root,'submissions/index.html'),path.join(dist,'submissions/index.html'));
+await fs.mkdir(path.join(dist,'steelebird'),{recursive:true});
+await fs.copyFile(path.join(root,'steelebird/index.html'),path.join(dist,'steelebird/index.html'));
 await fs.mkdir(path.join(dist,'about'),{recursive:true});
 await fs.copyFile(path.join(root,'about/index.html'),path.join(dist,'about/index.html'));
 await fs.mkdir(path.join(dist,'src/content'),{recursive:true});
