@@ -149,3 +149,24 @@ a{color:inherit}button,input{font:inherit}button{cursor:pointer}.sb-skip{positio
 .sb-submit-actions input[type=file]{margin:0;max-width:160px;min-width:0;font-size:11px}
 .sb-submit-actions button{flex:0 0 auto}
 @media(max-width:600px){.sb-submit-actions{flex-wrap:wrap}.sb-submit-actions .sb-submit-file{max-width:100%;flex-wrap:wrap}.sb-about-hero .sb-hero-wrap{gap:30px}}
+
+/* Consistent, reusable Steelebird interiors and brand cross-promotion */
+.sb-newsletter h2{font-family:var(--sb-body);font-size:clamp(29px,2.65vw,39px);font-weight:700;letter-spacing:-.06em;line-height:1.12}
+.sb-newsletter p{font-size:16px;line-height:1.55}
+.sb-interior-hero .sb-hero-wrap{display:flex;align-items:center;min-height:0;padding-block:clamp(56px,6.2vw,90px)}
+.sb-interior-hero .sb-hero-wrap>div{width:min(100%,1080px)}
+.sb-interior-hero h1{font-size:clamp(46px,5.5vw,83px);max-width:1080px}
+.sb-interior-hero .sb-hero-copy{max-width:780px;margin-top:22px}
+.sb-contact-layout--interior{padding-block:clamp(55px,6.8vw,98px)}
+.sb-contact-intro h2{font-size:clamp(34px,3.9vw,57px);letter-spacing:-.07em;line-height:1.1;margin:0 0 23px}
+.sb-reread-banner{background:#192c47}
+.sb-reread-banner-link{display:grid;grid-template-columns:1fr 1fr;min-height:325px;text-decoration:none;color:inherit}
+.sb-reread-banner-pattern{background:linear-gradient(135deg,rgba(16,32,73,.17),rgba(16,32,73,.65)),url('/endpapers/collection/01-french-blue.webp') center/cover;display:flex;align-items:center;justify-content:center;padding:clamp(30px,5vw,65px)}
+.sb-reread-banner-pattern .sb-imprint-brand{font-size:clamp(60px,7vw,115px)}
+.sb-reread-banner-copy{background:#192c47;color:#fffaf2;padding:clamp(34px,5.6vw,88px);display:flex;flex-direction:column;justify-content:center}
+.sb-reread-eyebrow{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#a9bfff;margin:0 0 22px}
+.sb-reread-banner-copy h2{font-size:clamp(34px,4vw,60px);line-height:1.1;letter-spacing:-.065em;margin:0 0 20px}
+.sb-reread-banner-copy>p:not(.sb-reread-eyebrow){font-size:17px;line-height:1.6;color:#e2e8ff;margin:0 0 27px}
+.sb-reread-visit{display:inline-block;width:max-content;font-weight:700;font-size:15px;padding-bottom:6px;border-bottom:2px solid #5984ff}
+.sb-reread-banner-link:hover .sb-reread-visit{color:#a8bfff}
+@media(max-width:820px){.sb-reread-banner-link{grid-template-columns:1fr}.sb-reread-banner-pattern{min-height:260px}.sb-interior-hero .sb-hero-wrap{padding-block:58px}.sb-reread-banner-copy{padding:45px 28px}}
