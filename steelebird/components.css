@@ -1,0 +1,47 @@
+/* Steelebird — shared component contract v1.
+   Every page composes the same pieces. Surface variants use existing Re:Read assets.
+   Components: homepage hero, interior hero, form, redirect, content, card, footer, CTA.
+   Surfaces: paper, paper-blue, cobalt, ebony endpaper, french-blue endpaper.
+*/
+.sb-surface--paper{--surface-bg:#fffaf2;--surface-ink:#171c29;--surface-accent:#244ddb;background-color:var(--surface-bg);color:var(--surface-ink)}
+.sb-surface--paper-blue{--surface-bg:#edf0ff;--surface-ink:#171c29;--surface-accent:#244ddb;background-color:var(--surface-bg);color:var(--surface-ink)}
+.sb-surface--cobalt{--surface-bg:#244ddb;--surface-ink:#fffaf2;--surface-accent:#fffaf2;background-color:var(--surface-bg);color:var(--surface-ink)}
+.sb-surface--ebony{--surface-bg:#172348;--surface-ink:#fffaf2;--surface-accent:#8ba8ff;background-color:var(--surface-bg);color:var(--surface-ink)}
+.sb-surface--french-blue{--surface-bg:#192c47;--surface-ink:#fffaf2;--surface-accent:#f15a36;background-color:var(--surface-bg);color:var(--surface-ink)}
+/* Hero: one shared marble, headline width, scale, and vertical rhythm. */
+.sb-component-hero{position:relative;isolation:isolate;overflow:hidden}
+.sb-component-hero.sb-surface--ebony::before{background:linear-gradient(105deg,rgba(12,23,47,.77),rgba(12,23,47,.35)),url('/endpapers/collection/03-ebony-marble.webp') center/cover}
+.sb-component-hero.sb-surface--french-blue::before{background:linear-gradient(105deg,rgba(16,32,70,.72),rgba(16,32,70,.34)),url('/endpapers/collection/01-french-blue.webp') center/cover}
+.sb-component-hero h1{font-family:var(--sb-body);font-weight:700;letter-spacing:-.07em;line-height:1.065}
+.sb-component-hero h1 em{font-style:normal;color:var(--surface-accent)}
+.sb-component-hero--home .sb-hero-wrap{min-height:clamp(550px,56vw,750px)}
+.sb-component-hero--home h1{font-size:clamp(45px,4.55vw,77px);max-width:850px}
+.sb-component-hero--interior .sb-hero-wrap{min-height:0;padding-block:clamp(55px,6vw,94px)}
+.sb-component-hero--interior h1{font-size:clamp(45px,5.25vw,82px);max-width:1090px}
+.sb-component-hero--interior .sb-hero-copy{margin-top:22px}
+.sb-component-hero--form .sb-submit-layout{padding-block:clamp(55px,7vw,94px)}
+/* The card is not a new aesthetic: neutral rectangular paper, consistent padding. */
+.sb-component-card{border:0;border-radius:2px;box-shadow:none;padding:clamp(27px,3.2vw,44px)}
+.sb-component-card h2{font-family:var(--sb-body);font-weight:700;letter-spacing:-.055em;line-height:1.13}
+.sb-component-form input:not([type=file]),.sb-component-form textarea,.sb-component-form select{border-radius:2px}
+.sb-component-form button{border-radius:2px}
+/* Content: consistent column structure and headline hierarchy on paper. */
+.sb-component-content{column-gap:clamp(42px,7vw,120px)}
+.sb-component-content h2{font-family:var(--sb-body);font-weight:700;letter-spacing:-.07em;line-height:1.11}
+/* Redirect: two balanced halves; pattern establishes imprint, copy stays simple. */
+.sb-component-redirect__link{display:grid;grid-template-columns:1fr 1fr;min-height:355px;text-decoration:none;color:inherit}
+.sb-component-redirect__pattern{min-height:355px;display:flex;justify-content:center;align-items:center;padding:clamp(30px,5vw,78px);background:linear-gradient(130deg,rgba(12,28,65,.15),rgba(12,28,65,.48)),url('/endpapers/collection/01-french-blue.webp') center/cover}
+.sb-component-redirect__copy{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:#192c47;color:#fffaf2;padding:clamp(34px,5.4vw,82px)}
+.sb-component-redirect__copy h2{font-family:var(--sb-body);font-size:clamp(32px,3.35vw,52px);line-height:1.15;letter-spacing:-.06em;margin:0 0 19px}
+.sb-component-redirect__copy p{font-size:17px;line-height:1.6;margin:0 0 23px;color:#e3e7f7}
+.sb-component-redirect__action{font-size:15px;font-weight:700;border-bottom:2px solid #5984ff;padding-bottom:5px}
+.sb-component-redirect__link:hover .sb-component-redirect__action{color:#aec1ff}
+.sb-component-redirect--reread .sb-imprint-brand{font-size:clamp(61px,7vw,110px)}
+/* CTA: cobalt slab, clear action. */
+.sb-component-cta{border:0}
+.sb-component-cta .sb-bridge-inner{padding-block:clamp(55px,6.8vw,100px)}
+.sb-component-cta .sb-button--light{background:#fffaf2;color:#172348}
+/* Footer is identical across all routes via shared markup and one token set. */
+.sb-footer{background:#fffaf2;color:#171c29;border-top:1px solid rgba(23,28,41,.19)}
+.sb-footer-in{min-height:66px}
+@media(max-width:900px){.sb-component-redirect__link{grid-template-columns:1fr}.sb-component-redirect__pattern{min-height:245px}.sb-component-redirect__copy{padding:42px clamp(25px,6vw,70px)}}
