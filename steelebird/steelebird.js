@@ -1,0 +1,1 @@
+document.querySelectorAll('[data-sb-theme]').forEach(button=>{button.addEventListener('click',()=>{const theme=button.getAttribute('data-sb-theme');document.body.setAttribute('data-theme',theme);document.querySelectorAll('[data-sb-theme]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));});});
