@@ -17,10 +17,9 @@ h1{font:normal clamp(61px,9.5vw,158px)/.97 "Libre Baskerville",Georgia,serif;let
 .lockup{display:inline-flex;position:relative;align-items:baseline;max-width:100%}
 .wordmark{position:relative;display:inline-block}
 .bird{position:absolute;width:clamp(46px,6.5vw,105px);height:auto;left:74%;top:-.60em;transform:translate3d(0,0,0);transform-origin:54% 72%;color:var(--red);overflow:visible}
-.bird .flight{transform-origin:50% 62%;animation:depart 11s cubic-bezier(.45,.02,.27,1) infinite}
-.bird .wing{transform-origin:48% 70%;animation:wing 11s ease-in-out infinite}
+.bird{object-fit:contain;animation:depart 11s cubic-bezier(.45,.02,.27,1) infinite}
 @keyframes depart{0%,20%,74%,100%{transform:translate(0,0) rotate(0)}27%{transform:translate(8px,-8px) rotate(-9deg)}35%{transform:translate(23px,-19px) rotate(-13deg)}44%{transform:translate(48px,-28px) rotate(-9deg)}58%{transform:translate(24px,-17px) rotate(-6deg)}70%{transform:translate(0,0) rotate(0)}}
-@keyframes wing{0%,20%,70%,100%{transform:rotate(0deg) scaleY(1)}27%,38%,50%,61%{transform:rotate(-15deg) scaleY(.74)}33%,44%,56%{transform:rotate(14deg) scaleY(1.18)}}
+
 .descriptor{margin:22px 0 0;font-size:clamp(12px,1.1vw,15px);letter-spacing:.32em;font-weight:700;text-transform:uppercase}
 .intro{font:normal clamp(19px,2vw,27px)/1.55 "Libre Baskerville",Georgia,serif;letter-spacing:-.035em;max-width:360px;margin:0}.intro small{display:block;margin-top:22px;font:500 13px/1.7 "DM Sans",sans-serif;color:var(--muted);letter-spacing:0}
 .details{border-top:1px solid var(--line);padding:34px clamp(20px,6vw,90px) 78px;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
@@ -41,20 +40,13 @@ h1{font:normal clamp(61px,9.5vw,158px)/.97 "Libre Baskerville",Georgia,serif;let
 <section class="hero" aria-label="Steelebird Books identity">
 <div>
 <div class="lockup"><h1 class="wordmark">Steelebird
-<svg class="bird" viewBox="0 0 110 110" role="img" aria-label="Small abstract bird in flight">
-<g class="flight" fill="currentColor">
-<path d="M43 60 C58 55 69 54 84 46 L104 40 L90 51 L105 52 L87 58 C75 59 69 66 58 69 L42 71 Z"/>
-<path d="M47 64 L14 87 L38 74 L25 92 L55 73 Z"/>
-<path d="M68 56 C74 47 77 42 80 40 C86 38 90 40 92 44 L101 44 L93 47 C89 47 86 47 83 48 L78 59 Z"/>
-<circle cx="87" cy="44" r="1.6" fill="#f6f0e5"/>
-<g class="wing"><path d="M56 63 C44 48 31 35 8 14 C37 19 58 32 73 55 L78 62 L62 68 Z"/></g>
-</g></svg></h1></div>
+<img class="bird" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Crow_%28NIH_BioArt_833_-_796095%29.svg" alt="" aria-hidden="true" loading="eager"></h1></div>
 <p class="descriptor">Books</p>
 </div>
-<p class="intro">Some stories refuse to stay still.<small>A wordmark first. An unusual little bird that lifts away, makes a short circuit, and returns. Built entirely from type, vector paths, and CSS.</small></p>
+<p class="intro">Some stories refuse to stay still.<small>A wordmark first. A real crow silhouette, positioned over the title, briefly lifts away and returns. Its movement uses CSS rather than generated animation.</small></p>
 </section>
 <section class="details">
-<div><h2>How the mark works</h2><p>The bird belongs to the wordmark, not a separate illustration. Motion is quiet and intermittent, with a full pause between flights. On print and on book spines, the same mark stays completely still.</p></div>
+<div><h2>How the mark works</h2><p>The bird comes from an actual crow silhouette drawn for NIH BioArt, rather than a fabricated bird. Motion is quiet and intermittent, with a full pause between flights. On print and on book spines, the same mark stays completely still.</p></div>
 <div><h2>Color</h2><p>Paper, near-black, weathered red. A parent identity intentionally quieter than Re:Read, without feeling corporate.</p><div class="swatches"><span class="swatch" style="background:#f6f0e5"></span><span class="swatch" style="background:#1e2624"></span><span class="swatch" style="background:#7b342a"></span><span class="swatch" style="background:#a68e6a"></span></div></div>
 <div><h2>Shared family</h2><p>Steelebird can share Re:Read's archival paper language and carefully composed typography while each future imprint keeps its own color and personality.</p></div>
 </section>
@@ -63,6 +55,6 @@ h1{font:normal clamp(61px,9.5vw,158px)/.97 "Libre Baskerville",Georgia,serif;let
 <div><h2>Made for the spine.<br>Not just the screen.</h2><p>The strongest test is whether the identity holds together without animation. The small mark should work in one ink color, at thumbnail size, on a title page or the bottom of a book spine.</p></div>
 </section>
 </main>
-<footer><span>Steelebird Books — brand exploration, not a launched site</span><span>Static mark for reduced-motion visitors</span></footer>
+<footer><span>Steelebird Books — brand exploration, not a launched site. Bird: NIAID / Ryan Kissinger, NIH BioArt (U.S. public domain).</span><span>Static mark for reduced-motion visitors</span></footer>
 </body>
 </html>
