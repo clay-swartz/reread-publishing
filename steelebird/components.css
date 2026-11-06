@@ -45,3 +45,9 @@
 .sb-footer{background:#fffaf2;color:#171c29;border-top:1px solid rgba(23,28,41,.19)}
 .sb-footer-in{min-height:66px}
 @media(max-width:900px){.sb-component-redirect__link{grid-template-columns:1fr}.sb-component-redirect__pattern{min-height:245px}.sb-component-redirect__copy{padding:42px clamp(25px,6vw,70px)}}
+
+/* Nested light panel inside the dark French-blue redirect: reset inherited text ink. */
+.sb-imprint.sb-surface--french-blue .sb-imprint-text{background:#e9edff;color:#171c29;--surface-ink:#171c29;--surface-accent:#244ddb}
+.sb-imprint.sb-surface--french-blue .sb-imprint-text h2{color:#171c29}
+.sb-imprint.sb-surface--french-blue .sb-imprint-text p{color:#30394e}
+.sb-imprint.sb-surface--french-blue .sb-imprint-text .sb-link{color:#171c29;border-bottom-color:#244ddb}
