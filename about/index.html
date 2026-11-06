@@ -7,7 +7,7 @@
 <title>About — Re:Read</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/src/system/tokens.css"><link rel="stylesheet" href="/src/system/components.css">
+<link rel="stylesheet" href="/src/system/tokens.css"><link rel="stylesheet" href="/src/system/components.css"><link rel="stylesheet" href="/src/system/review-pages.css">
 <style>
 body{background:#fffaf2;color:#1b1b19}
 .rr-about{max-width:970px;margin:0 auto;padding:clamp(64px,9vw,130px) clamp(24px,6vw,64px) 110px}
@@ -17,6 +17,10 @@ body{background:#fffaf2;color:#1b1b19}
 .rr-about__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 55px;border-top:1px solid #d9cec0;padding-top:38px}
 .rr-about__grid h2{font-size:20px;letter-spacing:-.035em;margin:0 0 12px}
 .rr-about__grid p{font-size:16px;line-height:1.65;margin:0;color:#40403b}
+.rr-about__closing{border-top:1px solid #d9cec0;margin-top:64px;padding-top:33px;max-width:780px}
+.rr-about__closing h2{font-size:clamp(25px,3.5vw,36px);letter-spacing:-.05em;margin:0 0 14px}
+.rr-about__closing p{font-size:17px;line-height:1.65;color:#40403b;margin:0 0 15px}
+.rr-about__closing a{color:#244ddb;text-underline-offset:4px;font-weight:700}
 
 
 
@@ -26,22 +30,28 @@ body{background:#fffaf2;color:#1b1b19}
 <body><a href="#content" class="rr-skip">Skip to content</a>
 <header class="rr-header">
   <a class="rr-wordmark" href="/" aria-label="Re:Read home"><span>Re</span><span class="rr-wordmark__colon">:</span><span class="rr-wordmark__part"><span class="rr-wordmark__spacer" aria-hidden="true">Read</span><span class="rr-wordmark__face">Read</span></span></a>
+  <nav class="rr-header__nav" aria-label="Main navigation"><a class="rr-header__link" href="/submissions/">Submissions</a></nav>
 </header>
 <main class="rr-about" id="content">
 <p class="rr-about__eyebrow">About Re:Read</p>
 <h1>Great books deserve another chapter<span style="color:#f15a36">.</span></h1>
-<p class="rr-about__lede">Re:Read is an emerging independent publishing house dedicated to giving overlooked books new life—and finding original stories worth keeping.</p>
+<p class="rr-about__lede">Re:Read is an independent publishing house hellbent on giving overlooked books a new life. That includes remarkable books that slipped through the cracks and original stories that deserve a first chance.</p>
 <div class="rr-about__grid">
-<section><h2>What we publish</h2><p>Compelling, accessible books with lasting appeal: rediscovered backlist titles, thoughtfully licensed editions, and distinctive new voices.</p></section>
+<section><h2>What we publish</h2><p>Fiction and nonfiction with a reason to exist on a reader’s shelf. Sometimes that means bringing a neglected book back into print. Sometimes it means backing a new voice or giving a recent book the attention it never received.</p></section>
 <section><h2>American Myths</h2><p>Our first collection explores stories that capture the American imagination. Adventurers, dreamers, outlaws, renegades, and the myths still taking shape.</p></section>
-<section><h2>How we see books</h2><p>Each edition deserves a reason to exist: fresh editorial perspective, beautiful contemporary design, and a clear invitation for the next generation of readers.</p></section>
-<section><h2>Publishing partnerships</h2><p>We welcome conversations with authors, agents, estates, and publishers about print reissues, special editions, original work, and selected audiobook opportunities.</p></section>
+<section><h2>How we see books</h2><p>Making a book available is only the beginning. We care about editing, thoughtful design, clear positioning, and finding readers—especially through bookstores. We believe a publisher should do more than put a file into circulation.</p></section>
+<section><h2>Working with authors</h2><p>We want publishing relationships built on candid conversations, flexible deal structures, and clear financial terms. Each book is different, and we think its publishing arrangement should reflect that. We welcome conversations with authors, agents, estates, and rights holders.</p></section>
 </div>
+<section class="rr-about__closing" aria-labelledby="rr-about-next">
+  <h2 id="rr-about-next">Have a book we should know about?</h2>
+  <p>We're interested in original manuscripts, overlooked backlist titles, and rights partnerships. Tell us what makes the book worth finding—and who controls the rights, if it has been published before.</p>
+  <p><a href="/submissions/">See our submissions information</a></p>
+</section>
 </main>
 <footer class="rr-footer rr-footer--compact">
   <div class="rr-footer__inner">
     <span class="rr-footer__name">Re:Read<span class="rr-footer__period">.</span></span>
-    <nav class="rr-footer__nav" aria-label="Footer navigation"><a href="/submissions/">Submissions</a><a href="/about/" aria-current="page">About</a></nav>
+    <nav class="rr-footer__nav" aria-label="Footer navigation"><a href="/about/" aria-current="page">About</a></nav>
   </div>
 </footer>
 <script type="module" src="/src/system/site.js"></script>
