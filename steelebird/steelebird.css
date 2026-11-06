@@ -64,3 +64,58 @@ a{color:inherit}button,input{font:inherit}button{cursor:pointer}.sb-skip{positio
 .sb-contact-form button:disabled{opacity:.65;cursor:not-allowed}
 .sb-contact-form .form-note{font-size:12px;line-height:1.55;color:#555d68;margin-top:16px}
 @media(max-width:850px){.sb-contact-layout{grid-template-columns:1fr}.sb-contact-intro h1{max-width:640px}}
+
+/* November refinements: the same logo proportions apply in header and footer */
+.sb-icon{width:.64em;height:.64em;top:-.14em;left:50%}
+.sb-logo{line-height:1.55}
+.sb-nav .sb-nav-feature,.sb-button{display:inline-flex;align-items:center;justify-content:center;gap:13px;background:var(--sb-primary);color:#fffaf2!important;border:1px solid var(--sb-primary);padding:13px 19px;border-radius:2px;text-decoration:none;font-size:14px;font-weight:700;line-height:1.2}
+.sb-nav .sb-nav-feature:hover,.sb-button:hover{background:#1b3db9;color:#fffaf2!important;text-decoration:none}
+.sb-button--light{background:#fffaf2!important;border-color:#fffaf2;color:#172348!important}
+.sb-button--light:hover{background:#dce4ff!important;border-color:#dce4ff;color:#172348!important}
+.sb-bridge-actions{display:flex;align-items:center;gap:30px;flex-wrap:wrap}.sb-bridge-sub{font-size:14px!important;text-decoration:underline;text-underline-offset:5px}
+.sb-imprint-art{align-items:center;justify-content:center;padding:clamp(40px,5vw,76px)}
+.sb-imprint-art::before{background:linear-gradient(rgba(12,30,70,.18),rgba(12,30,70,.5))}
+.sb-imprint-brand{font-family:var(--sb-body);font-weight:700;color:#fffaf2;white-space:nowrap;font-size:clamp(56px,6.5vw,108px);letter-spacing:-.085em;line-height:1}
+.sb-imprint-brand-colon,.sb-imprint-brand-read{color:#f15a36}.sb-imprint-brand-colon{color:#fffaf2}.sb-imprint-brand-period{color:#f15a36}
+.sb-about-feature{background:#fffaf2}
+.sb-about-feature-inner{display:grid;grid-template-columns:1.2fr .75fr;min-height:530px;gap:clamp(40px,6vw,90px);align-items:stretch}
+.sb-about-feature-copy{padding-block:clamp(80px,10vw,140px)}
+.sb-about-feature h1{font-size:clamp(48px,6.5vw,92px);line-height:1.04;letter-spacing:-.08em;max-width:790px;margin:0 0 30px}
+.sb-about-feature-copy>p:not(.sb-kicker){font-size:clamp(20px,2vw,27px);line-height:1.45;max-width:760px;margin:0;color:#394153}
+.sb-about-feature-pattern{background:linear-gradient(180deg,rgba(9,22,49,.22),rgba(9,22,49,.78)),url('/endpapers/collection/03-ebony-marble.webp') center/cover;color:#fffaf2;display:flex;align-items:flex-end;padding:clamp(28px,4vw,65px)}
+.sb-about-feature-pattern span{font:700 clamp(28px,3.2vw,50px)/1.12 var(--sb-display);letter-spacing:-.055em}
+.sb-about-feature-pattern .sb-about-period{color:#82a3ff}
+.sb-about-story{display:grid;grid-template-columns:1fr 1.18fr;gap:clamp(45px,9vw,145px);padding-block:clamp(75px,9vw,130px)}
+.sb-about-story h2{font-size:clamp(42px,4.7vw,70px);letter-spacing:-.075em;line-height:1.1;margin:0}
+.sb-about-story-body p{font-size:clamp(18px,1.6vw,22px);line-height:1.65;margin:0 0 23px}
+.sb-about-principles{background:#172348;color:#fffaf2}
+.sb-about-principles-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(25px,4vw,72px);padding-block:clamp(70px,8vw,110px)}
+.sb-about-principles article{border-top:1px solid #7c8db3;padding-top:26px}
+.sb-about-principles .sb-index{font-size:12px;letter-spacing:.12em;color:#a8bcf3;text-transform:uppercase;font-weight:700}
+.sb-about-principles h3{font-size:clamp(23px,2.6vw,35px);letter-spacing:-.055em;line-height:1.15;margin:35px 0 18px}
+.sb-about-principles p{font-size:16px;line-height:1.7;color:#d8dff2}
+.sb-about-imprint{display:grid;grid-template-columns:.85fr 1.15fr;min-height:400px}
+.sb-about-imprint-pattern{background:#192c47 url('/endpapers/collection/01-french-blue.webp') center/cover;min-height:330px}
+.sb-about-imprint-copy{padding:clamp(55px,7vw,105px);background:#e9edff}
+.sb-about-imprint-copy h2{font-size:clamp(50px,6vw,85px);letter-spacing:-.075em;line-height:1.1;margin:0 0 20px}
+.sb-about-imprint-copy>p:not(.sb-kicker){font-size:18px;line-height:1.65;max-width:620px}
+.sb-submit-hero{background:#192c47;color:#fffaf2;position:relative;isolation:isolate}
+.sb-submit-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(16,29,59,.78),rgba(16,29,59,.45)),url('/endpapers/collection/01-french-blue.webp') center/cover}
+.sb-submit-layout{display:grid;grid-template-columns:1fr minmax(320px,.87fr);align-items:center;gap:clamp(35px,6vw,100px);padding-block:clamp(65px,8vw,115px)}
+.sb-submit-copy h1{font-size:clamp(52px,5.7vw,90px);line-height:1.06;letter-spacing:-.07em;margin:0 0 30px}
+.sb-submit-copy p:not(.sb-kicker){font-size:clamp(19px,1.8vw,25px);line-height:1.55;max-width:680px}
+.sb-submit-card{background:#fffaf2;color:#171c29;padding:clamp(25px,3.5vw,49px)}
+.sb-submit-card h2{font-size:clamp(30px,3vw,45px);letter-spacing:-.05em;margin:0 0 10px}
+.sb-submit-card>p{font-size:15px;color:#596276;margin:0 0 26px}
+.sb-submit-form label{font-size:13px;display:block;font-weight:700;margin-bottom:19px}
+.sb-submit-form input:not([type=file]),.sb-submit-form textarea{display:block;width:100%;padding:13px 14px;margin-top:8px;border:1px solid #a7b0c4;background:#fff;color:#171c29;border-radius:2px;font:400 15px var(--sb-body)}
+.sb-submit-form textarea{resize:vertical;min-height:110px}.sb-submit-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.sb-submit-form input[type=file]{display:block;margin-top:10px;max-width:100%;font-size:12px;font-weight:400}
+.sb-submit-form button{padding:15px 27px;background:#244ddb;color:#fff;border:0;border-radius:2px;font:700 15px var(--sb-body)}
+.sb-submit-form button:disabled{opacity:.65;cursor:not-allowed}
+.sb-submit-notice{font-size:12px;line-height:1.5;color:#596276}
+.sb-submit-below{display:grid;grid-template-columns:.9fr 1fr;gap:clamp(40px,7vw,100px);padding-block:clamp(70px,8vw,110px)}
+.sb-submit-below h2{font-size:clamp(36px,4.4vw,67px);line-height:1.1;letter-spacing:-.07em;margin:0}
+.sb-submit-below>p{font-size:18px;line-height:1.7;margin:0}
+@media(max-width:980px){.sb-about-feature-inner,.sb-about-story,.sb-about-imprint,.sb-submit-layout,.sb-submit-below{grid-template-columns:1fr}.sb-about-feature-pattern{min-height:290px}.sb-about-principles-inner{grid-template-columns:1fr;gap:38px}.sb-about-imprint-pattern{min-height:250px}}
+@media(max-width:650px){.sb-nav{gap:9px}.sb-nav .sb-nav-feature{padding:10px 12px}.sb-nav a{font-size:12px}.sb-imprint-brand{font-size:clamp(55px,12vw,83px)}.sb-submit-row{grid-template-columns:1fr}.sb-submit-card{padding:25px}.sb-about-feature-copy{padding-block:70px}}
