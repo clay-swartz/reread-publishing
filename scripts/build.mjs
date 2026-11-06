@@ -12,6 +12,9 @@ await fs.copyFile(path.join(root,'submissions/index.html'),path.join(dist,'submi
 await fs.mkdir(path.join(dist,'steelebird'),{recursive:true});
 await fs.copyFile(path.join(root,'steelebird/index.html'),path.join(dist,'steelebird/index.html'));
 await fs.copyFile(path.join(root,'steelebird/steelebird.css'),path.join(dist,'steelebird/steelebird.css'));
+await fs.copyFile(path.join(root,'steelebird/components.css'),path.join(dist,'steelebird/components.css'));
+await fs.mkdir(path.join(dist,'steelebird/system'),{recursive:true});
+await fs.copyFile(path.join(root,'steelebird/system/index.html'),path.join(dist,'steelebird/system/index.html'));
 await fs.copyFile(path.join(root,'steelebird/steelebird.js'),path.join(dist,'steelebird/steelebird.js'));
 await fs.mkdir(path.join(dist,'steelebird/about'),{recursive:true});
 await fs.copyFile(path.join(root,'steelebird/about/index.html'),path.join(dist,'steelebird/about/index.html'));
