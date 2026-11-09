@@ -242,3 +242,8 @@
  .sb-component-hero--home .sb-hero-wrap{padding-block:55px 63px}
  .sb-home-invite{padding-block:48px}
 }
+
+/* Homepage: one headline with a quiet second line, not an eyebrow or label. */
+.sb-component-hero--home h1 .sb-hero-name{display:block;font-size:1em;line-height:1.1}
+.sb-component-hero--home h1 .sb-hero-promise{display:block;font-size:.68em;font-weight:600;line-height:1.33;letter-spacing:-.045em;margin-top:clamp(15px,1.7vw,24px);max-width:810px}
+@media(max-width:650px){.sb-component-hero--home h1 .sb-hero-promise{font-size:.73em;line-height:1.3}}
