@@ -243,7 +243,51 @@
  .sb-home-invite{padding-block:48px}
 }
 
-/* Homepage: one headline with a quiet second line, not an eyebrow or label. */
-.sb-component-hero--home h1 .sb-hero-name{display:block;font-size:1em;line-height:1.1}
-.sb-component-hero--home h1 .sb-hero-promise{display:block;font-size:.68em;font-weight:600;line-height:1.33;letter-spacing:-.045em;margin-top:clamp(15px,1.7vw,24px);max-width:810px}
-@media(max-width:650px){.sb-component-hero--home h1 .sb-hero-promise{font-size:.73em;line-height:1.3}}
+
+/* November 9: uncluttered homepage sections and compact collection panels. */
+.sb-component-hero--home h1,
+.sb-hero:not(.sb-interior-hero).sb-component-hero--home h1{
+  font-size:clamp(35px,3.72vw,62px);
+  line-height:1.14;
+  letter-spacing:-.065em;
+  font-weight:700;
+  max-width:800px;
+}
+.sb-home-about{position:relative;isolation:isolate;overflow:hidden;background:#edf0ff}
+.sb-home-about::before{
+  content:"";position:absolute;right:-6%;top:-72%;width:44%;height:255%;
+  background:linear-gradient(115deg,rgba(237,240,255,.12),rgba(237,240,255,.72)),url('/endpapers/collection/01-french-blue.webp') center/cover;
+  opacity:.085;z-index:-1;pointer-events:none;transform:rotate(-10deg);
+}
+.sb-home-about .sb-about-story{position:relative}
+.sb-home-invite{position:relative;isolation:isolate;overflow:hidden;background:#f8f3eb;padding-block:clamp(52px,5.6vw,87px)}
+.sb-home-invite::before{
+  content:"";position:absolute;right:0;top:0;width:min(33%,450px);height:100%;z-index:-1;pointer-events:none;
+  background:linear-gradient(90deg,#f8f3eb 0%,rgba(248,243,235,.76) 36%,rgba(248,243,235,.48) 100%),url('/endpapers/collection/07-classic-speckle.webp') center/cover;
+  opacity:.3;
+}
+.sb-home-invite-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:clamp(35px,6vw,110px)}
+.sb-home-invite h2{font-size:clamp(36px,4.2vw,61px);margin:0 0 17px}
+.sb-home-invite p:not(.sb-section-eyebrow){max-width:750px}
+.sb-home-invite .sb-button{align-self:center}
+.sb-submissions-collection-card{
+  min-height:0;
+  padding:clamp(25px,2.45vw,37px);
+  border-radius:10px;
+  align-items:center;
+}
+.sb-submissions-collection-card h3{font-size:clamp(30px,2.85vw,41px);margin-bottom:11px}
+.sb-submissions-collection-card p{line-height:1.48}
+.sb-submissions-lede{margin-bottom:clamp(22px,2.5vw,36px)}
+.sb-submissions-form-intro{padding-top:clamp(6px,1.1vw,18px)}
+.sb-mobile-menu summary{border-radius:6px}
+@media(max-width:850px){
+  .sb-home-invite-inner{display:flex;flex-direction:column;align-items:flex-start;gap:25px}
+  .sb-home-about::before{width:70%;right:-28%}
+  .sb-submissions-collection-card{min-height:0;padding:28px}
+}
+@media(max-width:650px){
+  .sb-component-hero--home h1,.sb-hero:not(.sb-interior-hero).sb-component-hero--home h1{font-size:clamp(34px,8.4vw,48px);line-height:1.16}
+  .sb-home-invite::before{width:65%;opacity:.16}
+  .sb-mobile-menu summary{background:#244ddb;color:#fffaf2;border-radius:6px}
+}
