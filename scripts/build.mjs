@@ -8,7 +8,7 @@ await fs.mkdir(dist,{recursive:true});
 await fs.cp(path.join(root,'public/endpapers'),path.join(dist,'endpapers'),{recursive:true});
 await fs.mkdir(path.join(dist,'steelebird'),{recursive:true});
 for(const asset of ['steelebird.css','components.css','steelebird.js']) await fs.copyFile(path.join(root,'steelebird',asset),path.join(dist,'steelebird',asset));
-for(const route of ['','about','submissions','contact']){
+for(const route of ['','submissions','contact']){
  const from=path.join(root,'steelebird',route,'index.html');
  const out=path.join(dist,route,'index.html');
  await fs.mkdir(path.dirname(out),{recursive:true});
