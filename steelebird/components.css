@@ -369,3 +369,43 @@
 .sb-header .sb-logo.sb-wordmark:focus-visible{outline:2px solid #365c78;outline-offset:5px}
 @media(max-width:650px){.sb-header .sb-logo.sb-wordmark,.sb-footer .sb-logo.sb-wordmark{width:230px;max-width:calc(100vw - 50px)}}
 @media(prefers-reduced-motion:reduce){.sb-header .sb-logo.sb-wordmark,.sb-footer .sb-logo.sb-wordmark{transition:none}}
+
+
+/* Approved Steelebird static editorial wordmark — 10 permanent faces and restrained ink palette.
+   Font choices and color sequence match the reviewed static prototype. No animation. */
+:root{--sb-editorial-navy:#172348;--sb-editorial-red:#d52d3a;--sb-editorial-red-bright:#e23b36;--sb-editorial-blue:#47679e;--sb-editorial-slate:#45637b}
+.sb-header .sb-logo.sb-wordmark.sb-wordmark--editorial,
+.sb-footer .sb-logo.sb-wordmark.sb-wordmark--editorial{
+ display:inline-flex;align-items:baseline;justify-content:flex-start;gap:0;
+ width:auto;min-height:0;font-size:clamp(27px,2.6vw,36px);
+ font-family:"Space Grotesk",sans-serif;font-weight:700;font-style:normal;
+ letter-spacing:0;text-transform:none;line-height:1.38;white-space:nowrap;
+ color:var(--sb-editorial-navy);transition:none;opacity:1;
+}
+.sb-footer .sb-logo.sb-wordmark.sb-wordmark--editorial{font-size:24px}
+.sb-logo.sb-wordmark.sb-wordmark--editorial .sb-wordmark-letter{
+ display:inline-block;font-size:1em;line-height:1.38;letter-spacing:-.062em;
+ font-style:normal;white-space:pre;transition:none;animation:none;
+}
+.sb-wordmark--editorial .sb-wordmark-letter--1{font-family:"Space Grotesk",sans-serif;font-weight:700;color:#172348}
+.sb-wordmark--editorial .sb-wordmark-letter--2{font-family:"Fraunces",Georgia,serif;font-weight:700;color:#d52d3a}
+.sb-wordmark--editorial .sb-wordmark-letter--3{font-family:"DM Sans",Arial,sans-serif;font-weight:700;color:#47679e}
+.sb-wordmark--editorial .sb-wordmark-letter--4{font-family:"Oswald",Arial,sans-serif;font-weight:600;color:#172348}
+.sb-wordmark--editorial .sb-wordmark-letter--5{font-family:"Bodoni Moda",Georgia,serif;font-weight:700;color:#e23b36}
+.sb-wordmark--editorial .sb-wordmark-letter--6{font-family:"Archivo Black",Arial,sans-serif;font-weight:400;color:#45637b}
+.sb-wordmark--editorial .sb-wordmark-letter--7{font-family:"Libre Baskerville",Georgia,serif;font-weight:700;color:#172348}
+.sb-wordmark--editorial .sb-wordmark-letter--8{font-family:"Space Grotesk",Arial,sans-serif;font-weight:700;color:#d52d3a}
+.sb-wordmark--editorial .sb-wordmark-letter--9{font-family:"Fraunces",Georgia,serif;font-weight:700;color:#47679e}
+.sb-wordmark--editorial .sb-wordmark-letter--10{font-family:"DM Sans",Arial,sans-serif;font-weight:700;color:#172348}
+/* Small, purposeful extensions of the new identity, not a global recolor. */
+.sb-launch-card{border-top:3px solid var(--sb-editorial-red)}
+.sb-launch-button--secondary:hover{background:var(--sb-editorial-navy);border-color:var(--sb-editorial-navy)}
+.sb-footer{border-top:2px solid rgba(71,103,158,.48)}
+.sb-contact-form.sb-component-form,.sb-submissions-grid .sb-submit-card{border-top:3px solid var(--sb-editorial-red)}
+.sb-interior-hero h1 em{color:#b4c6f0}
+.sb-contact-intro a,.sb-submissions-guidance a{ text-decoration-color:var(--sb-editorial-red);text-decoration-thickness:2px;text-underline-offset:4px}
+.sb-form-status[data-state="success"]{color:#365c78}
+@media(max-width:650px){
+ .sb-header .sb-logo.sb-wordmark.sb-wordmark--editorial{font-size:clamp(26px,7.3vw,33px)}
+ .sb-footer .sb-logo.sb-wordmark.sb-wordmark--editorial{font-size:23px}
+}
