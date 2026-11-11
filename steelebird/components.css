@@ -714,19 +714,19 @@
 .sb-header .sb-publishing-descriptor{
  display:block;
  font-family:"Space Grotesk",Arial,sans-serif;
- font-size:18px;
+ font-size:15px;
  font-weight:700;
- line-height:1.1;
+ line-height:1;
  letter-spacing:4.5px;
  text-transform:uppercase;
  text-align:center;
  color:#172348;
- margin-top:-1px;
+ margin-top:-8px;
  white-space:nowrap;
 }
 @media(max-width:650px){
  .sb-header .sb-publishing-descriptor{
-  font-size:15px;
+  font-size:13px;
   letter-spacing:3.8px;
  }
 }
