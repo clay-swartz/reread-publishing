@@ -347,3 +347,25 @@
 .sb-launch-button--primary:hover{background:#29465d;border-color:#29465d;color:#fffaf2}
 .sb-nav .sb-nav-feature,.sb-button,.sb-contact-form button,.sb-submit-form button[type="submit"]{background:#365c78;border-color:#365c78;color:#fffaf2}
 .sb-nav .sb-nav-feature:hover,.sb-button:hover,.sb-contact-form button:hover,.sb-submit-form button[type="submit"]:hover{background:#29465d;border-color:#29465d;color:#fffaf2}
+
+
+/* Steelebird wordmark as a rotating collection of book-cover typographic treatments.
+   Uses fixed advance width to prevent header movement. */
+.sb-header .sb-logo.sb-wordmark,
+.sb-footer .sb-logo.sb-wordmark{width:clamp(215px,19vw,280px);min-height:1.3em;display:inline-flex;justify-content:flex-start;align-items:center;white-space:nowrap;font-family:"Space Grotesk",Arial,sans-serif;font-size:clamp(26px,2.5vw,36px);font-weight:700;font-style:normal;letter-spacing:-.075em;text-transform:none;color:#365c78;text-decoration:none;transition:color .25s ease,opacity .25s ease;transform-origin:left center}
+.sb-logo.sb-wordmark .sb-wordmark-last{margin-left:-.027em}
+.sb-logo.sb-wordmark[data-cover="modern"]{font-family:"Space Grotesk",Arial,sans-serif;font-size:clamp(26px,2.5vw,36px);font-weight:700;letter-spacing:-.075em;color:#365c78;text-transform:none;font-style:normal}
+.sb-logo.sb-wordmark[data-cover="literary"]{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(26px,2.5vw,35px);letter-spacing:-.07em;color:#743e32;text-transform:none;font-style:normal}
+.sb-logo.sb-wordmark[data-cover="paperback"]{font-family:"Oswald",Impact,sans-serif;font-weight:600;font-size:clamp(29px,2.65vw,38px);letter-spacing:-.012em;color:#3f5561;text-transform:uppercase;font-style:normal}
+.sb-logo.sb-wordmark[data-cover="modernist"]{font-family:"Archivo Black",Arial,sans-serif;font-weight:400;font-size:clamp(23px,2.18vw,31px);letter-spacing:-.082em;color:#9b4a29;text-transform:uppercase;font-style:normal}
+.sb-logo.sb-wordmark[data-cover="typewriter"]{font-family:"Special Elite","Courier New",monospace;font-weight:400;font-size:clamp(21px,2.0vw,30px);letter-spacing:-.075em;color:#252d39;text-transform:none;font-style:normal}
+.sb-logo.sb-wordmark[data-cover="classic"]{font-family:"Bodoni Moda","Times New Roman",serif;font-weight:700;font-size:clamp(26px,2.4vw,35px);letter-spacing:-.075em;color:#534d73;text-transform:none;font-style:normal}
+.sb-logo.sb-wordmark[data-cover="experimental"]{font-family:"Fraunces",Georgia,serif;font-weight:700;font-size:clamp(27px,2.55vw,36px);letter-spacing:-.08em;color:#a24f3e;text-transform:none;font-style:normal}
+.sb-logo.sb-wordmark[data-cover="edition"]{font-family:"DM Mono",monospace;font-weight:500;font-size:clamp(20px,1.82vw,27px);letter-spacing:-.075em;color:#3f6656;text-transform:uppercase;font-style:normal}
+.sb-logo.sb-wordmark[data-cover="romance"]{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(28px,2.6vw,36px);letter-spacing:-.085em;color:#865161;text-transform:none;font-style:italic}
+.sb-logo.sb-wordmark[data-cover="romance"] .sb-wordmark-first,.sb-logo.sb-wordmark[data-cover="romance"] .sb-wordmark-last{font-style:italic}
+.sb-logo.sb-wordmark[data-cover="paperback"] .sb-wordmark-last,.sb-logo.sb-wordmark[data-cover="modernist"] .sb-wordmark-last,.sb-logo.sb-wordmark[data-cover="edition"] .sb-wordmark-last{margin-left:0}
+.sb-logo.sb-wordmark.is-cover-switching{opacity:.5}
+.sb-header .sb-logo.sb-wordmark:focus-visible{outline:2px solid #365c78;outline-offset:5px}
+@media(max-width:650px){.sb-header .sb-logo.sb-wordmark,.sb-footer .sb-logo.sb-wordmark{width:230px;max-width:calc(100vw - 50px)}}
+@media(prefers-reduced-motion:reduce){.sb-header .sb-logo.sb-wordmark,.sb-footer .sb-logo.sb-wordmark{transition:none}}
