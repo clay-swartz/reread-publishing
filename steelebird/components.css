@@ -759,3 +759,72 @@
  .sb-header.sb-launch-header{flex-wrap:wrap;row-gap:2px}
  .sb-header.sb-launch-header .sb-header-links{width:100%;justify-content:flex-end}
 }
+
+/* Mobile-only navigation and footer simplification. Desktop remains unchanged. */
+.sb-header.sb-launch-header .sb-mobile-header-menu{display:none}
+@media(max-width:650px){
+ .sb-header.sb-launch-header{
+  flex-wrap:nowrap;
+  min-height:60px;
+  position:relative;
+  justify-content:space-between;
+ }
+ .sb-header.sb-launch-header .sb-header-links{display:none}
+ .sb-header.sb-launch-header .sb-mobile-header-menu{
+  display:block;
+  margin-left:auto;
+  flex:0 0 auto;
+  position:relative;
+  z-index:20;
+ }
+ .sb-header.sb-launch-header .sb-mobile-header-menu summary{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  cursor:pointer;
+  color:#172348;
+  list-style:none;
+  border-radius:4px;
+ }
+ .sb-header.sb-launch-header .sb-mobile-header-menu summary::-webkit-details-marker{display:none}
+ .sb-header.sb-launch-header .sb-mobile-header-menu summary:hover{color:#b82e3b}
+ .sb-header.sb-launch-header .sb-mobile-header-menu summary:focus-visible{
+  outline:2px solid #47679e;
+  outline-offset:2px;
+ }
+ .sb-header.sb-launch-header .sb-mobile-nav-links{
+  position:absolute;
+  top:calc(100% + 8px);
+  right:0;
+  min-width:180px;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  padding:7px;
+  background:#fffaf2;
+  border:1px solid rgba(23,35,72,.25);
+  border-radius:4px;
+  box-shadow:0 7px 18px rgba(23,35,72,.13);
+ }
+ .sb-header.sb-launch-header .sb-mobile-nav-links a{
+  display:block;
+  padding:11px 13px;
+  color:#172348;
+  font:600 14px/1.35 "Space Grotesk",Arial,sans-serif;
+  text-decoration:none;
+  border-radius:3px;
+ }
+ .sb-header.sb-launch-header .sb-mobile-nav-links a:hover,
+ .sb-header.sb-launch-header .sb-mobile-nav-links a:focus-visible{
+  background:#edf0fb;
+  color:#b82e3b;
+ }
+ .sb-header.sb-launch-header .sb-mobile-nav-links a[aria-current="page"]{
+  text-decoration:underline;
+  text-decoration-color:#47679e;
+  text-underline-offset:4px;
+ }
+ .sb-footer{display:none!important}
+}
