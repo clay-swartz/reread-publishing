@@ -369,3 +369,34 @@
 .sb-header .sb-logo.sb-wordmark:focus-visible{outline:2px solid #365c78;outline-offset:5px}
 @media(max-width:650px){.sb-header .sb-logo.sb-wordmark,.sb-footer .sb-logo.sb-wordmark{width:230px;max-width:calc(100vw - 50px)}}
 @media(prefers-reduced-motion:reduce){.sb-header .sb-logo.sb-wordmark,.sb-footer .sb-logo.sb-wordmark{transition:none}}
+
+
+/* Steelebird wordmark: permanent typographic collage; ink colors only animate.
+   Fixed face per letter; no shape transforms, no reflow, no flicker. */
+.sb-header .sb-logo.sb-wordmark.sb-wordmark--collage,
+.sb-footer .sb-logo.sb-wordmark.sb-wordmark--collage{
+  display:inline-flex;align-items:baseline;justify-content:flex-start;width:auto;
+  min-height:0;font-family:"Space Grotesk",sans-serif;
+  font-size:clamp(27px,2.6vw,37px);font-weight:700;letter-spacing:0;
+  text-transform:none;font-style:normal;color:#365c78;
+  white-space:nowrap;line-height:1.25;transition:none;
+}
+.sb-footer .sb-logo.sb-wordmark.sb-wordmark--collage{font-size:25px}
+.sb-wordmark--collage .sb-wordmark-letter{
+  display:inline-block;flex:none;letter-spacing:-.065em;
+  transition:color .34s ease;transform:none;font-style:normal;
+  font-size:1em;line-height:1.2;vertical-align:baseline;
+  color:#365c78;
+}
+.sb-wordmark--collage .sb-wordmark-letter:nth-child(1){font-family:"Archivo Black",Arial,sans-serif;font-weight:400;color:#365c78}
+.sb-wordmark--collage .sb-wordmark-letter:nth-child(2){font-family:"Bodoni Moda",Georgia,serif;font-weight:700;color:#8c604e}
+.sb-wordmark--collage .sb-wordmark-letter:nth-child(3){font-family:"Space Grotesk",Arial,sans-serif;font-weight:700;color:#4c6b60}
+.sb-wordmark--collage .sb-wordmark-letter:nth-child(4){font-family:"Fraunces",Georgia,serif;font-weight:700;color:#627487}
+.sb-wordmark--collage .sb-wordmark-letter:nth-child(5){font-family:"Oswald",Arial,sans-serif;font-weight:600;color:#756d56}
+.sb-wordmark--collage .sb-wordmark-letter:nth-child(6){font-family:"Playfair Display",Georgia,serif;font-weight:700;color:#365c78}
+.sb-wordmark--collage .sb-wordmark-letter:nth-child(7){font-family:"Space Grotesk",Arial,sans-serif;font-weight:700;color:#8c604e}
+.sb-wordmark--collage .sb-wordmark-letter:nth-child(8){font-family:"DM Mono",monospace;font-weight:500;color:#4c6b60}
+.sb-wordmark--collage .sb-wordmark-letter:nth-child(9){font-family:"Bodoni Moda",Georgia,serif;font-weight:700;color:#627487}
+.sb-wordmark--collage .sb-wordmark-letter:nth-child(10){font-family:"Archivo Black",Arial,sans-serif;font-weight:400;color:#756d56}
+@media(max-width:650px){.sb-header .sb-logo.sb-wordmark.sb-wordmark--collage{font-size:clamp(26px,7vw,33px)}.sb-footer .sb-logo.sb-wordmark.sb-wordmark--collage{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.sb-wordmark--collage .sb-wordmark-letter{transition:none!important}}
