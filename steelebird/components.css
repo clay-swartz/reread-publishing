@@ -701,32 +701,14 @@
  }
 }
 
-
-/* Approved Steelebird Publishing header lockup (Nov 11).
-   Header only: existing multitypeface wordmark and footer stay unchanged. */
-.sb-header.sb-launch-header .sb-home{
- display:inline-flex;
- flex-direction:column;
- align-items:center;
- justify-content:center;
- text-decoration:none;
-}
-.sb-header .sb-publishing-descriptor{
- display:block;
- font-family:"Space Grotesk",Arial,sans-serif;
- font-size:15px;
- font-weight:700;
- line-height:1;
- letter-spacing:4.5px;
- text-transform:uppercase;
- text-align:center;
- color:#172348;
- margin-top:-8px;
- white-space:nowrap;
+/* Compact wordmark-only header on the three published Steelebird pages. */
+.sb-header.sb-launch-header{
+ min-height:64px;
+ padding:10px clamp(22px,5vw,86px);
 }
 @media(max-width:650px){
- .sb-header .sb-publishing-descriptor{
-  font-size:13px;
-  letter-spacing:3.8px;
+ .sb-header.sb-launch-header{
+  min-height:60px;
+  padding:10px 22px;
  }
 }
