@@ -632,3 +632,71 @@
  .sb-submissions-main--streamlined .sb-submit-actions{align-items:flex-start}
  .sb-submissions-main--streamlined .sb-submit-attachment{width:100%}
 }
+
+
+/* Nov 11: Crimson Peacock endpaper on both interior heroes.
+   Strong opaque ink wash keeps every headline readable, including over red plumage. */
+.sb-hero.sb-interior-hero{
+ background-color:#172348;
+ color:#fffaf2;
+ position:relative;
+ isolation:isolate;
+}
+.sb-hero.sb-interior-hero::before{
+ content:"";position:absolute;inset:0;z-index:-1;
+ background-image:
+  linear-gradient(90deg,rgba(12,20,44,.86) 0%,rgba(12,20,44,.78) 57%,rgba(12,20,44,.72) 100%),
+  url('/endpapers/collection/05-crimson-peacock.webp');
+ background-position:center,center 49%;
+ background-size:cover,cover;
+ background-repeat:no-repeat;
+ opacity:1;
+}
+.sb-hero.sb-interior-hero h1,
+.sb-hero.sb-interior-hero h1 em{
+ color:#fffaf2;
+ font-style:normal;
+ text-shadow:0 1px 3px rgba(8,14,29,.3);
+}
+/* Contact mirrors the desktop Submissions layout and editorial typography. */
+.sb-contact-layout.sb-contact-layout--interior{
+ grid-template-columns:minmax(0,1fr) minmax(350px,1.04fr);
+ gap:clamp(28px,5vw,85px);
+ align-items:start;
+ padding-block:clamp(30px,4vw,58px);
+}
+.sb-contact-layout--interior .sb-contact-intro{
+ padding:0;
+}
+.sb-contact-layout--interior .sb-contact-intro p:not(.sb-kicker){
+ max-width:none;
+ margin:0 0 23px;
+ font-size:clamp(23px,2.25vw,32px);
+ line-height:1.47;
+ font-weight:500;
+ letter-spacing:-.025em;
+ color:#263248;
+}
+.sb-contact-layout--interior .sb-contact-intro a{
+ color:#365d9b;
+ font-weight:700;
+ text-decoration-color:#b82e3b;
+}
+.sb-contact-layout--interior .sb-contact-form{
+ padding:clamp(25px,3vw,43px);
+}
+.sb-contact-layout--interior .sb-contact-form>h2{
+ font-family:"Space Grotesk",Arial,sans-serif;
+ font-size:clamp(27px,2.6vw,38px);
+ line-height:1.12;
+ font-weight:700;
+ letter-spacing:-.055em;
+ color:#172348;
+ margin:0 0 25px;
+}
+@media(max-width:850px){
+ .sb-contact-layout.sb-contact-layout--interior{display:grid;grid-template-columns:1fr;gap:26px}
+ .sb-contact-layout--interior .sb-contact-intro p:not(.sb-kicker){
+  font-size:clamp(18px,4.7vw,23px);line-height:1.48;
+ }
+}
