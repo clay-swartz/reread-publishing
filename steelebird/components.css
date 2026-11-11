@@ -570,3 +570,65 @@
  .sb-submissions-main--streamlined {padding-block:22px 38px}
  .sb-submissions-main--streamlined .sb-submit-card {width:100%;max-width:none}
 }
+
+
+/* Nov 11: copy-fitted home announcement and editorial-sized acquisition pitch. */
+.sb-launch-card{
+ width:min(100%,790px);
+ padding:clamp(36px,4.1vw,58px) clamp(28px,5.25vw,70px);
+}
+.sb-launch-card h1{margin-bottom:21px;font-size:clamp(38px,4vw,58px)}
+.sb-launch-card .sb-launch-statement{
+ max-width:675px;
+ font-size:clamp(22px,2.18vw,31px);
+ line-height:1.32;
+ margin:0 auto 29px;
+ text-wrap:balance;
+}
+.sb-launch-card .sb-launch-actions{margin-top:0}
+.sb-submissions-main--streamlined .sb-submissions-guidance>p.sb-submissions-opening{
+ font-size:clamp(23px,2.25vw,32px);
+ line-height:1.47;
+ font-weight:500;
+ letter-spacing:-.025em;
+ color:#263248;
+ margin:0;
+}
+/* Clean manuscript attachment component, with keyboard-operable native input retained. */
+.sb-submissions-main--streamlined .sb-submit-actions{gap:18px;align-items:center}
+.sb-submissions-main--streamlined .sb-submit-attachment{
+ display:flex;flex-direction:column;align-items:flex-start;gap:7px;
+ min-width:0;flex:1;
+}
+.sb-submissions-main--streamlined .sb-attach-trigger{
+ display:inline-flex;align-items:center;justify-content:center;gap:9px;
+ width:auto;max-width:100%;padding:11px 14px;
+ margin:0;position:relative;cursor:pointer;
+ border:1.5px solid #47679e;border-radius:4px;
+ background:#fffaf2;color:#172348;
+ font:700 13px/1.3 "Space Grotesk",Arial,sans-serif;
+ transition:background .15s,border-color .15s,color .15s;
+}
+.sb-submissions-main--streamlined .sb-attach-trigger:hover {
+ border-color:#b82e3b;color:#b82e3b;background:#fff;
+}
+.sb-submissions-main--streamlined .sb-attach-trigger:focus-within{
+ outline:2px solid #47679e;outline-offset:3px;
+}
+.sb-submissions-main--streamlined .sb-attach-trigger input[type=file]{
+ position:absolute!important;width:1px!important;height:1px!important;
+ padding:0!important;margin:0!important;overflow:hidden!important;
+ opacity:0!important;clip-path:inset(50%)!important;
+ border:0!important;
+}
+.sb-submissions-main--streamlined .sb-attachment-name{
+ display:block;max-width:100%;overflow-wrap:anywhere;
+ font-size:12px;line-height:1.35;font-weight:400;color:#58657a;
+}
+@media(max-width:650px){
+ .sb-launch-card{padding:36px 23px}
+ .sb-launch-card h1{font-size:clamp(35px,8.6vw,45px);margin-bottom:19px}
+ .sb-launch-card .sb-launch-statement{font-size:clamp(21px,5.1vw,25px);margin-bottom:25px}
+ .sb-submissions-main--streamlined .sb-submit-actions{align-items:flex-start}
+ .sb-submissions-main--streamlined .sb-submit-attachment{width:100%}
+}
