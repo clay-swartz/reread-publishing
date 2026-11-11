@@ -536,3 +536,37 @@
  .sb-submissions-opening{margin-bottom:26px}
  .sb-submissions-main--streamlined .sb-submit-card{max-width:100%}
 }
+
+
+/* Submissions: distinct editorial interests and desktop left / form right. */
+.sb-interior-hero h1 em {color:#ee5757}
+.sb-submissions-main--streamlined .sb-submissions-grid--streamlined {
+ grid-template-columns:minmax(0,1fr) minmax(350px,1.04fr);
+ align-items:start;
+}
+.sb-submissions-main--streamlined .sb-submissions-opening {
+ margin:0 0 22px;
+ max-width:none;
+ font-size:clamp(19px,1.85vw,26px);
+ line-height:1.56;
+ color:#263248;
+}
+.sb-submissions-main--streamlined .sb-submissions-interest {
+ font-weight:700;
+}
+.sb-submissions-interest--american {color:#b82e3b}
+.sb-submissions-interest--worlds {color:#365d9b}
+.sb-submissions-main--streamlined .sb-submissions-guidance-note {
+ font-size:15px;
+ line-height:1.65;
+ color:#526076;
+ margin:0;
+}
+@media(max-width:850px){
+ .sb-submissions-main--streamlined .sb-submissions-grid--streamlined {
+  display:block;
+ }
+ .sb-submissions-main--streamlined .sb-submissions-guidance {display:none}
+ .sb-submissions-main--streamlined {padding-block:22px 38px}
+ .sb-submissions-main--streamlined .sb-submit-card {width:100%;max-width:none}
+}
