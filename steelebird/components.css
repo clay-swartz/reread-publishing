@@ -338,3 +338,12 @@
 .sb-header .sb-logo.sb-wordmark{font-family:"Space Grotesk",Arial,sans-serif;font-weight:700;font-size:clamp(26px,2.5vw,36px);letter-spacing:-.075em;line-height:1.1;color:#244ddb}
 .sb-launch-hero{background-color:#172348;background-image:linear-gradient(110deg,rgba(15,25,52,.19),rgba(15,25,52,.28)),url('/endpapers/collection/08-botanical-ivy.webp');background-size:100% 100%, 780px auto;background-repeat:no-repeat,repeat;background-position:center,center}
 @media(max-width:650px){.sb-header,.sb-header.sb-launch-header{min-height:72px;padding:17px 22px}.sb-header .sb-logo.sb-wordmark{font-size:27px}.sb-launch-hero{background-size:100% 100%, 620px auto}}
+
+/* Botanical-ivy launch accent: subdued inky blue shared by logo and primary actions. */
+:root{--sb-primary:#365c78}
+.sb-header .sb-logo.sb-wordmark{color:#365c78}
+.sb-launch-card h1 em{color:#365c78}
+.sb-launch-button--primary{background:#365c78;border-color:#365c78;color:#fffaf2}
+.sb-launch-button--primary:hover{background:#29465d;border-color:#29465d;color:#fffaf2}
+.sb-nav .sb-nav-feature,.sb-button,.sb-contact-form button,.sb-submit-form button[type="submit"]{background:#365c78;border-color:#365c78;color:#fffaf2}
+.sb-nav .sb-nav-feature:hover,.sb-button:hover,.sb-contact-form button:hover,.sb-submit-form button[type="submit"]:hover{background:#29465d;border-color:#29465d;color:#fffaf2}
