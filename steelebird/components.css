@@ -700,3 +700,33 @@
   font-size:clamp(18px,4.7vw,23px);line-height:1.48;
  }
 }
+
+
+/* Approved Steelebird Publishing header lockup (Nov 11).
+   Header only: existing multitypeface wordmark and footer stay unchanged. */
+.sb-header.sb-launch-header .sb-home{
+ display:inline-flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ text-decoration:none;
+}
+.sb-header .sb-publishing-descriptor{
+ display:block;
+ font-family:"Space Grotesk",Arial,sans-serif;
+ font-size:18px;
+ font-weight:700;
+ line-height:1.1;
+ letter-spacing:4.5px;
+ text-transform:uppercase;
+ text-align:center;
+ color:#172348;
+ margin-top:-1px;
+ white-space:nowrap;
+}
+@media(max-width:650px){
+ .sb-header .sb-publishing-descriptor{
+  font-size:15px;
+  letter-spacing:3.8px;
+ }
+}
