@@ -1,1 +1,13 @@
 (()=>{"use strict";const endpoint="https://uymwsivcgtapckzjoywk.supabase.co/functions/v1/steelebird-intake";const forms=document.querySelectorAll('form[data-steelebird-form]');for(const form of forms){const button=form.querySelector('button[type="submit"]');const status=form.querySelector('[data-form-status]');const kind=form.dataset.steelebirdForm;const started=Date.now();form.addEventListener("submit",async event=>{event.preventDefault();if(!form.reportValidity())return;button.disabled=true;const old=button.textContent;button.textContent="Sending…";status.textContent="";status.dataset.state="";try{const payload=new FormData(form);payload.set("kind",kind);payload.set("started_at",String(started));const response=await fetch(endpoint,{method:"POST",body:payload,mode:"cors",credentials:"omit"});const result=await response.json().catch(()=>({}));if(!response.ok||!result.ok)throw new Error(result.error||"Unable to send right now. Please try again.");status.textContent=result.message||"Received. Thank you.";status.dataset.state="success";form.reset();}catch(error){status.textContent=error.message||"Could not send your request.";status.dataset.state="error";}finally{button.textContent=old;button.disabled=false;}});}})();
+/* Accessible file-name feedback for the styled manuscript chooser. */
+(()=>{
+ const field=document.getElementById('sb-sub-file');
+ const name=document.getElementById('sb-attachment-name');
+ if(!field||!name)return;
+ const initial=name.textContent;
+ field.addEventListener('change',()=>{
+   const file=field.files&&field.files[0];
+   name.textContent=file?file.name:initial;
+ });
+ field.form?.addEventListener('reset',()=>{name.textContent=initial;});
+})();
