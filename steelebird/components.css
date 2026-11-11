@@ -287,3 +287,29 @@
 }
 
 @media(max-width:850px){.sb-home-invite-inner{align-items:center;text-align:center}}
+
+
+/* Steelebird announcement page and restrained typographic wordmark — November 2026 */
+.sb-logo.sb-wordmark{display:inline-flex;align-items:baseline;font-family:"Space Grotesk",Arial,sans-serif;font-size:clamp(26px,2.5vw,36px);font-weight:700;line-height:1.1;letter-spacing:-.075em;white-space:nowrap;color:#172348;font-kerning:normal;font-feature-settings:"kern" 1,"liga" 1}
+.sb-wordmark-first,.sb-wordmark-last{color:inherit}
+.sb-wordmark-last{margin-left:-.027em}
+.sb-footer .sb-logo.sb-wordmark{font-size:25px}
+.sb-launch{background:#fffaf2}
+.sb-launch-header{position:relative;min-height:72px;padding-block:17px;box-shadow:none}
+.sb-launch-hero{min-height:calc(100svh - 143px);display:grid;place-items:center;padding:clamp(36px,7vw,100px) 22px;background-color:#5a493b;background-image:linear-gradient(110deg,rgba(25,25,32,.16),rgba(32,23,28,.34)),url('/endpapers/collection/03-ebony-marble.webp');background-size:cover;background-position:center}
+.sb-launch-card{width:min(100%,890px);background:#fffaf2;color:#171c29;border:1px solid #e4dacb;outline:1px solid #e8dece;outline-offset:-10px;padding:clamp(35px,5.6vw,83px) clamp(27px,6.2vw,90px);text-align:center;box-shadow:0 18px 54px rgba(13,16,24,.16)}
+.sb-launch-card h1{font-family:"Space Grotesk",Arial,sans-serif;font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1.11;letter-spacing:-.065em;max-width:760px;margin:0 auto 26px}
+.sb-launch-card h1 em{font-style:normal;color:#244ddb}
+.sb-launch-card p{font-family:"Space Grotesk",Arial,sans-serif;font-size:clamp(15px,1.28vw,18px);line-height:1.58;max-width:715px;margin:0 auto 32px;color:#343a48}
+.sb-launch-actions{display:flex;justify-content:center;align-items:center;gap:13px;flex-wrap:wrap}
+.sb-launch-button{display:inline-flex;justify-content:center;align-items:center;padding:14px 24px;border-radius:3px;min-width:150px;font-family:"Space Grotesk",Arial,sans-serif;font-size:14px;line-height:1.2;font-weight:700;text-decoration:none;transition:background-color .15s,color .15s}
+.sb-launch-button--primary{background:#244ddb;color:#fffaf2;border:1px solid #244ddb}
+.sb-launch-button--primary:hover{background:#1b3db9;color:#fffaf2}
+.sb-launch-button--secondary{background:transparent;color:#172348;border:1px solid #172348}
+.sb-launch-button--secondary:hover{background:#172348;color:#fffaf2}
+.sb-launch-button:focus-visible{outline:3px solid #89a7ff;outline-offset:3px}
+.sb-launch-footer{padding:13px 0}
+.sb-launch-footer .sb-footer-in{min-height:36px}
+.sb-launch-copyright{font-size:12px;color:#5a6070}
+@media(max-width:650px){.sb-launch-hero{min-height:calc(100svh - 140px);padding:28px 16px}.sb-launch-card{padding:48px 25px;outline-offset:-7px}.sb-launch-card h1{font-size:clamp(31px,8vw,43px)}.sb-launch-card p{font-size:15px;line-height:1.55}.sb-launch-button{min-width:130px}.sb-launch-footer .sb-footer-in{flex-direction:row;align-items:center}.sb-launch-footer .sb-logo.sb-wordmark{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.sb-launch-button{transition:none}}
