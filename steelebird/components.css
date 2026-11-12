@@ -946,3 +946,20 @@
  font-weight:700;
  color:#b82e3b;
 }
+
+/* Homepage desktop hierarchy: let the introduction lead and soften its supporting line. */
+@media(min-width:651px){
+ .sb-launch-card .sb-launch-statement{
+  font-weight:400;
+  font-size:clamp(23px,1.9vw,29px);
+  line-height:1.44;
+  letter-spacing:-.025em;
+  color:#40516a;
+  max-width:690px;
+  margin-bottom:33px;
+ }
+ .sb-launch-card .sb-home-accent{
+  color:#365d9b;
+  font-weight:500;
+ }
+}
