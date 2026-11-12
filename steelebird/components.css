@@ -889,3 +889,26 @@
   background:#172348;
  }
 }
+
+/* Mobile polish: keep Safari's bottom overscroll/backdrop navy and soften homepage text. */
+@media(max-width:650px){
+ html,
+ body.sb-launch{
+  background:#172348;
+ }
+ body.sb-launch{
+  min-height:100dvh;
+ }
+ .sb-launch-card .sb-launch-statement{
+  font-weight:400;
+  letter-spacing:-.025em;
+  font-size:clamp(19px,4.9vw,23px);
+  line-height:1.46;
+  color:#344257;
+  text-wrap:balance;
+ }
+ .sb-launch-card .sb-home-accent{
+  color:#365d9b;
+  font-weight:500;
+ }
+}
