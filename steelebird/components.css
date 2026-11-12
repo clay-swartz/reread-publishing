@@ -912,3 +912,24 @@
   font-weight:500;
  }
 }
+
+/* A single continuous botanical-ivy backdrop for the mobile home hero and footer.
+   The pattern is painted once on the page, never restarted in the footer. */
+@media(max-width:650px){
+ body.sb-launch{
+  background-color:#172348;
+  background-image:
+   linear-gradient(110deg,rgba(15,25,52,.19),rgba(15,25,52,.28)),
+   url('/endpapers/collection/08-botanical-ivy.webp');
+  background-size:100% 100%,620px auto;
+  background-position:center top,center top;
+  background-repeat:no-repeat,repeat;
+ }
+ body.sb-launch .sb-launch-hero{
+  background:none;
+  background-color:transparent;
+ }
+ body.sb-launch > .sb-footer.sb-launch-footer{
+  background:transparent;
+ }
+}
