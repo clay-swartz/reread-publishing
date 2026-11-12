@@ -933,3 +933,16 @@
   background:transparent;
  }
 }
+
+/* Friendly human-authorship note beneath the submissions editorial brief. */
+.sb-submissions-main--streamlined .sb-submissions-guidance > p.sb-no-ai-note{
+ margin:24px 0 0;
+ max-width:36rem;
+ font:400 16px/1.5 "Space Grotesk",Arial,sans-serif;
+ letter-spacing:normal;
+ color:#526076;
+}
+.sb-submissions-main--streamlined .sb-no-ai-note strong{
+ font-weight:700;
+ color:#b82e3b;
+}
