@@ -9,7 +9,7 @@ await fs.cp(path.join(root,'public/endpapers'),path.join(dist,'endpapers'),{recu
 await fs.copyFile(path.join(root,'public/favicon.svg'),path.join(dist,'favicon.svg'));
 await fs.mkdir(path.join(dist,'steelebird'),{recursive:true});
 for(const asset of ['steelebird.css','components.css','steelebird.js','forms.js']) await fs.copyFile(path.join(root,'steelebird',asset),path.join(dist,'steelebird',asset));
-for(const route of ['','submissions','contact','pattern-review']){
+for(const route of ['','submissions','contact','pattern-review','bigfiles']){
  const from=path.join(root,'steelebird',route,'index.html');
  const out=path.join(dist,route,'index.html');
  await fs.mkdir(path.dirname(out),{recursive:true});
