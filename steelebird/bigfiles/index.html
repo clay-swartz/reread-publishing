@@ -6,34 +6,30 @@ form{display:grid;gap:22px}.field{display:grid;gap:8px}label{font-size:14px;font
 input[type=file]{display:block;width:100%;padding:16px;background:#fff;border:1px solid #bbc0ce;border-radius:3px;font:inherit;font-size:14px}
 button{font-family:inherit;font-size:15px;border:0;color:white;background:#244ddb;padding:17px 25px;border-radius:3px;font-weight:700}button:disabled{opacity:.65;cursor:not-allowed}
 progress{width:100%;height:9px;accent-color:#244ddb}.hint{font-size:13px;color:#5a6070;margin:3px 0 0}.status{font-size:14px;line-height:1.6;margin:0}.status:empty{display:none}.sb-home{display:inline-flex}
-</style></head><body><header class="sb-header"><a href="/" class="sb-home" aria-label="Steelebird home"><span class="sb-logo sb-wordmark sb-wordmark--solid">Steelebird</span></a></header><main><div class="upload-wrap"><h1>Attach large files</h1><form id="largefile-form"><div class="field"><label for="sender-email">Email</label><input id="sender-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required></div><div class="field"><label for="upload-file">Attach</label><input id="upload-file" name="file" type="file" required><p class="hint">Up to 50 MB. Keep this page open until your upload finishes.</p></div><input name="website" style="display:none" tabindex="-1" autocomplete="off"><button id="send-button" type="submit">Send file</button><progress id="upload-progress" value="0" max="100" hidden></progress><p class="status" id="upload-status" role="status" aria-live="polite"></p></form></div></main>
-<script src="https://cdn.jsdelivr.net/npm/tus-js-client@4.3.1/dist/tus.min.js"></script>
-<script>
+</style></head><body><header class="sb-header"><a href="/" class="sb-home" aria-label="Steelebird home"><span class="sb-logo sb-wordmark sb-wordmark--solid">Steelebird</span></a></header><main><div class="upload-wrap"><h1>Attach large files</h1><form id="largefile-form"><div class="field"><label for="sender-email">Email</label><input id="sender-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required></div><div class="field"><label for="upload-file">Attach</label><input id="upload-file" name="file" type="file" required><p class="hint">Up to 2 GB. Keep this page open until your upload finishes.</p></div><input name="website" style="display:none" tabindex="-1" autocomplete="off"><button id="send-button" type="submit">Send file</button><progress id="upload-progress" value="0" max="100" hidden></progress><p class="status" id="upload-status" role="status" aria-live="polite"></p></form></div></main>
+<script type="module">
+import {upload} from "https://esm.sh/@vercel/blob@2.0.0/client";
 const endpoint="https://uymwsivcgtapckzjoywk.supabase.co/functions/v1/steelebird-largefile-intake";
 const form=document.getElementById("largefile-form"),button=document.getElementById("send-button"),status=document.getElementById("upload-status"),progress=document.getElementById("upload-progress");
-async function request(data){const r=await fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)});const body=await r.json();if(!r.ok)throw new Error(body.error||"Upload service unavailable.");return body}
+async function request(data){const r=await fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)});const body=await r.json();if(!r.ok)throw new Error(body.error||"Upload unavailable.");return body}
 form.addEventListener("submit",async e=>{
  e.preventDefault();if(button.disabled)return;
  const file=document.getElementById("upload-file").files[0],email=document.getElementById("sender-email").value.trim();
  if(!file||!email)return;
- if(file.size>50*1024*1024){status.textContent="Please choose a file smaller than 50 MB.";return}
- if(!window.tus?.Upload){status.textContent="The upload library couldn't load. Please reload the page.";return}
- button.disabled=true;status.textContent="Preparing upload…";progress.hidden=false;progress.value=0;
+ if(file.size>2*1024*1024*1024){status.textContent="Please choose a file under 2 GB.";return;}
+ button.disabled=true;status.textContent="Preparing secure upload…";progress.hidden=false;progress.removeAttribute("value");
  try{
-  const ready=await request({action:"start",email,filename:file.name,size:file.size,website:form.website?.value||""});
-  await new Promise((resolve,reject)=>{
-   const upload=new tus.Upload(file,{
-    endpoint:"https://uymwsivcgtapckzjoywk.storage.supabase.co/storage/v1/upload/resumable",
-    chunkSize:6*1024*1024,retryDelays:[0,3000,5000,10000,20000],
-    headers:{"x-signature":ready.upload_token,"Authorization":"Bearer "+ready.anon_key},
-    metadata:{bucketName:ready.bucket,objectName:ready.path,contentType:file.type||"application/octet-stream",cacheControl:"3600"},
-    uploadDataDuringCreation:true,removeFingerprintOnSuccess:true,
-    onProgress:(done,total)=>{const pct=Math.round(done/total*100);progress.value=pct;status.textContent="Uploading… "+pct+"%";},
-    onSuccess:resolve,onError:reject
-   });upload.start();
+  const ready=await request({action:"start",email,filename:file.name,size:file.size,website:form.elements.website.value||""});
+  status.textContent="Uploading securely… Keep this page open.";
+  await upload(ready.path,file,{
+    access:"private",
+    handleUploadUrl:"/api/bigfiles-upload",
+    clientPayload:JSON.stringify({id:ready.id,secret:ready.secret}),
+    contentType:file.type||"application/octet-stream",
+    multipart:true
   });
-  await request({action:"complete",id:ready.id,secret:ready.secret});
-  status.textContent="Thanks! Your file has been received.";progress.value=100;form.reset();
- }catch(err){status.textContent=err.message||"Upload failed. Please try again."}finally{button.disabled=false}
+  status.textContent="Thanks! Your file has been uploaded. You can close this page.";
+  progress.hidden=true;form.reset();
+ }catch(err){status.textContent=err.message||"Upload failed. Please try again.";progress.hidden=true;}finally{button.disabled=false;}
 });
 </script></body></html>
