@@ -995,3 +995,27 @@
 .sb-launch-card .sb-pillar--books{color:#365d9b}
 .sb-launch-card .sb-pillar--authors{color:#9c3743}
 .sb-launch-card .sb-pillar--talk{color:#172348}
+
+/* Interior hero consistency */
+.sb-about-new .sb-hero.sb-about-new-intro{padding:0}
+.sb-hero.sb-interior-hero.sb-component-hero .sb-hero-wrap,
+.sb-about-new .sb-hero.sb-about-new-intro .sb-hero-wrap{display:flex;align-items:center;min-height:clamp(190px,19vw,255px);padding-block:clamp(42px,5vw,70px)}
+.sb-hero.sb-interior-hero.sb-component-hero h1 em,.sb-about-new .sb-hero.sb-about-new-intro h1 em{color:#a9bfff;font-style:normal}
+.sb-launch-card .sb-pillar--talk{color:#c64c29}
+.sb-about-new .sb-about-new-prose .sb-about-accent--talk{color:#bb492b}
+/* Compact one-field newsletter */
+.sb-follow{background:#e9edff;color:#172348;padding:clamp(30px,4.3vw,55px) 0}
+.sb-follow-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.85fr);align-items:center;gap:clamp(23px,6vw,85px)}
+.sb-follow h2{font-family:"Space Grotesk",Arial,sans-serif;font-size:clamp(26px,2.8vw,39px);line-height:1.12;letter-spacing:-.055em;margin:0 0 10px}
+.sb-follow-copy>p{font-size:clamp(15px,1.4vw,18px);line-height:1.5;margin:0;max-width:530px}
+.sb-follow-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px}
+.sb-follow-form input[type=email]{background:#fffaf2;color:#172348;border:1px solid #9caecb;border-radius:4px;padding:13px 15px;min-height:49px;width:100%;font:inherit;font-size:15px}
+.sb-follow-form button{background:#365d9b;color:#fff;border:0;border-radius:4px;padding:12px 22px;min-height:49px;font:700 14px "Space Grotesk",Arial,sans-serif;cursor:pointer}
+.sb-follow-form button:hover{background:#244ddb}
+.sb-follow-form button:disabled{opacity:.65;cursor:wait}
+.sb-follow-form input:focus-visible,.sb-follow-form button:focus-visible{outline:3px solid #799bdf;outline-offset:2px}
+.sb-follow-form .sb-follow-status{grid-column:1/-1;margin:0}
+.sb-follow-fine{font-size:12px;line-height:1.4;color:#596276;margin:8px 0 0}
+.sb-visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:760px){.sb-follow-inner{grid-template-columns:1fr;gap:18px}.sb-follow-form{grid-template-columns:minmax(0,1fr) auto}}
+@media(max-width:400px){.sb-follow-form{grid-template-columns:1fr}.sb-follow-form button{width:100%}}
