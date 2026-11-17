@@ -963,3 +963,35 @@
   font-weight:500;
  }
 }
+
+/* Shared interior hero scale and accent: About, Submissions, Contact. */
+.sb-hero.sb-interior-hero.sb-component-hero .sb-hero-wrap{
+ display:flex;align-items:center;min-height:0;
+ padding-block:clamp(42px,5vw,70px);
+}
+.sb-hero.sb-interior-hero.sb-component-hero .sb-hero-wrap>div{width:min(100%,1080px)}
+.sb-hero.sb-interior-hero.sb-component-hero h1{
+ font-size:clamp(45px,5.25vw,82px);line-height:1.065;letter-spacing:-.07em;
+ margin:0;color:#fffaf2;
+}
+.sb-hero.sb-interior-hero.sb-component-hero h1 em{
+ color:#a9bfff;font-style:normal;text-shadow:0 1px 3px rgba(8,14,29,.3);
+}
+/* About takes the exact interior hero structure, not a second competing header layout. */
+.sb-about-new .sb-hero.sb-about-new-intro{padding:0;background:#172348}
+.sb-about-new .sb-hero.sb-about-new-intro::before{
+ background-image:linear-gradient(90deg,rgba(12,20,44,.86) 0%,rgba(12,20,44,.78) 57%,rgba(12,20,44,.72) 100%),url('/endpapers/collection/05-crimson-peacock.webp');
+ background-position:center,center 49%;background-size:cover;
+}
+.sb-about-new .sb-about-new-prose .sb-about-accent{font-weight:600}
+.sb-about-new .sb-about-new-prose .sb-about-accent--books{color:#365d9b}
+.sb-about-new .sb-about-new-prose .sb-about-accent--authors{color:#9c3743}
+.sb-about-new .sb-about-new-prose .sb-about-accent--talk{color:#365d9b}
+.sb-about-new .sb-about-new-prose .sb-about-new-standout{color:#172348}
+.sb-about-new .sb-about-highlight{background:linear-gradient(transparent 65%,#d9e3f8 65%,#d9e3f8 93%,transparent 93%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.sb-about-new .sb-about-emphasis{font-weight:600;color:#365d9b}
+/* Three deliberate colors from Steelebird's navy, editorial blue, and muted crimson. */
+.sb-launch-card .sb-pillar{font-weight:500}
+.sb-launch-card .sb-pillar--books{color:#365d9b}
+.sb-launch-card .sb-pillar--authors{color:#9c3743}
+.sb-launch-card .sb-pillar--talk{color:#172348}
