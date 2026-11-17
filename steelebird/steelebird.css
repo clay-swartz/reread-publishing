@@ -200,9 +200,8 @@ a{color:inherit}button,input{font:inherit}button{cursor:pointer}.sb-skip{positio
 @media(max-width:650px){.sb-footer .sb-footer-in{gap:16px}.sb-footer .sb-footer-links{flex-wrap:wrap}}
 
 /* About refresh: match Submissions hero and keep body typography on one scale. */
-.sb-about-new .sb-about-new-intro{padding:0;background:#172348}
-.sb-about-new .sb-about-new-intro::before{background-image:linear-gradient(90deg,rgba(12,20,44,.86) 0%,rgba(12,20,44,.78) 57%,rgba(12,20,44,.72) 100%),url('/endpapers/collection/05-crimson-peacock.webp');background-position:center,center 49%;background-size:cover}
-.sb-about-new .sb-about-new-intro .sb-hero-wrap{padding-block:clamp(42px,5vw,70px);min-height:0}
+.sb-about-new .sb-about-new-intro{padding:clamp(50px,6vw,86px) 0;background:#172348}
+.sb-about-new .sb-about-new-intro::before{background-image:linear-gradient(90deg,rgba(12,20,44,.86),rgba(12,20,44,.72)),url('/endpapers/collection/05-crimson-peacock.webp');background-position:center,center 49%;background-size:cover}
 .sb-about-new .sb-about-new-intro h1{font-size:clamp(45px,5.25vw,82px);line-height:1.065;letter-spacing:-.07em;color:#fffaf2}
 .sb-about-new .sb-about-new-copy{padding-block:clamp(46px,5.8vw,85px);background:#fffaf2}
 .sb-about-new .sb-about-new-copy .sb-shell{display:block;width:min(100% - 2*clamp(22px,5vw,86px),1480px);max-width:1480px}
