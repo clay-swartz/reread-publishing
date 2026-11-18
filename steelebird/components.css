@@ -1057,3 +1057,12 @@
 .sb-about-note-details>summary:focus-visible{outline:3px solid #799bdf;outline-offset:4px}
 .sb-about-note-details .sb-about-note-form{margin-top:17px}
 @media(max-width:780px){.sb-about-actions-grid{align-items:stretch}.sb-about-action--note{border-top:1px solid #b6c4df;padding-top:15px}}
+
+
+/* About: one newsletter CTA, with the contact invitation inline in the copy. */
+.sb-about-actions .sb-about-actions-grid{display:block;max-width:1480px}
+.sb-about-actions .sb-about-action{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.85fr);align-items:center;gap:clamp(20px,5vw,70px)}
+.sb-about-actions .sb-about-action h2{margin:0}
+.sb-about-new .sb-about-new-prose .sb-about-contact-link{color:#365d9b;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;font-weight:600}
+.sb-about-new .sb-about-new-prose .sb-about-contact-link:hover{color:#9c3743}
+@media(max-width:760px){.sb-about-actions .sb-about-action{grid-template-columns:1fr;gap:16px}}
