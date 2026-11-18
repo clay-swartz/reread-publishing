@@ -1038,3 +1038,9 @@
 .sb-about-note-form .sb-honeypot{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
 @media(max-width:780px){.sb-about-actions-grid{grid-template-columns:1fr;gap:34px}}
 @media(max-width:480px){.sb-about-note-pair{grid-template-columns:1fr}}
+
+
+/* About page activity subheading. Keep colored phrases selective. */
+.sb-about-new .sb-about-new-prose .sb-about-current-heading{font-family:"Space Grotesk",Arial,sans-serif;font-size:clamp(23px,2.25vw,31px);font-weight:700;letter-spacing:-.045em;line-height:1.22;color:#172348;margin:1.4em 0 .65em}
+.sb-about-new .sb-about-new-prose .sb-about-accent--books{color:#365d9b;font-weight:600}
+.sb-about-new .sb-about-new-prose .sb-about-accent--authors{color:#9c3743;font-weight:600}
