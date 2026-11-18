@@ -1019,3 +1019,22 @@
 .sb-visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:760px){.sb-follow-inner{grid-template-columns:1fr;gap:18px}.sb-follow-form{grid-template-columns:minmax(0,1fr) auto}}
 @media(max-width:400px){.sb-follow-form{grid-template-columns:1fr}.sb-follow-form button{width:100%}}
+
+
+/* About page: two quiet, functional calls to action. */
+.sb-about-actions{background:#e9edff;color:#172348;padding:clamp(30px,4.3vw,55px) 0}
+.sb-about-actions-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,74px);align-items:start}
+.sb-about-action h2{font-family:"Space Grotesk",Arial,sans-serif;font-size:clamp(25px,2.5vw,35px);line-height:1.15;letter-spacing:-.05em;margin:0 0 19px}
+.sb-about-actions .sb-follow-form{grid-template-columns:minmax(0,1fr) auto}
+.sb-about-note-form{display:grid;gap:10px}
+.sb-about-note-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sb-about-note-form input:not([type=hidden]),.sb-about-note-form textarea{width:100%;min-width:0;border:1px solid #9caecb;border-radius:4px;background:#fffaf2;color:#172348;padding:13px 15px;font:inherit;font-size:15px}
+.sb-about-note-form input{min-height:49px}
+.sb-about-note-form textarea{resize:vertical;min-height:96px}
+.sb-about-note-form button{justify-self:start;background:#365d9b;color:#fff;border:0;border-radius:4px;padding:12px 22px;min-height:49px;font:700 14px "Space Grotesk",Arial,sans-serif;cursor:pointer}
+.sb-about-note-form button:hover{background:#244ddb}
+.sb-about-note-form button:disabled{opacity:.65;cursor:wait}
+.sb-about-note-form :is(input,textarea,button):focus-visible{outline:3px solid #799bdf;outline-offset:2px}
+.sb-about-note-form .sb-honeypot{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+@media(max-width:780px){.sb-about-actions-grid{grid-template-columns:1fr;gap:34px}}
+@media(max-width:480px){.sb-about-note-pair{grid-template-columns:1fr}}
