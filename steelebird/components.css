@@ -1066,3 +1066,9 @@
 .sb-about-new .sb-about-new-prose .sb-about-contact-link{color:#365d9b;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;font-weight:600}
 .sb-about-new .sb-about-new-prose .sb-about-contact-link:hover{color:#9c3743}
 @media(max-width:760px){.sb-about-actions .sb-about-action{grid-template-columns:1fr;gap:16px}}
+
+
+/* Only the two collection names carry decorative body-copy color. */
+.sb-about-new .sb-about-new-prose .sb-about-collection{font-weight:600}
+.sb-about-new .sb-about-new-prose .sb-about-collection--myths{color:#365d9b}
+.sb-about-new .sb-about-new-prose .sb-about-collection--worlds{color:#9c3743}
