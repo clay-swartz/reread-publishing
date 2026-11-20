@@ -12,7 +12,7 @@
       "destination": "https://uymwsivcgtapckzjoywk.supabase.co/functions/v1/steelebird-agreements-manager"
     },
     {
-      "source": "/review/tuyo-rachel",
+      "source": "/review/tuyo-rachel-pbtqax2qtw",
       "destination": "https://uymwsivcgtapckzjoywk.supabase.co/functions/v1/steelebird-tuyo-rachel-review"
     }
   ],
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "source": "/review/tuyo-rachel",
+      "source": "/review/tuyo-rachel-pbtqax2qtw",
       "headers": [
         {
           "key": "Content-Type",
