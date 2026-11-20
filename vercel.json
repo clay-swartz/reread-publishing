@@ -18,7 +18,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'self'; img-src https://steelebird.com data:; form-action 'self'; base-uri 'none'; frame-ancestors 'none'"
+          "value": "default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'unsafe-inline'; connect-src 'self'; img-src https://steelebird.com data:; form-action 'self'; base-uri 'none'; frame-ancestors 'none'"
         },
         {
           "key": "Cache-Control",
