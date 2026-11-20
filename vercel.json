@@ -10,6 +10,10 @@
     {
       "source": "/agreements",
       "destination": "https://uymwsivcgtapckzjoywk.supabase.co/functions/v1/steelebird-agreements-manager"
+    },
+    {
+      "source": "/review/tuyo-rachel",
+      "destination": "https://uymwsivcgtapckzjoywk.supabase.co/functions/v1/steelebird-tuyo-rachel-review"
     }
   ],
   "headers": [
@@ -60,6 +64,31 @@
         {
           "key": "Content-Security-Policy",
           "value": "default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'unsafe-inline'; connect-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'"
+        }
+      ]
+    },
+    {
+      "source": "/review/tuyo-rachel",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'unsafe-inline'; connect-src 'self'; img-src https://steelebird.com data:; form-action 'self'; base-uri 'none'; frame-ancestors 'none'"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
         }
       ]
     }
