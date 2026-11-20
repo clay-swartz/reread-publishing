@@ -6,6 +6,10 @@
     {
       "source": "/review/tuyo",
       "destination": "https://uymwsivcgtapckzjoywk.supabase.co/functions/v1/steelebird-contract-review"
+    },
+    {
+      "source": "/agreements",
+      "destination": "https://uymwsivcgtapckzjoywk.supabase.co/functions/v1/steelebird-agreements-manager"
     }
   ],
   "headers": [
@@ -31,6 +35,31 @@
         {
           "key": "X-Frame-Options",
           "value": "DENY"
+        }
+      ]
+    },
+    {
+      "source": "/agreements",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'unsafe-inline'; connect-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'"
         }
       ]
     }
