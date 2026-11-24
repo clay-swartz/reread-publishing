@@ -121,5 +121,17 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/partners/michele-morimier-7p4q",
+      "destination": "/partners/michele-mortimer-7p4q/",
+      "permanent": true
+    },
+    {
+      "source": "/partners/michele-morimier-7p4q/",
+      "destination": "/partners/michele-mortimer-7p4q/",
+      "permanent": true
+    }
   ]
 }
