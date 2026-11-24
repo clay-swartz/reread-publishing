@@ -15,6 +15,10 @@ for(const route of ['','about','submissions','contact','pattern-review','bigfile
  await fs.mkdir(path.dirname(out),{recursive:true});
  await fs.copyFile(from,out);
 }
+const agentFrom=path.join(root,'steelebird/partners/michele-morimier-7p4q/index.html');
+const agentOut=path.join(dist,'partners/michele-morimier-7p4q/index.html');
+await fs.mkdir(path.dirname(agentOut),{recursive:true});
+await fs.copyFile(agentFrom,agentOut);
 const asset=await fs.stat(path.join(dist,'endpapers/collection/03-ebony-marble.webp'));
 if(asset.size<10000)throw Error('Endpaper asset is missing');
 console.log('Steelebird standalone preview built');
