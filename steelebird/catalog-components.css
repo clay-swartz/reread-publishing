@@ -2,7 +2,7 @@
    .sb-catalog > .catalog-group > .catalog-group-head + .catalog-items
    Each .catalog-items contains .catalog-item with .catalog-item-body.
    JS progressively enhances horizontal shelves; no auto rotation. */
-.sb-catalog{--catalog-rule:#d4cfc4;--catalog-surface:#f7f4ed;--catalog-cover:160px;display:grid;gap:34px}
+.sb-catalog{--catalog-rule:#c8bfb0;--catalog-surface:#eee7dc;--catalog-cover:160px;display:grid;gap:34px}
 .sb-catalog .catalog-group{min-width:0;margin:0;padding:24px 0 0;border:0;border-top:1px solid var(--catalog-rule);background:transparent}
 .sb-catalog .catalog-group-head{border:0;margin:0;padding:0 0 20px}
 .sb-catalog .catalog-group-header{align-items:center;gap:16px}
