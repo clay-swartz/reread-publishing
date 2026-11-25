@@ -23,6 +23,10 @@ const donaldFrom=path.join(root,'steelebird/partners/donald-winchester-wl7p4q/in
 const donaldOut=path.join(dist,'partners/donald-winchester-wl7p4q/index.html');
 await fs.mkdir(path.dirname(donaldOut),{recursive:true});
 await fs.copyFile(donaldFrom,donaldOut);
+const janineFrom=path.join(root,'steelebird/partners/janine-jensen-ch7p4q/index.html');
+const janineOut=path.join(dist,'partners/janine-jensen-ch7p4q/index.html');
+await fs.mkdir(path.dirname(janineOut),{recursive:true});
+await fs.copyFile(janineFrom,janineOut);
 const asset=await fs.stat(path.join(dist,'endpapers/collection/03-ebony-marble.webp'));
 if(asset.size<10000)throw Error('Endpaper asset is missing');
 console.log('Steelebird standalone preview built');
