@@ -7,6 +7,9 @@ await fs.rm(dist,{recursive:true,force:true});
 await fs.mkdir(dist,{recursive:true});
 await fs.cp(path.join(root,'public/endpapers'),path.join(dist,'endpapers'),{recursive:true});
 await fs.copyFile(path.join(root,'public/favicon.svg'),path.join(dist,'favicon.svg'));
+await fs.cp(path.join(root,'public/covers'),path.join(dist,'covers'),{recursive:true});
+const darkCover=await fs.readFile(path.join(dist,'covers/dark-liquid-skies.webp'));
+if(darkCover.toString('ascii',0,4)!=='RIFF'||darkCover.toString('ascii',8,12)!=='WEBP'||(darkCover.readUInt16LE(26)&0x3fff)!==360||(darkCover.readUInt16LE(28)&0x3fff)!==549)throw Error('Dark Liquid Skies cover missing or incorrect dimensions');
 await fs.mkdir(path.join(dist,'steelebird'),{recursive:true});
 for(const asset of ['steelebird.css','components.css','steelebird.js','forms.js','catalog-components.css','catalog-components.js']) await fs.copyFile(path.join(root,'steelebird',asset),path.join(dist,'steelebird',asset));
 for(const route of ['','about','submissions','contact','pattern-review','bigfiles']){

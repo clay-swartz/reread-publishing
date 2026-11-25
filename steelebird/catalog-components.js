@@ -4,7 +4,9 @@ class CatalogShelf {
     this.track = track;
     this.cards = Array.from(track.children).filter(card => card.classList.contains('catalog-item'));
     this.motion = matchMedia('(prefers-reduced-motion: reduce)');
-    const header = track.closest('.catalog-group').querySelector('.catalog-group-header');
+    const group = track.closest('.catalog-group');
+    const header = group.querySelector('.catalog-group-header');
+    const featured = group.classList.contains('catalog-group--featured');
     track.id ||= 'book-shelf-' + (index + 1);
     track.tabIndex = 0;
     track.setAttribute('role', 'region');
@@ -15,7 +17,11 @@ class CatalogShelf {
     this.controls.innerHTML = '<span class="shelf-counter" aria-live="polite"></span>' +
       '<button type="button" class="shelf-control" aria-label="Previous books"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>' +
       '<button type="button" class="shelf-control" aria-label="Next books"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>';
-    header.append(this.controls);
+    if(featured){
+      this.controls.innerHTML='<span class="shelf-counter" aria-live="polite"></span><div class="shelf-actions"><button type="button" class="shelf-control" aria-label="Previous titles"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Previous</button><button type="button" class="shelf-control shelf-control--next" aria-label="Next titles">Next titles<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>';
+      track.before(this.controls);
+    }else{header.append(this.controls);}
+    track.dataset.enhanced='true';
     this.counter = this.controls.querySelector('.shelf-counter');
     [this.previous, this.next] = this.controls.querySelectorAll('button');
     [this.previous, this.next].forEach(button => button.setAttribute('aria-controls', track.id));
@@ -46,11 +52,11 @@ class CatalogShelf {
     if (!step) return;
     const first = Math.min(this.cards.length-1, Math.max(0, Math.round(track.scrollLeft/step)));
     const last = Math.min(this.cards.length-1, first+Math.max(1,Math.round(width/step))-1);
-    const label = (first===last?String(first+1):(first+1)+'–'+(last+1))+' / '+this.cards.length;
+    const label = 'Showing '+(first===last?String(first+1):(first+1)+'–'+(last+1))+' of '+this.cards.length+' titles';
     if(this.counter.textContent!==label) this.counter.textContent=label;
   }
 }
-document.querySelectorAll('.sb-catalog:not(.sb-catalog--grid) .catalog-items').forEach((track,index)=>new CatalogShelf(track,index));
+document.querySelectorAll('.sb-catalog .catalog-items').forEach((track,index)=>{if(!track.closest('.sb-catalog--grid'))new CatalogShelf(track,index);});
 
 /* Use the same endpaper frame when an externally hosted cover cannot load. */
 document.querySelectorAll('.sb-catalog .catalog-cover img').forEach(img=>{

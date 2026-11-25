@@ -60,3 +60,22 @@
 .sb-catalog--grid .catalog-item:only-child .catalog-item-body{max-width:none}
 @media(max-width:1000px){.sb-catalog--grid .catalog-items{grid-template-columns:minmax(0,1fr)}.sb-catalog--grid .catalog-item:nth-child(odd){border-right:0}.sb-catalog--grid .catalog-item:nth-child(n+2){border-top:1px solid var(--catalog-rule)}.sb-catalog--grid .catalog-item:last-child:nth-child(odd) .catalog-item-body{max-width:none}}
 @media print{.sb-catalog--grid .catalog-items{display:block}.sb-catalog--grid .catalog-item,.sb-catalog--grid .catalog-item:nth-child(odd){border:0;border-bottom:1px solid var(--catalog-rule)}.sb-catalog--grid .catalog-item:last-child:nth-child(odd) .catalog-item-body{max-width:none}}
+
+/* Featured shelf: clearly labeled, accessible controls with two complete cards. */
+.sb-catalog .catalog-group--featured .catalog-items{--columns:2;scrollbar-width:auto;scrollbar-color:#999eaa var(--catalog-surface)}
+.sb-catalog .catalog-group--featured .catalog-items::-webkit-scrollbar{display:block;height:8px}
+.sb-catalog .catalog-group--featured .catalog-items::-webkit-scrollbar-thumb{background:#999eaa}
+.sb-catalog .catalog-group--featured .catalog-items[data-enhanced]{scrollbar-width:none}
+.sb-catalog .catalog-group--featured .catalog-items[data-enhanced]::-webkit-scrollbar{display:none}
+.sb-catalog .catalog-group--featured .shelf-controls{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0 12px;margin:0}
+.sb-catalog .catalog-group--featured .shelf-controls[hidden]{display:none}
+.sb-catalog .catalog-group--featured .shelf-counter{font-size:13px;font-weight:600;color:#40506b;margin:0}
+.sb-catalog .shelf-actions{display:flex;gap:8px}
+.sb-catalog .catalog-group--featured .shelf-control{width:auto;min-width:105px;height:40px;display:flex;align-items:center;justify-content:center;gap:8px;padding:0 12px;font:600 13px/1 var(--body,"Space Grotesk",sans-serif);border:1px solid #b5b7bd;color:#263d5b;background:transparent}
+.sb-catalog .catalog-group--featured .shelf-control--next{color:#fffaf2;background:#263d5b;border-color:#263d5b}
+.sb-catalog .catalog-group--featured .shelf-control--next:hover:not(:disabled){background:#365d9b;border-color:#365d9b}
+.sb-catalog .catalog-group--featured .shelf-control:disabled{opacity:.42;color:#596276;background:transparent;border-color:#b5b7bd}
+.sb-catalog .catalog-cover--notavailable::after{content:"Cover to come";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:max-content;max-width:calc(100% - 12px);box-sizing:border-box;padding:8px 7px;border:1px solid #7d786d;color:#263d5b;background:#f7f4ed;font:700 10px/1.2 var(--body,"Space Grotesk",sans-serif);text-transform:uppercase;letter-spacing:.055em;text-align:center;z-index:1}
+@media(max-width:1000px){.sb-catalog .catalog-group--featured .catalog-items{--columns:1}}
+@media(max-width:480px){.sb-catalog .catalog-group--featured .shelf-controls{gap:8px}.sb-catalog .catalog-group--featured .shelf-counter{font-size:12px}.sb-catalog .catalog-group--featured .shelf-control{min-width:0;padding:0 9px;font-size:12px}.sb-catalog .shelf-actions{gap:5px}}
+@media print{.sb-catalog .catalog-group--featured .catalog-items{display:block;overflow:visible}.sb-catalog .catalog-group--featured .shelf-controls{display:none!important}}
