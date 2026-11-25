@@ -51,3 +51,10 @@ class CatalogShelf {
   }
 }
 document.querySelectorAll('.sb-catalog .catalog-items').forEach((track,index)=>new CatalogShelf(track,index));
+
+/* Use the same endpaper frame when an externally hosted cover cannot load. */
+document.querySelectorAll('.sb-catalog .catalog-cover img').forEach(img=>{
+  const fallback=()=>{img.hidden=true;img.closest('.catalog-cover').classList.add('catalog-cover--notavailable');};
+  img.addEventListener('error',fallback,{once:true});
+  if(img.complete&&!img.naturalWidth)fallback();
+});
