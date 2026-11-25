@@ -50,7 +50,7 @@ class CatalogShelf {
     if(this.counter.textContent!==label) this.counter.textContent=label;
   }
 }
-document.querySelectorAll('.sb-catalog .catalog-items').forEach((track,index)=>new CatalogShelf(track,index));
+document.querySelectorAll('.sb-catalog:not(.sb-catalog--grid) .catalog-items').forEach((track,index)=>new CatalogShelf(track,index));
 
 /* Use the same endpaper frame when an externally hosted cover cannot load. */
 document.querySelectorAll('.sb-catalog .catalog-cover img').forEach(img=>{
