@@ -18,7 +18,7 @@ class CatalogShelf {
       '<button type="button" class="shelf-control" aria-label="Previous books"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>' +
       '<button type="button" class="shelf-control" aria-label="Next books"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>';
     if(featured){
-      this.controls.innerHTML='<span class="shelf-counter" aria-live="polite"></span><div class="shelf-actions"><button type="button" class="shelf-control" aria-label="Previous titles"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Previous</button><button type="button" class="shelf-control shelf-control--next" aria-label="Next titles">Next titles<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>';
+      this.controls.innerHTML='<div class="shelf-actions"><button type="button" class="shelf-control" aria-label="Previous titles"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Previous</button><button type="button" class="shelf-control shelf-control--next" aria-label="Next titles">Next titles<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div><span class="shelf-counter" aria-live="polite"></span>';
       track.before(this.controls);
     }else{header.append(this.controls);}
     track.dataset.enhanced='true';
